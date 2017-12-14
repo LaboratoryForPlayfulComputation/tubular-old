@@ -1,6 +1,7 @@
 /// <reference path="../libs/core/enums.d.ts" />
 /// <reference path="../node_modules/pxt-core/typings/globals/bluebird/index.d.ts" />
 /// <reference path="../node_modules/pxt-core/built/pxtsim.d.ts" />
+/// <reference path="../typings/globals/peerjs/index.d.ts" />
 /// <reference path="../sim/video.d.ts" />
 declare namespace pxsim.loops {
     /**
@@ -20,6 +21,23 @@ declare namespace pxsim.console {
      * Print out message
      */
     function log(msg: string): void;
+}
+declare namespace pxsim.messaging {
+    /**
+     * Peer
+     * @param id The value of the marker
+     */
+    function send(key: string, value: number, id: string): void;
+    /**
+     * Peer
+     * @param id The value of the marker
+     */
+    function connect(id: string): void;
+    /**
+     * Allows user to define callbacks for receive event
+     * @param key
+     */
+    function receive(key: string, handler: RefAction): void;
 }
 declare namespace pxsim {
     /**
