@@ -1,23 +1,58 @@
 /// <reference path="../libs/core/enums.d.ts" />
+/// <reference path="../sim/youtube.d.ts" />
 /// <reference path="../node_modules/pxt-core/typings/globals/bluebird/index.d.ts" />
 /// <reference path="../node_modules/pxt-core/built/pxtsim.d.ts" />
-declare namespace pxsim.turtle {
+declare namespace pxsim.video {
     /**
-     * Moves the sprite forward
-     * @param steps number of steps to move, eg: 1
+    * Set video using YouTube URL ID
+     * @param rate
      */
-    function forwardAsync(steps: number): Promise<void>;
+    function setVideo(id: string): void;
     /**
-     * Moves the sprite forward
-     * @param direction the direction to turn, eg: Direction.Left
-     * @param angle degrees to turn, eg:90
+    * Change video speed
+     * @param rate
      */
-    function turnAsync(direction: Direction, angle: number): Promise<void>;
+    function setSpeed(rate: number): void;
     /**
-     * Triggers when the turtle bumps a wall
-     * @param handler
+    * Seek to a specific time
+     * @param time
      */
-    function onBump(handler: RefAction): void;
+    function seek(time: number): void;
+    /**
+    * Rewind a specific number of seconds
+     * @param value
+     */
+    function rewind(value: number): void;
+    /**
+    * Fast forward a specific number of seconds
+     * @param value
+     */
+    function fastforward(value: number): void;
+    /**
+    * Set volume of the video
+     * @param value
+     */
+    function setVolume(value: number): void;
+    /**
+    * Play video
+     */
+    function play(): void;
+    /**
+    * Pause video
+     */
+    function pause(): void;
+    /**
+    * Stop video
+     */
+    function stop(): void;
+    /**
+    * Mute video
+     */
+    function mute(): void;
+    /**
+    * Unmute video
+     */
+    function unmute(): void;
 }
 declare namespace pxsim.loops {
     /**
@@ -40,34 +75,6 @@ declare namespace pxsim.console {
 }
 declare namespace pxsim {
     /**
-     * A ghost on the screen.
-     */
-    class Sprite {
-        /**
-         * The X-coordiante
-         */
-        x: number;
-        /**
-        * The Y-coordiante
-        */
-        y: number;
-        angle: number;
-        constructor();
-        private foobar();
-        /**
-         * Move the thing forward
-         */
-        forwardAsync(steps: number): Promise<void>;
-    }
-}
-declare namespace pxsim.sprites {
-    /**
-     * Creates a new sprite
-     */
-    function createSprite(): Sprite;
-}
-declare namespace pxsim {
-    /**
      * Gets the current 'board', eg. program state.
      */
     function board(): Board;
@@ -77,11 +84,9 @@ declare namespace pxsim {
      */
     class Board extends pxsim.BaseBoard {
         bus: EventBus;
-        element: SVGSVGElement;
-        spriteElement: SVGCircleElement;
-        sprite: Sprite;
+        player: YT.Player;
         constructor();
         initAsync(msg: pxsim.SimulatorRunMessage): Promise<void>;
-        updateView(): void;
+        initializePlayer(): void;
     }
 }

@@ -1,43 +1,126 @@
 /// <reference path="../libs/core/enums.d.ts"/>
+/// <reference path="youtube.d.ts" />
 
-namespace pxsim.turtle {
+namespace pxsim.video {
+
     /**
-     * Moves the sprite forward
-     * @param steps number of steps to move, eg: 1
+    * Set video using YouTube URL ID 
+     * @param rate
      */
-    //% weight=90
-    //% block
-    export function forwardAsync(steps: number) {
-        return board().sprite.forwardAsync(steps)
+    //% blockId=youtube_set_video block="set video %string" blockGap=8
+    //% weight=98
+    //% blockNamespace=youtube inBasicCategory=true
+    export function setVideo(id: string) {
+        board().player.cueVideoById(id);
     }
 
     /**
-     * Moves the sprite forward
-     * @param direction the direction to turn, eg: Direction.Left
-     * @param angle degrees to turn, eg:90
+    * Change video speed 
+     * @param rate
      */
-    //% weight=85
-    //% blockId=sampleTurn block="turn %direction|by %angle degrees"
-    export function turnAsync(direction: Direction, angle: number) {
-        let b = board();
-
-        if (direction == Direction.Left)
-            b.sprite.angle -= angle;
-        else
-            b.sprite.angle += angle;
-        return Promise.delay(400)
+    //% blockId=youtube_set_speed block="set speed %rate" blockGap=8
+    //% weight=98
+    //% blockNamespace=youtube inBasicCategory=true
+    export function setSpeed(rate: number) {
+        board().player.setPlaybackRate(rate);
     }
 
     /**
-     * Triggers when the turtle bumps a wall
-     * @param handler 
+    * Seek to a specific time 
+     * @param time
      */
-    //% blockId=onBump block="on bump"
-    export function onBump(handler: RefAction) {
-        let b = board();
+    //% blockId=youtube_seek block="seek to %time" blockGap=8
+    //% weight=98
+    //% blockNamespace=youtube inBasicCategory=true
+    export function seek(time: number) {
+        board().player.seekTo(time);
+    }    
 
-        b.bus.listen("Turtle", "Bump", handler);
+    /**
+    * Rewind a specific number of seconds 
+     * @param value
+     */
+    //% blockId=youtube_rewind block="rewind %value" blockGap=8
+    //% weight=98
+    //% blockNamespace=youtube inBasicCategory=true
+    export function rewind(value: number) {
+        let time = board().player.getCurrentTime();
+        board().player.seekTo(time - value);
+    }  
+
+    /**
+    * Fast forward a specific number of seconds 
+     * @param value
+     */
+    //% blockId=youtube_fastforward block="fast forward %value" blockGap=8
+    //% weight=98
+    //% blockNamespace=youtube inBasicCategory=true
+    export function fastforward(value: number) {
+        let time = board().player.getCurrentTime();
+        board().player.seekTo(time + value);
+    }  
+
+    /**
+    * Set volume of the video 
+     * @param value
+     */
+    //% blockId=youtube_set_volume block="set volume %value" blockGap=8
+    //% weight=98
+    //% blockNamespace=youtube inBasicCategory=true
+    export function setVolume(value: number) {
+        board().player.setVolume(value);
+    }  
+
+    /**
+    * Play video
+     */
+    //% blockId=youtube_play block="play video" blockGap=8
+    //% weight=98
+    //% blockNamespace=youtube inBasicCategory=true
+    export function play() {
+        board().player.playVideo();
+    }  
+
+    /**
+    * Pause video
+     */
+    //% blockId=youtube_pause block="pause video" blockGap=8
+    //% weight=98
+    //% blockNamespace=youtube inBasicCategory=true
+    export function pause() {
+        board().player.pauseVideo();
     }
+
+    /**
+    * Stop video
+     */
+    //% blockId=youtube_stop block="stop video" blockGap=8
+    //% weight=98
+    //% blockNamespace=youtube inBasicCategory=true
+    export function stop() {
+        board().player.stopVideo();
+    }
+
+    /**
+    * Mute video
+     */
+    //% blockId=youtube_mute block="mute video" blockGap=8
+    //% weight=98
+    //% blockNamespace=youtube inBasicCategory=true
+    export function mute() {
+        board().player.mute();
+    }
+
+    /**
+    * Unmute video
+     */
+    //% blockId=youtube_unmute block="unmute video" blockGap=8
+    //% weight=98
+    //% blockNamespace=youtube inBasicCategory=true
+    export function unmute() {
+        board().player.unMute();
+    }
+
 }
 
 namespace pxsim.loops {
@@ -77,53 +160,3 @@ namespace pxsim.console {
     }
 }
 
-namespace pxsim {
-    /**
-     * A ghost on the screen.
-     */
-    //%
-    export class Sprite {
-        /**
-         * The X-coordiante
-         */
-        //%
-        public x = 100;
-         /**
-         * The Y-coordiante
-         */
-        //%
-        public y = 100;
-        public angle = 90;
-        
-        constructor() {
-        }
-        
-        private foobar() {}
-
-        /**
-         * Move the thing forward
-         */
-        //%
-        public forwardAsync(steps: number) {
-            let deg = this.angle / 180 * Math.PI;
-            this.x += Math.cos(deg) * steps * 10;
-            this.y += Math.sin(deg) * steps * 10;
-            board().updateView();
-
-            if (this.x < 0 || this.y < 0)
-                board().bus.queue("TURTLE", "BUMP");
-
-            return Promise.delay(400)
-        }
-    }
-}
-
-namespace pxsim.sprites {
-    /**
-     * Creates a new sprite
-     */
-    //% block
-    export function createSprite(): Sprite {
-        return new Sprite();
-    }
-}

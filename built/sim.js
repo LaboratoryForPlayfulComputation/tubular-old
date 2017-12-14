@@ -4,47 +4,130 @@ var __extends = (this && this.__extends) || function (d, b) {
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
 /// <reference path="../libs/core/enums.d.ts"/>
+/// <reference path="youtube.d.ts" />
 var pxsim;
 (function (pxsim) {
-    var turtle;
-    (function (turtle) {
+    var video;
+    (function (video) {
         /**
-         * Moves the sprite forward
-         * @param steps number of steps to move, eg: 1
+        * Set video using YouTube URL ID
+         * @param rate
          */
-        //% weight=90
-        //% block
-        function forwardAsync(steps) {
-            return pxsim.board().sprite.forwardAsync(steps);
+        //% blockId=youtube_set_video block="set video %string" blockGap=8
+        //% weight=98
+        //% blockNamespace=youtube inBasicCategory=true
+        function setVideo(id) {
+            pxsim.board().player.cueVideoById(id);
         }
-        turtle.forwardAsync = forwardAsync;
+        video.setVideo = setVideo;
         /**
-         * Moves the sprite forward
-         * @param direction the direction to turn, eg: Direction.Left
-         * @param angle degrees to turn, eg:90
+        * Change video speed
+         * @param rate
          */
-        //% weight=85
-        //% blockId=sampleTurn block="turn %direction|by %angle degrees"
-        function turnAsync(direction, angle) {
-            var b = pxsim.board();
-            if (direction == 0 /* Left */)
-                b.sprite.angle -= angle;
-            else
-                b.sprite.angle += angle;
-            return Promise.delay(400);
+        //% blockId=youtube_set_speed block="set speed %rate" blockGap=8
+        //% weight=98
+        //% blockNamespace=youtube inBasicCategory=true
+        function setSpeed(rate) {
+            pxsim.board().player.setPlaybackRate(rate);
         }
-        turtle.turnAsync = turnAsync;
+        video.setSpeed = setSpeed;
         /**
-         * Triggers when the turtle bumps a wall
-         * @param handler
+        * Seek to a specific time
+         * @param time
          */
-        //% blockId=onBump block="on bump"
-        function onBump(handler) {
-            var b = pxsim.board();
-            b.bus.listen("Turtle", "Bump", handler);
+        //% blockId=youtube_seek block="seek to %time" blockGap=8
+        //% weight=98
+        //% blockNamespace=youtube inBasicCategory=true
+        function seek(time) {
+            pxsim.board().player.seekTo(time);
         }
-        turtle.onBump = onBump;
-    })(turtle = pxsim.turtle || (pxsim.turtle = {}));
+        video.seek = seek;
+        /**
+        * Rewind a specific number of seconds
+         * @param value
+         */
+        //% blockId=youtube_rewind block="rewind %value" blockGap=8
+        //% weight=98
+        //% blockNamespace=youtube inBasicCategory=true
+        function rewind(value) {
+            var time = pxsim.board().player.getCurrentTime();
+            pxsim.board().player.seekTo(time - value);
+        }
+        video.rewind = rewind;
+        /**
+        * Fast forward a specific number of seconds
+         * @param value
+         */
+        //% blockId=youtube_fastforward block="fast forward %value" blockGap=8
+        //% weight=98
+        //% blockNamespace=youtube inBasicCategory=true
+        function fastforward(value) {
+            var time = pxsim.board().player.getCurrentTime();
+            pxsim.board().player.seekTo(time + value);
+        }
+        video.fastforward = fastforward;
+        /**
+        * Set volume of the video
+         * @param value
+         */
+        //% blockId=youtube_set_volume block="set volume %value" blockGap=8
+        //% weight=98
+        //% blockNamespace=youtube inBasicCategory=true
+        function setVolume(value) {
+            pxsim.board().player.setVolume(value);
+        }
+        video.setVolume = setVolume;
+        /**
+        * Play video
+         */
+        //% blockId=youtube_play block="play video" blockGap=8
+        //% weight=98
+        //% blockNamespace=youtube inBasicCategory=true
+        function play() {
+            pxsim.board().player.playVideo();
+        }
+        video.play = play;
+        /**
+        * Pause video
+         */
+        //% blockId=youtube_pause block="pause video" blockGap=8
+        //% weight=98
+        //% blockNamespace=youtube inBasicCategory=true
+        function pause() {
+            pxsim.board().player.pauseVideo();
+        }
+        video.pause = pause;
+        /**
+        * Stop video
+         */
+        //% blockId=youtube_stop block="stop video" blockGap=8
+        //% weight=98
+        //% blockNamespace=youtube inBasicCategory=true
+        function stop() {
+            pxsim.board().player.stopVideo();
+        }
+        video.stop = stop;
+        /**
+        * Mute video
+         */
+        //% blockId=youtube_mute block="mute video" blockGap=8
+        //% weight=98
+        //% blockNamespace=youtube inBasicCategory=true
+        function mute() {
+            pxsim.board().player.mute();
+        }
+        video.mute = mute;
+        /**
+        * Unmute video
+         */
+        //% blockId=youtube_unmute block="unmute video" blockGap=8
+        //% weight=98
+        //% blockNamespace=youtube inBasicCategory=true
+        function unmute() {
+            pxsim.board().player.unMute();
+        }
+        video.unmute = unmute;
+    })(video = pxsim.video || (pxsim.video = {}));
 })(pxsim || (pxsim = {}));
 var pxsim;
 (function (pxsim) {
@@ -89,62 +172,12 @@ var pxsim;
         console.log = log;
     })(console = pxsim.console || (pxsim.console = {}));
 })(pxsim || (pxsim = {}));
-var pxsim;
-(function (pxsim) {
-    /**
-     * A ghost on the screen.
-     */
-    //%
-    var Sprite = (function () {
-        function Sprite() {
-            /**
-             * The X-coordiante
-             */
-            //%
-            this.x = 100;
-            /**
-            * The Y-coordiante
-            */
-            //%
-            this.y = 100;
-            this.angle = 90;
-        }
-        Sprite.prototype.foobar = function () { };
-        /**
-         * Move the thing forward
-         */
-        //%
-        Sprite.prototype.forwardAsync = function (steps) {
-            var deg = this.angle / 180 * Math.PI;
-            this.x += Math.cos(deg) * steps * 10;
-            this.y += Math.sin(deg) * steps * 10;
-            pxsim.board().updateView();
-            if (this.x < 0 || this.y < 0)
-                pxsim.board().bus.queue("TURTLE", "BUMP");
-            return Promise.delay(400);
-        };
-        return Sprite;
-    }());
-    pxsim.Sprite = Sprite;
-})(pxsim || (pxsim = {}));
-var pxsim;
-(function (pxsim) {
-    var sprites;
-    (function (sprites) {
-        /**
-         * Creates a new sprite
-         */
-        //% block
-        function createSprite() {
-            return new pxsim.Sprite();
-        }
-        sprites.createSprite = createSprite;
-    })(sprites = pxsim.sprites || (pxsim.sprites = {}));
-})(pxsim || (pxsim = {}));
 /// <reference path="../node_modules/pxt-core/typings/globals/bluebird/index.d.ts"/>
 /// <reference path="../node_modules/pxt-core/built/pxtsim.d.ts"/>
+/// <reference path="youtube.d.ts" />
 var pxsim;
 (function (pxsim) {
+    var player = null;
     /**
      * This function gets called each time the program restarts
      */
@@ -167,18 +200,40 @@ var pxsim;
         function Board() {
             _super.call(this);
             this.bus = new pxsim.EventBus(pxsim.runtime);
-            this.element = document.getElementById('svgcanvas');
-            this.spriteElement = this.element.getElementById('svgsprite');
-            this.sprite = new pxsim.Sprite();
+            this.player = new YT.Player('video-placeholder', {
+                width: 350,
+                height: 250,
+                videoId: 'mZxxhxjgnC0',
+                playerVars: {
+                    color: 'white',
+                    playlist: 'GpBFOJ3R0M4,cWKi6F5jMjo'
+                },
+                events: {
+                    onReady: this.initializePlayer
+                }
+            });
         }
         Board.prototype.initAsync = function (msg) {
-            document.body.innerHTML = ''; // clear children
-            document.body.appendChild(this.element);
+            //document.body.innerHTML = ''; // clear children           
             return Promise.resolve();
         };
-        Board.prototype.updateView = function () {
-            this.spriteElement.cx.baseVal.value = this.sprite.x;
-            this.spriteElement.cy.baseVal.value = this.sprite.y;
+        Board.prototype.initializePlayer = function () {
+            this.player.playVideo();
+            /*
+            // Update the controls on load
+            this.updateTimerDisplay();
+            this.updateProgressBar();
+        
+            // Clear any old interval.
+            //clearInterval(time_update_interval);
+        
+            // Start interval to update elapsed time display and
+            // the elapsed part of the progress bar every second.
+            let time_update_interval = setInterval(function () {
+                this.updateTimerDisplay();
+                this.updateProgressBar();
+            }, 1000)
+            */
         };
         return Board;
     }(pxsim.BaseBoard));

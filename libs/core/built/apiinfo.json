@@ -2234,140 +2234,358 @@
    "parameters": null,
    "qName": "Direction.Right"
   },
-  "turtle": {
+  "video": {
    "kind": 5,
    "namespace": "",
-   "name": "turtle",
+   "name": "video",
    "attributes": {
     "paramDefl": {},
     "callingConvention": 0,
     "_source": null,
-    "color": "#00BCD4",
-    "weight": 100,
     "paramHelp": {},
-    "jsDoc": "Basic functionalities.",
-    "block": "turtle"
+    "jsDoc": "",
+    "_name": "video",
+    "block": "video"
    },
    "pkg": null,
    "retType": "",
    "parameters": null,
-   "qName": "turtle"
+   "qName": "video"
   },
-  "turtle.forward": {
+  "video.setVideo": {
    "kind": 3,
-   "namespace": "turtle",
-   "name": "forward",
-   "attributes": {
-    "paramDefl": {
-     "steps": "1"
-    },
-    "callingConvention": 2,
-    "_source": null,
-    "weight": 90,
-    "block": "forward|steps %steps",
-    "shim": "turtle::forwardAsync",
-    "promise": "true",
-    "paramHelp": {
-     "steps": "number of steps to move, eg: 1"
-    },
-    "jsDoc": "Moves the sprite forward",
-    "_name": "forward",
-    "blockId": "turtle_forward"
-   },
-   "pkg": null,
-   "retType": "void",
-   "parameters": [
-    {
-     "name": "steps",
-     "description": "number of steps to move, eg: 1",
-     "type": "number",
-     "initializer": "1",
-     "default": "1",
-     "options": {},
-     "isEnum": false
-    }
-   ],
-   "snippet": "forward(1)",
-   "qName": "turtle.forward"
-  },
-  "turtle.turn": {
-   "kind": 3,
-   "namespace": "turtle",
-   "name": "turn",
-   "attributes": {
-    "paramDefl": {
-     "direction": "Direction.Left",
-     "angle": "90"
-    },
-    "callingConvention": 2,
-    "_source": null,
-    "weight": 85,
-    "blockId": "sampleTurn",
-    "block": "turn %direction|by %angle degrees",
-    "shim": "turtle::turnAsync",
-    "promise": "true",
-    "paramHelp": {
-     "direction": "the direction to turn, eg: Direction.Left",
-     "angle": "degrees to turn, eg:90"
-    },
-    "jsDoc": "Moves the sprite forward",
-    "_name": "turn"
-   },
-   "pkg": null,
-   "retType": "void",
-   "parameters": [
-    {
-     "name": "direction",
-     "description": "the direction to turn, eg: Direction.Left",
-     "type": "Direction",
-     "initializer": "Direction.Left",
-     "default": "Direction.Left",
-     "options": {},
-     "isEnum": true
-    },
-    {
-     "name": "angle",
-     "description": "degrees to turn, eg:90",
-     "type": "number",
-     "initializer": "90",
-     "default": "90",
-     "options": {},
-     "isEnum": false
-    }
-   ],
-   "snippet": "turn(Direction.Left, 90)",
-   "qName": "turtle.turn"
-  },
-  "turtle.onBump": {
-   "kind": 3,
-   "namespace": "turtle",
-   "name": "onBump",
+   "namespace": "video",
+   "name": "setVideo",
    "attributes": {
     "paramDefl": {},
     "callingConvention": 0,
     "_source": null,
-    "blockId": "onBump",
-    "block": "on bump",
-    "shim": "turtle::onBump",
+    "blockId": "youtube_set_video",
+    "block": "set video %string",
+    "blockGap": "8",
+    "weight": 98,
+    "blockNamespace": "youtube",
+    "inBasicCategory": "true",
+    "shim": "video::setVideo",
     "paramHelp": {
-     "handler": ""
+     "rate": ""
     },
-    "jsDoc": "Triggers when the turtle bumps a wall",
-    "_name": "onBump"
+    "jsDoc": "Set video using YouTube URL ID",
+    "_name": "setVideo"
    },
    "pkg": null,
    "retType": "void",
    "parameters": [
     {
-     "name": "handler",
+     "name": "id",
      "description": "",
-     "type": "() => void",
+     "type": "string",
      "options": {},
      "isEnum": false
     }
    ],
-   "snippet": "onBump(function () {})",
-   "qName": "turtle.onBump"
+   "snippet": "setVideo(\"\")",
+   "qName": "video.setVideo"
+  },
+  "video.setSpeed": {
+   "kind": 3,
+   "namespace": "video",
+   "name": "setSpeed",
+   "attributes": {
+    "paramDefl": {},
+    "callingConvention": 0,
+    "_source": null,
+    "blockId": "youtube_set_speed",
+    "block": "set speed %rate",
+    "blockGap": "8",
+    "weight": 98,
+    "blockNamespace": "youtube",
+    "inBasicCategory": "true",
+    "shim": "video::setSpeed",
+    "paramHelp": {
+     "rate": ""
+    },
+    "jsDoc": "Change video speed",
+    "_name": "setSpeed"
+   },
+   "pkg": null,
+   "retType": "void",
+   "parameters": [
+    {
+     "name": "rate",
+     "description": "",
+     "type": "number",
+     "options": {},
+     "isEnum": false
+    }
+   ],
+   "snippet": "setSpeed(0)",
+   "qName": "video.setSpeed"
+  },
+  "video.seek": {
+   "kind": 3,
+   "namespace": "video",
+   "name": "seek",
+   "attributes": {
+    "paramDefl": {},
+    "callingConvention": 0,
+    "_source": null,
+    "blockId": "youtube_seek",
+    "block": "seek to %time",
+    "blockGap": "8",
+    "weight": 98,
+    "blockNamespace": "youtube",
+    "inBasicCategory": "true",
+    "shim": "video::seek",
+    "paramHelp": {
+     "time": ""
+    },
+    "jsDoc": "Seek to a specific time",
+    "_name": "seek"
+   },
+   "pkg": null,
+   "retType": "void",
+   "parameters": [
+    {
+     "name": "time",
+     "description": "",
+     "type": "number",
+     "options": {},
+     "isEnum": false
+    }
+   ],
+   "snippet": "seek(0)",
+   "qName": "video.seek"
+  },
+  "video.rewind": {
+   "kind": 3,
+   "namespace": "video",
+   "name": "rewind",
+   "attributes": {
+    "paramDefl": {},
+    "callingConvention": 0,
+    "_source": null,
+    "blockId": "youtube_rewind",
+    "block": "rewind %value",
+    "blockGap": "8",
+    "weight": 98,
+    "blockNamespace": "youtube",
+    "inBasicCategory": "true",
+    "shim": "video::rewind",
+    "paramHelp": {
+     "value": ""
+    },
+    "jsDoc": "Rewind a specific number of seconds",
+    "_name": "rewind"
+   },
+   "pkg": null,
+   "retType": "void",
+   "parameters": [
+    {
+     "name": "value",
+     "description": "",
+     "type": "number",
+     "options": {},
+     "isEnum": false
+    }
+   ],
+   "snippet": "rewind(0)",
+   "qName": "video.rewind"
+  },
+  "video.fastforward": {
+   "kind": 3,
+   "namespace": "video",
+   "name": "fastforward",
+   "attributes": {
+    "paramDefl": {},
+    "callingConvention": 0,
+    "_source": null,
+    "blockId": "youtube_fastforward",
+    "block": "fast forward %value",
+    "blockGap": "8",
+    "weight": 98,
+    "blockNamespace": "youtube",
+    "inBasicCategory": "true",
+    "shim": "video::fastforward",
+    "paramHelp": {
+     "value": ""
+    },
+    "jsDoc": "Fast forward a specific number of seconds",
+    "_name": "fastforward"
+   },
+   "pkg": null,
+   "retType": "void",
+   "parameters": [
+    {
+     "name": "value",
+     "description": "",
+     "type": "number",
+     "options": {},
+     "isEnum": false
+    }
+   ],
+   "snippet": "fastforward(0)",
+   "qName": "video.fastforward"
+  },
+  "video.setVolume": {
+   "kind": 3,
+   "namespace": "video",
+   "name": "setVolume",
+   "attributes": {
+    "paramDefl": {},
+    "callingConvention": 0,
+    "_source": null,
+    "blockId": "youtube_set_volume",
+    "block": "set volume %value",
+    "blockGap": "8",
+    "weight": 98,
+    "blockNamespace": "youtube",
+    "inBasicCategory": "true",
+    "shim": "video::setVolume",
+    "paramHelp": {
+     "value": ""
+    },
+    "jsDoc": "Set volume of the video",
+    "_name": "setVolume"
+   },
+   "pkg": null,
+   "retType": "void",
+   "parameters": [
+    {
+     "name": "value",
+     "description": "",
+     "type": "number",
+     "options": {},
+     "isEnum": false
+    }
+   ],
+   "snippet": "setVolume(0)",
+   "qName": "video.setVolume"
+  },
+  "video.play": {
+   "kind": 3,
+   "namespace": "video",
+   "name": "play",
+   "attributes": {
+    "paramDefl": {},
+    "callingConvention": 0,
+    "_source": null,
+    "blockId": "youtube_play",
+    "block": "play video",
+    "blockGap": "8",
+    "weight": 98,
+    "blockNamespace": "youtube",
+    "inBasicCategory": "true",
+    "shim": "video::play",
+    "paramHelp": {},
+    "jsDoc": "Play video",
+    "_name": "play"
+   },
+   "pkg": null,
+   "retType": "void",
+   "parameters": [],
+   "snippet": "play()",
+   "qName": "video.play"
+  },
+  "video.pause": {
+   "kind": 3,
+   "namespace": "video",
+   "name": "pause",
+   "attributes": {
+    "paramDefl": {},
+    "callingConvention": 0,
+    "_source": null,
+    "blockId": "youtube_pause",
+    "block": "pause video",
+    "blockGap": "8",
+    "weight": 98,
+    "blockNamespace": "youtube",
+    "inBasicCategory": "true",
+    "shim": "video::pause",
+    "paramHelp": {},
+    "jsDoc": "Pause video",
+    "_name": "pause"
+   },
+   "pkg": null,
+   "retType": "void",
+   "parameters": [],
+   "snippet": "pause()",
+   "qName": "video.pause"
+  },
+  "video.stop": {
+   "kind": 3,
+   "namespace": "video",
+   "name": "stop",
+   "attributes": {
+    "paramDefl": {},
+    "callingConvention": 0,
+    "_source": null,
+    "blockId": "youtube_stop",
+    "block": "stop video",
+    "blockGap": "8",
+    "weight": 98,
+    "blockNamespace": "youtube",
+    "inBasicCategory": "true",
+    "shim": "video::stop",
+    "paramHelp": {},
+    "jsDoc": "Stop video",
+    "_name": "stop"
+   },
+   "pkg": null,
+   "retType": "void",
+   "parameters": [],
+   "snippet": "stop()",
+   "qName": "video.stop"
+  },
+  "video.mute": {
+   "kind": 3,
+   "namespace": "video",
+   "name": "mute",
+   "attributes": {
+    "paramDefl": {},
+    "callingConvention": 0,
+    "_source": null,
+    "blockId": "youtube_mute",
+    "block": "mute video",
+    "blockGap": "8",
+    "weight": 98,
+    "blockNamespace": "youtube",
+    "inBasicCategory": "true",
+    "shim": "video::mute",
+    "paramHelp": {},
+    "jsDoc": "Mute video",
+    "_name": "mute"
+   },
+   "pkg": null,
+   "retType": "void",
+   "parameters": [],
+   "snippet": "mute()",
+   "qName": "video.mute"
+  },
+  "video.unmute": {
+   "kind": 3,
+   "namespace": "video",
+   "name": "unmute",
+   "attributes": {
+    "paramDefl": {},
+    "callingConvention": 0,
+    "_source": null,
+    "blockId": "youtube_unmute",
+    "block": "unmute video",
+    "blockGap": "8",
+    "weight": 98,
+    "blockNamespace": "youtube",
+    "inBasicCategory": "true",
+    "shim": "video::unmute",
+    "paramHelp": {},
+    "jsDoc": "Unmute video",
+    "_name": "unmute"
+   },
+   "pkg": null,
+   "retType": "void",
+   "parameters": [],
+   "snippet": "unmute()",
+   "qName": "video.unmute"
   },
   "loops": {
    "kind": 5,
@@ -2504,126 +2722,24 @@
    "snippet": "log(\"\")",
    "qName": "console.log"
   },
-  "Sprite": {
-   "kind": 8,
-   "namespace": "",
-   "name": "Sprite",
-   "attributes": {
-    "paramDefl": {},
-    "callingConvention": 0,
-    "_source": null,
-    "paramHelp": {},
-    "jsDoc": "A ghost on the screen.",
-    "_name": "Sprite"
-   },
-   "pkg": null,
-   "extendsTypes": [],
-   "retType": "Sprite",
-   "parameters": null,
-   "qName": "Sprite"
-  },
-  "Sprite.x": {
-   "kind": 2,
-   "namespace": "Sprite",
-   "name": "x",
-   "attributes": {
-    "paramDefl": {},
-    "callingConvention": 0,
-    "_source": null,
-    "shim": ".x",
-    "paramHelp": {},
-    "jsDoc": "The X-coordiante",
-    "_name": "x"
-   },
-   "pkg": null,
-   "retType": "number",
-   "parameters": null,
-   "qName": "Sprite.x"
-  },
-  "Sprite.y": {
-   "kind": 2,
-   "namespace": "Sprite",
-   "name": "y",
-   "attributes": {
-    "paramDefl": {},
-    "callingConvention": 0,
-    "_source": null,
-    "shim": ".y",
-    "paramHelp": {},
-    "jsDoc": "The Y-coordiante",
-    "_name": "y"
-   },
-   "pkg": null,
-   "retType": "number",
-   "parameters": null,
-   "qName": "Sprite.y"
-  },
-  "Sprite.forward": {
-   "kind": 1,
-   "namespace": "Sprite",
-   "name": "forward",
-   "attributes": {
-    "paramDefl": {},
-    "callingConvention": 2,
-    "_source": null,
-    "shim": ".forwardAsync",
-    "promise": "true",
-    "paramHelp": {},
-    "jsDoc": "Move the thing forward",
-    "_name": "forward"
-   },
-   "pkg": null,
-   "retType": "void",
-   "parameters": [
-    {
-     "name": "steps",
-     "description": "",
-     "type": "number",
-     "options": {},
-     "isEnum": false
-    }
-   ],
-   "snippet": "forward(0)",
-   "qName": "Sprite.forward"
-  },
-  "sprites": {
+  "turtle": {
    "kind": 5,
    "namespace": "",
-   "name": "sprites",
+   "name": "turtle",
    "attributes": {
     "paramDefl": {},
     "callingConvention": 0,
     "_source": null,
+    "color": "#00BCD4",
+    "weight": 100,
     "paramHelp": {},
-    "jsDoc": "",
-    "_name": "sprites",
-    "block": "sprites"
+    "jsDoc": "Basic functionalities.",
+    "_name": "turtle"
    },
    "pkg": null,
    "retType": "",
    "parameters": null,
-   "qName": "sprites"
-  },
-  "sprites.createSprite": {
-   "kind": 3,
-   "namespace": "sprites",
-   "name": "createSprite",
-   "attributes": {
-    "paramDefl": {},
-    "callingConvention": 0,
-    "_source": null,
-    "block": "create sprite",
-    "shim": "sprites::createSprite",
-    "paramHelp": {},
-    "jsDoc": "Creates a new sprite",
-    "_name": "createSprite",
-    "blockId": "sprites_createSprite"
-   },
-   "pkg": null,
-   "retType": "Sprite",
-   "parameters": [],
-   "snippet": "createSprite()",
-   "qName": "sprites.createSprite"
+   "qName": "turtle"
   },
   "control": {
    "kind": 5,

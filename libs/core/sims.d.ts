@@ -1,31 +1,109 @@
 // Auto-generated from simulator. Do not edit.
-declare namespace turtle {
+declare namespace video {
     /**
-     * Moves the sprite forward
-     * @param steps number of steps to move, eg: 1
+     * Set video using YouTube URL ID 
+     * @param rate
      */
-    //% weight=90
-    //% block
-    //% shim=turtle::forwardAsync promise
-    function forward(steps: number): void;
+    //% blockId=youtube_set_video block="set video %string" blockGap=8
+    //% weight=98
+    //% blockNamespace=youtube inBasicCategory=true
+    //% shim=video::setVideo
+    function setVideo(id: string): void;
 
     /**
-     * Moves the sprite forward
-     * @param direction the direction to turn, eg: Direction.Left
-     * @param angle degrees to turn, eg:90
+     * Change video speed 
+     * @param rate
      */
-    //% weight=85
-    //% blockId=sampleTurn block="turn %direction|by %angle degrees"
-    //% shim=turtle::turnAsync promise
-    function turn(direction: Direction, angle: number): void;
+    //% blockId=youtube_set_speed block="set speed %rate" blockGap=8
+    //% weight=98
+    //% blockNamespace=youtube inBasicCategory=true
+    //% shim=video::setSpeed
+    function setSpeed(rate: number): void;
 
     /**
-     * Triggers when the turtle bumps a wall
-     * @param handler 
+     * Seek to a specific time 
+     * @param time
      */
-    //% blockId=onBump block="on bump"
-    //% shim=turtle::onBump
-    function onBump(handler: () => void): void;
+    //% blockId=youtube_seek block="seek to %time" blockGap=8
+    //% weight=98
+    //% blockNamespace=youtube inBasicCategory=true
+    //% shim=video::seek
+    function seek(time: number): void;
+
+    /**
+     * Rewind a specific number of seconds 
+     * @param value
+     */
+    //% blockId=youtube_rewind block="rewind %value" blockGap=8
+    //% weight=98
+    //% blockNamespace=youtube inBasicCategory=true
+    //% shim=video::rewind
+    function rewind(value: number): void;
+
+    /**
+     * Fast forward a specific number of seconds 
+     * @param value
+     */
+    //% blockId=youtube_fastforward block="fast forward %value" blockGap=8
+    //% weight=98
+    //% blockNamespace=youtube inBasicCategory=true
+    //% shim=video::fastforward
+    function fastforward(value: number): void;
+
+    /**
+     * Set volume of the video 
+     * @param value
+     */
+    //% blockId=youtube_set_volume block="set volume %value" blockGap=8
+    //% weight=98
+    //% blockNamespace=youtube inBasicCategory=true
+    //% shim=video::setVolume
+    function setVolume(value: number): void;
+
+    /**
+     * Play video
+     */
+    //% blockId=youtube_play block="play video" blockGap=8
+    //% weight=98
+    //% blockNamespace=youtube inBasicCategory=true
+    //% shim=video::play
+    function play(): void;
+
+    /**
+     * Pause video
+     */
+    //% blockId=youtube_pause block="pause video" blockGap=8
+    //% weight=98
+    //% blockNamespace=youtube inBasicCategory=true
+    //% shim=video::pause
+    function pause(): void;
+
+    /**
+     * Stop video
+     */
+    //% blockId=youtube_stop block="stop video" blockGap=8
+    //% weight=98
+    //% blockNamespace=youtube inBasicCategory=true
+    //% shim=video::stop
+    function stop(): void;
+
+    /**
+     * Mute video
+     */
+    //% blockId=youtube_mute block="mute video" blockGap=8
+    //% weight=98
+    //% blockNamespace=youtube inBasicCategory=true
+    //% shim=video::mute
+    function mute(): void;
+
+    /**
+     * Unmute video
+     */
+    //% blockId=youtube_unmute block="unmute video" blockGap=8
+    //% weight=98
+    //% blockNamespace=youtube inBasicCategory=true
+    //% shim=video::unmute
+    function unmute(): void;
 
 }
 declare namespace loops {
@@ -55,42 +133,6 @@ declare namespace console {
     //%
     //% shim=console::log
     function log(msg: string): void;
-
-}
-    /**
-     * A ghost on the screen.
-     */
-    //%
-    declare class Sprite {
-        /**
-         * The X-coordiante
-         */
-        //%
-        //% shim=.x
-        public x: number;
-
-        /**
-         * The Y-coordiante
-         */
-        //%
-        //% shim=.y
-        public y: number;
-
-        /**
-         * Move the thing forward
-         */
-        //%
-        //% shim=.forwardAsync promise
-        public forward(steps: number): void;
-
-    }
-declare namespace sprites {
-    /**
-     * Creates a new sprite
-     */
-    //% block
-    //% shim=sprites::createSprite
-    function createSprite(): Sprite;
 
 }
 

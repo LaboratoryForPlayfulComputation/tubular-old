@@ -100,12 +100,15 @@
   "loops.forever|param|body": "the code to repeat",
   "loops.pause": "Pause for the specified time in milliseconds",
   "loops.pause|param|ms": "how long to pause for, eg: 100, 200, 500, 1000, 2000",
-  "sprites.createSprite": "Creates a new sprite",
-  "turtle": "Basic functionalities.",
-  "turtle.forward": "Moves the sprite forward",
-  "turtle.forward|param|steps": "number of steps to move, eg: 1",
-  "turtle.onBump": "Triggers when the turtle bumps a wall",
-  "turtle.turn": "Moves the sprite forward",
-  "turtle.turn|param|angle": "degrees to turn, eg:90",
-  "turtle.turn|param|direction": "the direction to turn, eg: Direction.Left"
+  "video.fastforward": "Fast forward a specific number of seconds",
+  "video.mute": "Mute video",
+  "video.pause": "Pause video",
+  "video.play": "Play video",
+  "video.rewind": "Rewind a specific number of seconds",
+  "video.seek": "Seek to a specific time",
+  "video.setSpeed": "Change video speed",
+  "video.setVideo": "Set video using YouTube URL ID",
+  "video.setVolume": "Set volume of the video",
+  "video.stop": "Stop video",
+  "video.unmute": "Unmute video"
 }
