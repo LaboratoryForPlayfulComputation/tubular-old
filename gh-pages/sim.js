@@ -49,6 +49,7 @@ var pxsim;
 })(pxsim || (pxsim = {}));
 /// <reference path="../node_modules/pxt-core/typings/globals/bluebird/index.d.ts"/>
 /// <reference path="../node_modules/pxt-core/built/pxtsim.d.ts"/>
+/// <reference path="../typings/globals/peerjs/index.d.ts" />
 /// <reference path="video.d.ts" />
 var pxsim;
 (function (pxsim) {
