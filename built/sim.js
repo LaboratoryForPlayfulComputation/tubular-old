@@ -51,17 +51,32 @@ var pxsim;
 (function (pxsim) {
     var messaging;
     (function (messaging) {
-        var connections = new Array();
-        // this.peer = new Peer({key: '648xw9rwll92j4i'}); // need key for deployment if using the cloud
-        var peer = new Peer({ host: 'localhost', port: 9000, path: '/' }); // for running locally and with custom server
-        peer.on('open', function (id) { });
-        peer.on('connection', function (dataConnection) {
-            connections.push(dataConnection);
-            dataConnection.on('data', function (data) { });
-        });
-        peer.on('close', function () { });
-        peer.on('disconnected', function () { });
-        peer.on('error', function (err) { });
+        var peer = null;
+        var connections = {};
+        var script = document.createElement('script');
+        script.onload = function () {
+            peer = new Peer({ host: 'localhost', port: 9000, path: '/' });
+            peer.on('open', function (id) {
+                document.getElementById('userid').innerHTML = 'Your user id is: ' + id.toString();
+            });
+            peer.on('connection', function (dataConnection) {
+                pxsim.console.log("connected to user");
+                connections[dataConnection.id] = dataConnection;
+                dataConnection.on('open', function () {
+                    pxsim.console.log("ready 4 data");
+                    dataConnection.send("yooo dawg");
+                    dataConnection.on('data', function (data) {
+                        pxsim.console.log(data);
+                    });
+                });
+                dataConnection.on('error', function () { pxsim.console.log("error"); });
+            });
+            peer.on('close', function () { });
+            peer.on('disconnected', function () { });
+            peer.on('error', function (err) { });
+        };
+        script.src = "/sim/peer.min.js";
+        document.head.appendChild(script);
         /**
          * Peer
          * @param id The value of the marker
@@ -70,11 +85,17 @@ var pxsim;
         //% blockNamespace=messaging inBasicCategory=true
         //% weight=100
         function send(key, value, id) {
-            var conn = peer.connect(id);
-            var sendString = { key: value };
-            conn.on('open', function () {
-                conn.send(sendString);
-            });
+            if (peer) {
+                if (connections[id]) {
+                    connections[id].send("hey hey heyyyy");
+                }
+                else {
+                    var dataConnection_1 = peer.connect(id);
+                    dataConnection_1.on('open', function () {
+                        dataConnection_1.send("hey hey heyyyy");
+                    });
+                }
+            }
         }
         messaging.send = send;
         /**
@@ -85,7 +106,9 @@ var pxsim;
         //% blockNamespace=messaging inBasicCategory=true
         //% weight=100
         function connect(id) {
-            var conn = peer.connect(id);
+            if (peer) {
+                var conn = peer.connect(id);
+            }
         }
         messaging.connect = connect;
         /**
