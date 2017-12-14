@@ -23,8 +23,8 @@ var pxtTargetBundle = {
     "autoRun": true
   },
   "appTheme": {
-    "logoUrl": "https://github.com/Microsoft/pxt-sample",
-    "homeUrl": "http://microsoft.github.io/pxt-sample/",
+    "logoUrl": "https://laboratoryforplayfulcomputation.github.io/tubular/",
+    "homeUrl": "https://laboratoryforplayfulcomputation.github.io/tubular/",
     "privacyUrl": "https://go.microsoft.com/fwlink/?LinkId=521839",
     "termsOfUseUrl": "https://go.microsoft.com/fwlink/?LinkID=206977",
     "betaUrl": "https://makecode.com/",
@@ -430,7 +430,7 @@ var pxtTargetBundle = {
         "prevPath": "/types/function"
       }
     ],
-    "embedUrl": "http://microsoft.github.io/pxt-sample/",
+    "embedUrl": "https://laboratoryforplayfulcomputation.github.io/tubular/",
     "id": "Tubular",
     "title": "Tubular",
     "name": "Tubular",
