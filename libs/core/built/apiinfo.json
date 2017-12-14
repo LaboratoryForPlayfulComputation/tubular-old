@@ -2379,7 +2379,7 @@
     "_source": null,
     "color": "#6657b2",
     "icon": "",
-    "weight": 100,
+    "weight": 99,
     "paramHelp": {},
     "jsDoc": "Messaging",
     "block": "messaging"
