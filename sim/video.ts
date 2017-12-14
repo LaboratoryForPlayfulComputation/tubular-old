@@ -1,5 +1,3 @@
-/// <reference path="video.d.ts" />
-
 namespace pxsim.video {
 
     let player = null as any;
