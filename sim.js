@@ -47,8 +47,64 @@ var pxsim;
         console.log = log;
     })(console = pxsim.console || (pxsim.console = {}));
 })(pxsim || (pxsim = {}));
+var pxsim;
+(function (pxsim) {
+    var messaging;
+    (function (messaging) {
+        var connections = new Array();
+        // this.peer = new Peer({key: '648xw9rwll92j4i'}); // need key for deployment if using the cloud
+        var peer = new Peer({ host: 'localhost', port: 9000, path: '/' }); // for running locally and with custom server
+        peer.on('open', function (id) { });
+        peer.on('connection', function (dataConnection) {
+            connections.push(dataConnection);
+            dataConnection.on('data', function (data) { });
+        });
+        peer.on('close', function () { });
+        peer.on('disconnected', function () { });
+        peer.on('error', function (err) { });
+        /**
+         * Peer
+         * @param id The value of the marker
+         */
+        //% blockId=peer_block block="send key %key| value %value| to %id"
+        //% blockNamespace=messaging inBasicCategory=true
+        //% weight=100
+        function send(key, value, id) {
+            var conn = peer.connect(id);
+            var sendString = { key: value };
+            conn.on('open', function () {
+                conn.send(sendString);
+            });
+        }
+        messaging.send = send;
+        /**
+         * Peer
+         * @param id The value of the marker
+         */
+        //% blockId=peer_conn_block block="connect to %id"
+        //% blockNamespace=messaging inBasicCategory=true
+        //% weight=100
+        function connect(id) {
+            var conn = peer.connect(id);
+        }
+        messaging.connect = connect;
+        /**
+         * Allows user to define callbacks for receive event
+         * @param key
+         */
+        //% blockId=peer_receive block="when I receive key %key|do" blockGap=8
+        //% blockNamespace=messaging inBasicCategory=true
+        //% weight=99    
+        function receive(key, handler) {
+            var event = 0x1;
+            pxsim.board().bus.listen(key, event, handler);
+        }
+        messaging.receive = receive;
+    })(messaging = pxsim.messaging || (pxsim.messaging = {}));
+})(pxsim || (pxsim = {}));
 /// <reference path="../node_modules/pxt-core/typings/globals/bluebird/index.d.ts"/>
 /// <reference path="../node_modules/pxt-core/built/pxtsim.d.ts"/>
+/// <reference path="../typings/globals/peerjs/index.d.ts" />
 /// <reference path="video.d.ts" />
 var pxsim;
 (function (pxsim) {
