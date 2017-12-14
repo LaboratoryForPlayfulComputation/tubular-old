@@ -22,23 +22,6 @@ declare namespace pxsim.console {
      */
     function log(msg: string): void;
 }
-declare namespace pxsim.messaging {
-    /**
-     * Peer
-     * @param id The value of the marker
-     */
-    function send(key: string, value: number, id: string): void;
-    /**
-     * Peer
-     * @param id The value of the marker
-     */
-    function connect(id: string): void;
-    /**
-     * Allows user to define callbacks for receive event
-     * @param key
-     */
-    function receive(key: string, handler: RefAction): void;
-}
 declare namespace pxsim {
     /**
      * Gets the current 'board', eg. program state.

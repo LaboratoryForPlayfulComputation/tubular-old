@@ -23,10 +23,6 @@
   "loops.forever|block": "forever",
   "loops.pause|block": "pause (ms) %pause",
   "loops|block": "loops",
-  "messaging.connect|block": "connect to %id",
-  "messaging.receive|block": "when I receive key %key|do",
-  "messaging.send|block": "send key %key| value %value| to %id",
-  "messaging|block": "messaging",
   "video.fastforward|block": "fast forward %value",
   "video.getCurrentTime|block": "current time",
   "video.getDuration|block": "video duration",
@@ -50,7 +46,6 @@
   "{id:category}Console": "Console",
   "{id:category}Loops": "Loops",
   "{id:category}Math": "Math",
-  "{id:category}Messaging": "Messaging",
   "{id:category}String": "String",
   "{id:category}Text": "Text",
   "{id:category}Video": "Video"
