@@ -3,8 +3,8 @@ namespace pxsim.video {
     let player = null as any;
     (window as any).onYouTubeIframeAPIReady = function() {
         player = new YT.Player('video-placeholder', {
-            width: 350,
-            height: 250,
+            width: 415,
+            height: 325,
             videoId: '6v2L2UGZJAM',
             playerVars: {
                 color: 'white',
@@ -34,7 +34,7 @@ namespace pxsim.video {
     //% weight=98
     //% blockNamespace=video inBasicCategory=true
     export function setVideo(id: string) {
-        player.cueVideoById(id);
+        if (player) player.cueVideoById(id);
     }
 
     /**
@@ -45,7 +45,7 @@ namespace pxsim.video {
     //% weight=98
     //% blockNamespace=video inBasicCategory=true
     export function setSpeed(rate: number) {
-        player.setPlaybackRate(rate);
+        if (player) player.setPlaybackRate(rate);
     }
 
     /**
@@ -55,7 +55,8 @@ namespace pxsim.video {
     //% weight=98
     //% blockNamespace=video inBasicCategory=true
     export function getSpeed(): number {
-        return player.getPlaybackRate();
+        if (player) return player.getPlaybackRate();
+        return 0;
     }    
 
     /**
@@ -65,10 +66,8 @@ namespace pxsim.video {
     //% weight=98
     //% blockNamespace=video inBasicCategory=true
     export function isPlaying(): boolean {
-        if (player.getPlayerState() == 1)
-            return true;
-        else
-            return false;
+        if (player && (player.getPlayerState() == 1)) return true;
+        return false;
     }
 
     /**
@@ -78,7 +77,8 @@ namespace pxsim.video {
     //% weight=98
     //% blockNamespace=video inBasicCategory=true
     export function getCurrentTime(): number {
-        return player.getCurrentTime();
+        if (player) return player.getCurrentTime();
+        return 0;
     }
 
     /**
@@ -88,7 +88,8 @@ namespace pxsim.video {
     //% weight=98
     //% blockNamespace=video inBasicCategory=true
     export function getDuration(): number {
-        return player.getDuration();
+        if (player) return player.getDuration();
+        return 0;
     }
 
     /**
@@ -98,7 +99,8 @@ namespace pxsim.video {
     //% weight=98
     //% blockNamespace=video inBasicCategory=true
     export function getVolume(): number {
-        return player.getVolume();
+        if (player) return player.getVolume();
+        return 0;
     }
 
     /**
@@ -108,7 +110,8 @@ namespace pxsim.video {
     //% weight=98
     //% blockNamespace=video inBasicCategory=true
     export function isMuted(): boolean {
-        return player.isMuted();
+        if (player) return player.isMuted();
+        return false;
     }
 
     /**
@@ -119,7 +122,7 @@ namespace pxsim.video {
     //% weight=98
     //% blockNamespace=video inBasicCategory=true
     export function seek(time: number) {
-        player.seekTo(time);
+        if (player) player.seekTo(time);
     }    
 
     /**
@@ -130,8 +133,10 @@ namespace pxsim.video {
     //% weight=98
     //% blockNamespace=video inBasicCategory=true
     export function rewind(value: number) {
-        let time = player.getCurrentTime();
-        player.seekTo(time - value);
+        if (player) {
+            let time = player.getCurrentTime();
+            player.seekTo(time - value);
+        }
     }  
 
     /**
@@ -142,8 +147,10 @@ namespace pxsim.video {
     //% weight=98
     //% blockNamespace=video inBasicCategory=true
     export function fastforward(value: number) {
-        let time = player.getCurrentTime();
-        player.seekTo(time + value);
+        if (player) {
+            let time = player.getCurrentTime();
+            player.seekTo(time + value);
+        }
     }  
 
     /**
@@ -154,7 +161,7 @@ namespace pxsim.video {
     //% weight=98
     //% blockNamespace=video inBasicCategory=true
     export function setVolume(value: number) {
-        player.setVolume(value);
+        if (player) player.setVolume(value);
     }  
 
     /**
@@ -164,7 +171,7 @@ namespace pxsim.video {
     //% weight=98
     //% blockNamespace=video inBasicCategory=true
     export function play() {
-        player.playVideo();
+        if (player) player.playVideo();
     }  
 
     /**
@@ -174,7 +181,7 @@ namespace pxsim.video {
     //% weight=98
     //% blockNamespace=video inBasicCategory=true
     export function pause() {
-        player.pauseVideo();
+        if (player) player.pauseVideo();
     }
 
     /**
@@ -184,7 +191,7 @@ namespace pxsim.video {
     //% weight=98
     //% blockNamespace=video inBasicCategory=true
     export function stop() {
-        player.stopVideo();
+        if (player) player.stopVideo();
     }
 
     /**
@@ -194,7 +201,7 @@ namespace pxsim.video {
     //% weight=98
     //% blockNamespace=video inBasicCategory=true
     export function mute() {
-        player.mute();
+        if (player) player.mute();
     }
 
     /**
@@ -204,7 +211,7 @@ namespace pxsim.video {
     //% weight=98
     //% blockNamespace=video inBasicCategory=true
     export function unmute() {
-        player.unMute();
+        if (player) player.unMute();
     }
 
 }

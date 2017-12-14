@@ -90,8 +90,8 @@ var pxsim;
         var player = null;
         window.onYouTubeIframeAPIReady = function () {
             player = new YT.Player('video-placeholder', {
-                width: 350,
-                height: 250,
+                width: 415,
+                height: 325,
                 videoId: '6v2L2UGZJAM',
                 playerVars: {
                     color: 'white',
@@ -119,7 +119,8 @@ var pxsim;
         //% weight=98
         //% blockNamespace=video inBasicCategory=true
         function setVideo(id) {
-            player.cueVideoById(id);
+            if (player)
+                player.cueVideoById(id);
         }
         video.setVideo = setVideo;
         /**
@@ -130,7 +131,8 @@ var pxsim;
         //% weight=98
         //% blockNamespace=video inBasicCategory=true
         function setSpeed(rate) {
-            player.setPlaybackRate(rate);
+            if (player)
+                player.setPlaybackRate(rate);
         }
         video.setSpeed = setSpeed;
         /**
@@ -140,7 +142,9 @@ var pxsim;
         //% weight=98
         //% blockNamespace=video inBasicCategory=true
         function getSpeed() {
-            return player.getPlaybackRate();
+            if (player)
+                return player.getPlaybackRate();
+            return 0;
         }
         video.getSpeed = getSpeed;
         /**
@@ -150,10 +154,9 @@ var pxsim;
         //% weight=98
         //% blockNamespace=video inBasicCategory=true
         function isPlaying() {
-            if (player.getPlayerState() == 1)
+            if (player && (player.getPlayerState() == 1))
                 return true;
-            else
-                return false;
+            return false;
         }
         video.isPlaying = isPlaying;
         /**
@@ -163,7 +166,9 @@ var pxsim;
         //% weight=98
         //% blockNamespace=video inBasicCategory=true
         function getCurrentTime() {
-            return player.getCurrentTime();
+            if (player)
+                return player.getCurrentTime();
+            return 0;
         }
         video.getCurrentTime = getCurrentTime;
         /**
@@ -173,7 +178,9 @@ var pxsim;
         //% weight=98
         //% blockNamespace=video inBasicCategory=true
         function getDuration() {
-            return player.getDuration();
+            if (player)
+                return player.getDuration();
+            return 0;
         }
         video.getDuration = getDuration;
         /**
@@ -183,7 +190,9 @@ var pxsim;
         //% weight=98
         //% blockNamespace=video inBasicCategory=true
         function getVolume() {
-            return player.getVolume();
+            if (player)
+                return player.getVolume();
+            return 0;
         }
         video.getVolume = getVolume;
         /**
@@ -193,7 +202,9 @@ var pxsim;
         //% weight=98
         //% blockNamespace=video inBasicCategory=true
         function isMuted() {
-            return player.isMuted();
+            if (player)
+                return player.isMuted();
+            return false;
         }
         video.isMuted = isMuted;
         /**
@@ -204,7 +215,8 @@ var pxsim;
         //% weight=98
         //% blockNamespace=video inBasicCategory=true
         function seek(time) {
-            player.seekTo(time);
+            if (player)
+                player.seekTo(time);
         }
         video.seek = seek;
         /**
@@ -215,8 +227,10 @@ var pxsim;
         //% weight=98
         //% blockNamespace=video inBasicCategory=true
         function rewind(value) {
-            var time = player.getCurrentTime();
-            player.seekTo(time - value);
+            if (player) {
+                var time = player.getCurrentTime();
+                player.seekTo(time - value);
+            }
         }
         video.rewind = rewind;
         /**
@@ -227,8 +241,10 @@ var pxsim;
         //% weight=98
         //% blockNamespace=video inBasicCategory=true
         function fastforward(value) {
-            var time = player.getCurrentTime();
-            player.seekTo(time + value);
+            if (player) {
+                var time = player.getCurrentTime();
+                player.seekTo(time + value);
+            }
         }
         video.fastforward = fastforward;
         /**
@@ -239,7 +255,8 @@ var pxsim;
         //% weight=98
         //% blockNamespace=video inBasicCategory=true
         function setVolume(value) {
-            player.setVolume(value);
+            if (player)
+                player.setVolume(value);
         }
         video.setVolume = setVolume;
         /**
@@ -249,7 +266,8 @@ var pxsim;
         //% weight=98
         //% blockNamespace=video inBasicCategory=true
         function play() {
-            player.playVideo();
+            if (player)
+                player.playVideo();
         }
         video.play = play;
         /**
@@ -259,7 +277,8 @@ var pxsim;
         //% weight=98
         //% blockNamespace=video inBasicCategory=true
         function pause() {
-            player.pauseVideo();
+            if (player)
+                player.pauseVideo();
         }
         video.pause = pause;
         /**
@@ -269,7 +288,8 @@ var pxsim;
         //% weight=98
         //% blockNamespace=video inBasicCategory=true
         function stop() {
-            player.stopVideo();
+            if (player)
+                player.stopVideo();
         }
         video.stop = stop;
         /**
@@ -279,7 +299,8 @@ var pxsim;
         //% weight=98
         //% blockNamespace=video inBasicCategory=true
         function mute() {
-            player.mute();
+            if (player)
+                player.mute();
         }
         video.mute = mute;
         /**
@@ -289,7 +310,8 @@ var pxsim;
         //% weight=98
         //% blockNamespace=video inBasicCategory=true
         function unmute() {
-            player.unMute();
+            if (player)
+                player.unMute();
         }
         video.unmute = unmute;
     })(video = pxsim.video || (pxsim.video = {}));
