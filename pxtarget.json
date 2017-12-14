@@ -38,8 +38,10 @@
                 "path": "/docs"
             }
         ],
-        "coloredToolbox": true,
+        "coloredToolbox": false,
         "monacoToolbox": true,
+        "invertedToolbox": true,
+        "invertedMonaco": true,        
         "invertedMenu": true,
         "showHomeScreen": true,
         "homeScreenHero": "./static/hero.png",        
@@ -55,6 +57,16 @@
         "simAnimationExit": "fly right out",
         "monacoColors": {
             "editor.background": "#ecf0f1"
-        }
+        },
+        "blockColors": {
+            "loops": "#30ad14",
+            "logic": "#44abff",
+            "math": "#9844ff",
+            "variables": "#e944ff",
+            "text": "#ffb444",
+            "advanced": "#111111",
+            "functions": "#3399ff",
+            "arrays": "#b62fd1"
+        }        
     }
 }

@@ -49,6 +49,30 @@ declare namespace pxsim.video {
      */
     function setSpeed(rate: number): void;
     /**
+    * Get video speed
+     */
+    function getSpeed(): number;
+    /**
+    * Determine if the video is playing
+     */
+    function isPlaying(): boolean;
+    /**
+    * Determine the current time of the video
+     */
+    function getCurrentTime(): number;
+    /**
+    * Determine the duration of the video
+     */
+    function getDuration(): number;
+    /**
+    * Get the video's current volume
+     */
+    function getVolume(): number;
+    /**
+    * Determine if the video is muted
+     */
+    function isMuted(): boolean;
+    /**
     * Seek to a specific time
      * @param time
      */

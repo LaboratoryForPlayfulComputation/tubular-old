@@ -93,7 +93,7 @@ var pxsim;
             player = new YT.Player('video-placeholder', {
                 width: 350,
                 height: 250,
-                videoId: 'mZxxhxjgnC0',
+                videoId: '6v2L2UGZJAM',
                 playerVars: {
                     color: 'white',
                 },
@@ -116,9 +116,9 @@ var pxsim;
         * Set video using YouTube URL ID
          * @param rate
          */
-        //% blockId=youtube_set_video block="set video %string" blockGap=8
+        //% blockId=video_set_video block="set video %string" blockGap=8
         //% weight=98
-        //% blockNamespace=youtube inBasicCategory=true
+        //% blockNamespace=video inBasicCategory=true
         function setVideo(id) {
             player.cueVideoById(id);
         }
@@ -127,20 +127,83 @@ var pxsim;
         * Change video speed
          * @param rate
          */
-        //% blockId=youtube_set_speed block="set speed %rate" blockGap=8
+        //% blockId=video_set_speed block="set speed %rate" blockGap=8
         //% weight=98
-        //% blockNamespace=youtube inBasicCategory=true
+        //% blockNamespace=video inBasicCategory=true
         function setSpeed(rate) {
             player.setPlaybackRate(rate);
         }
         video.setSpeed = setSpeed;
         /**
+        * Get video speed
+         */
+        //% blockId=video_get_speed block="get speed" blockGap=8
+        //% weight=98
+        //% blockNamespace=video inBasicCategory=true
+        function getSpeed() {
+            return player.getPlaybackRate();
+        }
+        video.getSpeed = getSpeed;
+        /**
+        * Determine if the video is playing
+         */
+        //% blockId=video_is_playing block="video is playing" blockGap=8
+        //% weight=98
+        //% blockNamespace=video inBasicCategory=true
+        function isPlaying() {
+            if (player.getPlayerState() == 1)
+                return true;
+            else
+                return false;
+        }
+        video.isPlaying = isPlaying;
+        /**
+        * Determine the current time of the video
+         */
+        //% blockId=video_current_time block="current time" blockGap=8
+        //% weight=98
+        //% blockNamespace=video inBasicCategory=true
+        function getCurrentTime() {
+            return player.getCurrentTime();
+        }
+        video.getCurrentTime = getCurrentTime;
+        /**
+        * Determine the duration of the video
+         */
+        //% blockId=video_duration block="video duration" blockGap=8
+        //% weight=98
+        //% blockNamespace=video inBasicCategory=true
+        function getDuration() {
+            return player.getDuration();
+        }
+        video.getDuration = getDuration;
+        /**
+        * Get the video's current volume
+         */
+        //% blockId=video_get_volume block="video volume" blockGap=8
+        //% weight=98
+        //% blockNamespace=video inBasicCategory=true
+        function getVolume() {
+            return player.getVolume();
+        }
+        video.getVolume = getVolume;
+        /**
+        * Determine if the video is muted
+         */
+        //% blockId=video_is_muted block="video is muted" blockGap=8
+        //% weight=98
+        //% blockNamespace=video inBasicCategory=true
+        function isMuted() {
+            return player.isMuted();
+        }
+        video.isMuted = isMuted;
+        /**
         * Seek to a specific time
          * @param time
          */
-        //% blockId=youtube_seek block="seek to %time" blockGap=8
+        //% blockId=video_seek block="seek to %time" blockGap=8
         //% weight=98
-        //% blockNamespace=youtube inBasicCategory=true
+        //% blockNamespace=video inBasicCategory=true
         function seek(time) {
             player.seekTo(time);
         }
@@ -149,9 +212,9 @@ var pxsim;
         * Rewind a specific number of seconds
          * @param value
          */
-        //% blockId=youtube_rewind block="rewind %value" blockGap=8
+        //% blockId=video_rewind block="rewind %value" blockGap=8
         //% weight=98
-        //% blockNamespace=youtube inBasicCategory=true
+        //% blockNamespace=video inBasicCategory=true
         function rewind(value) {
             var time = player.getCurrentTime();
             player.seekTo(time - value);
@@ -161,9 +224,9 @@ var pxsim;
         * Fast forward a specific number of seconds
          * @param value
          */
-        //% blockId=youtube_fastforward block="fast forward %value" blockGap=8
+        //% blockId=video_fastforward block="fast forward %value" blockGap=8
         //% weight=98
-        //% blockNamespace=youtube inBasicCategory=true
+        //% blockNamespace=video inBasicCategory=true
         function fastforward(value) {
             var time = player.getCurrentTime();
             player.seekTo(time + value);
@@ -173,9 +236,9 @@ var pxsim;
         * Set volume of the video
          * @param value
          */
-        //% blockId=youtube_set_volume block="set volume %value" blockGap=8
+        //% blockId=video_set_volume block="set volume %value" blockGap=8
         //% weight=98
-        //% blockNamespace=youtube inBasicCategory=true
+        //% blockNamespace=video inBasicCategory=true
         function setVolume(value) {
             player.setVolume(value);
         }
@@ -183,9 +246,9 @@ var pxsim;
         /**
         * Play video
          */
-        //% blockId=youtube_play block="play video" blockGap=8
+        //% blockId=video_play block="play video" blockGap=8
         //% weight=98
-        //% blockNamespace=youtube inBasicCategory=true
+        //% blockNamespace=video inBasicCategory=true
         function play() {
             player.playVideo();
         }
@@ -193,9 +256,9 @@ var pxsim;
         /**
         * Pause video
          */
-        //% blockId=youtube_pause block="pause video" blockGap=8
+        //% blockId=video_pause block="pause video" blockGap=8
         //% weight=98
-        //% blockNamespace=youtube inBasicCategory=true
+        //% blockNamespace=video inBasicCategory=true
         function pause() {
             player.pauseVideo();
         }
@@ -203,9 +266,9 @@ var pxsim;
         /**
         * Stop video
          */
-        //% blockId=youtube_stop block="stop video" blockGap=8
+        //% blockId=video_stop block="stop video" blockGap=8
         //% weight=98
-        //% blockNamespace=youtube inBasicCategory=true
+        //% blockNamespace=video inBasicCategory=true
         function stop() {
             player.stopVideo();
         }
@@ -213,9 +276,9 @@ var pxsim;
         /**
         * Mute video
          */
-        //% blockId=youtube_mute block="mute video" blockGap=8
+        //% blockId=video_mute block="mute video" blockGap=8
         //% weight=98
-        //% blockNamespace=youtube inBasicCategory=true
+        //% blockNamespace=video inBasicCategory=true
         function mute() {
             player.mute();
         }
@@ -223,9 +286,9 @@ var pxsim;
         /**
         * Unmute video
          */
-        //% blockId=youtube_unmute block="unmute video" blockGap=8
+        //% blockId=video_unmute block="unmute video" blockGap=8
         //% weight=98
-        //% blockNamespace=youtube inBasicCategory=true
+        //% blockNamespace=video inBasicCategory=true
         function unmute() {
             player.unMute();
         }
