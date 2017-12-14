@@ -1,8 +1,8 @@
 {
   "lang": "en",
   "dir": "ltr",
-  "name": "sample",
-  "short_name": "sample",
+  "name": "Tubular",
+  "short_name": "Tubular",
   "icons": [
     {
       "src": "/static/icons/android-chrome-36x36.png",

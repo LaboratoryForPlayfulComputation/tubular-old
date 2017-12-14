@@ -54,7 +54,7 @@
    Menu
 --------------------*/
 
-@mainMenuInvertedBackground: @green;
+@mainMenuInvertedBackground: @red;
 @mainMenuTutorialBackground: @orange;
 
 @mainMenuBlocksJsToggleColor: @primaryColor;

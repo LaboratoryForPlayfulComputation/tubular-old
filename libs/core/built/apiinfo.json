@@ -2234,6 +2234,141 @@
    "parameters": null,
    "qName": "Direction.Right"
   },
+  "loops": {
+   "kind": 5,
+   "namespace": "",
+   "name": "loops",
+   "attributes": {
+    "paramDefl": {},
+    "callingConvention": 0,
+    "_source": null,
+    "paramHelp": {},
+    "jsDoc": "",
+    "_name": "loops",
+    "block": "loops"
+   },
+   "pkg": null,
+   "retType": "",
+   "parameters": null,
+   "qName": "loops"
+  },
+  "loops.forever": {
+   "kind": 3,
+   "namespace": "loops",
+   "name": "forever",
+   "attributes": {
+    "paramDefl": {},
+    "callingConvention": 0,
+    "_source": null,
+    "help": "functions/forever",
+    "weight": 55,
+    "blockGap": "8",
+    "blockId": "device_forever",
+    "block": "forever",
+    "shim": "loops::forever",
+    "paramHelp": {
+     "body": "the code to repeat"
+    },
+    "jsDoc": "Repeats the code forever in the background. On each iteration, allows other code to run.",
+    "_name": "forever"
+   },
+   "pkg": null,
+   "retType": "void",
+   "parameters": [
+    {
+     "name": "body",
+     "description": "the code to repeat",
+     "type": "() => void",
+     "options": {},
+     "isEnum": false
+    }
+   ],
+   "snippet": "forever(function () {})",
+   "qName": "loops.forever"
+  },
+  "loops.pause": {
+   "kind": 3,
+   "namespace": "loops",
+   "name": "pause",
+   "attributes": {
+    "paramDefl": {
+     "ms": "100"
+    },
+    "callingConvention": 2,
+    "_source": null,
+    "help": "functions/pause",
+    "weight": 54,
+    "block": "pause (ms) %pause",
+    "blockId": "device_pause",
+    "shim": "loops::pauseAsync",
+    "promise": "true",
+    "paramHelp": {
+     "ms": "how long to pause for, eg: 100, 200, 500, 1000, 2000"
+    },
+    "jsDoc": "Pause for the specified time in milliseconds",
+    "_name": "pause"
+   },
+   "pkg": null,
+   "retType": "void",
+   "parameters": [
+    {
+     "name": "ms",
+     "description": "how long to pause for, eg: 100, 200, 500, 1000, 2000",
+     "type": "number",
+     "initializer": "100",
+     "default": "100",
+     "options": {},
+     "isEnum": false
+    }
+   ],
+   "snippet": "pause(100)",
+   "qName": "loops.pause"
+  },
+  "console": {
+   "kind": 5,
+   "namespace": "",
+   "name": "console",
+   "attributes": {
+    "paramDefl": {},
+    "callingConvention": 0,
+    "_source": null,
+    "paramHelp": {},
+    "jsDoc": "",
+    "_name": "console",
+    "block": "console"
+   },
+   "pkg": null,
+   "retType": "",
+   "parameters": null,
+   "qName": "console"
+  },
+  "console.log": {
+   "kind": 3,
+   "namespace": "console",
+   "name": "log",
+   "attributes": {
+    "paramDefl": {},
+    "callingConvention": 0,
+    "_source": null,
+    "shim": "console::log",
+    "paramHelp": {},
+    "jsDoc": "Print out message",
+    "_name": "log"
+   },
+   "pkg": null,
+   "retType": "void",
+   "parameters": [
+    {
+     "name": "msg",
+     "description": "",
+     "type": "string",
+     "options": {},
+     "isEnum": false
+    }
+   ],
+   "snippet": "log(\"\")",
+   "qName": "console.log"
+  },
   "video": {
    "kind": 5,
    "namespace": "",
@@ -2242,9 +2377,10 @@
     "paramDefl": {},
     "callingConvention": 0,
     "_source": null,
+    "color": "#f44242",
+    "weight": 100,
     "paramHelp": {},
-    "jsDoc": "",
-    "_name": "video",
+    "jsDoc": "Basic functionalities.",
     "block": "video"
    },
    "pkg": null,
@@ -2586,160 +2722,6 @@
    "parameters": [],
    "snippet": "unmute()",
    "qName": "video.unmute"
-  },
-  "loops": {
-   "kind": 5,
-   "namespace": "",
-   "name": "loops",
-   "attributes": {
-    "paramDefl": {},
-    "callingConvention": 0,
-    "_source": null,
-    "paramHelp": {},
-    "jsDoc": "",
-    "_name": "loops",
-    "block": "loops"
-   },
-   "pkg": null,
-   "retType": "",
-   "parameters": null,
-   "qName": "loops"
-  },
-  "loops.forever": {
-   "kind": 3,
-   "namespace": "loops",
-   "name": "forever",
-   "attributes": {
-    "paramDefl": {},
-    "callingConvention": 0,
-    "_source": null,
-    "help": "functions/forever",
-    "weight": 55,
-    "blockGap": "8",
-    "blockId": "device_forever",
-    "block": "forever",
-    "shim": "loops::forever",
-    "paramHelp": {
-     "body": "the code to repeat"
-    },
-    "jsDoc": "Repeats the code forever in the background. On each iteration, allows other code to run.",
-    "_name": "forever"
-   },
-   "pkg": null,
-   "retType": "void",
-   "parameters": [
-    {
-     "name": "body",
-     "description": "the code to repeat",
-     "type": "() => void",
-     "options": {},
-     "isEnum": false
-    }
-   ],
-   "snippet": "forever(function () {})",
-   "qName": "loops.forever"
-  },
-  "loops.pause": {
-   "kind": 3,
-   "namespace": "loops",
-   "name": "pause",
-   "attributes": {
-    "paramDefl": {
-     "ms": "100"
-    },
-    "callingConvention": 2,
-    "_source": null,
-    "help": "functions/pause",
-    "weight": 54,
-    "block": "pause (ms) %pause",
-    "blockId": "device_pause",
-    "shim": "loops::pauseAsync",
-    "promise": "true",
-    "paramHelp": {
-     "ms": "how long to pause for, eg: 100, 200, 500, 1000, 2000"
-    },
-    "jsDoc": "Pause for the specified time in milliseconds",
-    "_name": "pause"
-   },
-   "pkg": null,
-   "retType": "void",
-   "parameters": [
-    {
-     "name": "ms",
-     "description": "how long to pause for, eg: 100, 200, 500, 1000, 2000",
-     "type": "number",
-     "initializer": "100",
-     "default": "100",
-     "options": {},
-     "isEnum": false
-    }
-   ],
-   "snippet": "pause(100)",
-   "qName": "loops.pause"
-  },
-  "console": {
-   "kind": 5,
-   "namespace": "",
-   "name": "console",
-   "attributes": {
-    "paramDefl": {},
-    "callingConvention": 0,
-    "_source": null,
-    "paramHelp": {},
-    "jsDoc": "",
-    "_name": "console",
-    "block": "console"
-   },
-   "pkg": null,
-   "retType": "",
-   "parameters": null,
-   "qName": "console"
-  },
-  "console.log": {
-   "kind": 3,
-   "namespace": "console",
-   "name": "log",
-   "attributes": {
-    "paramDefl": {},
-    "callingConvention": 0,
-    "_source": null,
-    "shim": "console::log",
-    "paramHelp": {},
-    "jsDoc": "Print out message",
-    "_name": "log"
-   },
-   "pkg": null,
-   "retType": "void",
-   "parameters": [
-    {
-     "name": "msg",
-     "description": "",
-     "type": "string",
-     "options": {},
-     "isEnum": false
-    }
-   ],
-   "snippet": "log(\"\")",
-   "qName": "console.log"
-  },
-  "turtle": {
-   "kind": 5,
-   "namespace": "",
-   "name": "turtle",
-   "attributes": {
-    "paramDefl": {},
-    "callingConvention": 0,
-    "_source": null,
-    "color": "#00BCD4",
-    "weight": 100,
-    "paramHelp": {},
-    "jsDoc": "Basic functionalities.",
-    "_name": "turtle"
-   },
-   "pkg": null,
-   "retType": "",
-   "parameters": null,
-   "qName": "turtle"
   },
   "control": {
    "kind": 5,

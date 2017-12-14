@@ -18895,7 +18895,7 @@ ol.ui.horizontal.list li:before,
 }
 .ui.inverted.segment,
 .ui.primary.inverted.segment {
-  background: #2ecc71;
+  background: #e74c3c;
   color: rgba(255, 255, 255, 0.9);
 }
 /* Nested */
@@ -25563,7 +25563,7 @@ Floated Menu / Item
 ---------------*/
 .ui.inverted.menu {
   border: 0px solid transparent;
-  background: #2ecc71;
+  background: #e74c3c;
   box-shadow: none;
 }
 /* Menu Item */
@@ -49055,7 +49055,7 @@ div.simframe > iframe {
 }
 #menubar .ui.menu.inverted.fixed .ui.item.editor-menuitem .active.item {
   background: none;
-  color: #2ecc71 !important;
+  color: #e74c3c !important;
 }
 .ui.item.editor-menuitem .item.toggle {
   z-index: 1 !important;
@@ -49795,16 +49795,16 @@ Field editors
     padding: 4rem;
     padding-right: calc(8rem);
     padding-left: calc(8rem);
-    background-color: #2ecc71;
-    background: #2ecc71;
+    background-color: #e74c3c;
+    background: #e74c3c;
     /* For browsers that do not support gradients */
-    background: -webkit-linear-gradient(#2ecc71 50%, #2c3e50);
+    background: -webkit-linear-gradient(#e74c3c 50%, #2c3e50);
     /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(#2ecc71 50%, #2c3e50);
+    background: -o-linear-gradient(#e74c3c 50%, #2c3e50);
     /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(#2ecc71 50%, #2c3e50);
+    background: -moz-linear-gradient(#e74c3c 50%, #2c3e50);
     /* For Firefox 3.6 to 15 */
-    background: linear-gradient(#2ecc71 50%, #2c3e50);
+    background: linear-gradient(#e74c3c 50%, #2c3e50);
     /* Standard syntax */
   }
   .fullscreensim #simulator .ui.item:not(.simtoolbar),
@@ -50084,16 +50084,16 @@ Field editors
     padding-right: 2em;
     padding-left: 2em;
     padding-bottom: 2em;
-    background-color: #2ecc71;
-    background: #2ecc71;
+    background-color: #e74c3c;
+    background: #e74c3c;
     /* For browsers that do not support gradients */
-    background: -webkit-linear-gradient(#2ecc71 50%, #2c3e50);
+    background: -webkit-linear-gradient(#e74c3c 50%, #2c3e50);
     /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(#2ecc71 50%, #2c3e50);
+    background: -o-linear-gradient(#e74c3c 50%, #2c3e50);
     /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(#2ecc71 50%, #2c3e50);
+    background: -moz-linear-gradient(#e74c3c 50%, #2c3e50);
     /* For Firefox 3.6 to 15 */
-    background: linear-gradient(#2ecc71 50%, #2c3e50);
+    background: linear-gradient(#e74c3c 50%, #2c3e50);
     /* Standard syntax */
   }
   .simView #simulator .ui.item,

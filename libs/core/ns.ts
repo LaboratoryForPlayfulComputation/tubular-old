@@ -1,8 +1,8 @@
 /**
  * Basic functionalities.
  */
-//% color=#00BCD4 weight=100
-namespace turtle {
+//% color=#f44242 weight=100
+namespace video {
 
 }
 

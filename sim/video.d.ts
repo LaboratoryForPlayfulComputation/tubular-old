@@ -24,7 +24,7 @@ declare namespace YT {
 
     interface PlayerVarsOptions {
         color: string;
-        playlist: string;      
+        playlist?: string;      
     }
 
     interface PlayerEventsOptions {

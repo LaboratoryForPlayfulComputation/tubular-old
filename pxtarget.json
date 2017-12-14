@@ -1,7 +1,7 @@
 {
-    "id": "sample",
-    "name": "sample",
-    "title": "MakeCode Editor Sample",
+    "id": "Tubular",
+    "name": "Tubular",
+    "title": "Tubular",
     "corepkg": "core",
     "cloud": {
         "workspace": false,
