@@ -35,11 +35,11 @@ namespace pxsim.messaging {
             /* Received user ID from server */
             if (peer) peer.on('open', function(id : string) { updateUserId(id); });
             else initializePeer();
-            if (peer) peer.on('close', function() { peer = null; });
+            if (peer) peer.on('close', function() { peer = null; initializePeer(); });
             else initializePeer();
-            if (peer) peer.on('disconnected', function() { peer = null; });
+            if (peer) peer.on('disconnected', function() { peer = null; initializePeer(); });
             else initializePeer();
-            if (peer) peer.on('error', function(err: any) { peer = null; });
+            if (peer) peer.on('error', function(err: any) { peer = null; initializePeer(); });
             else initializePeer();
             
             /* Successfully created data connection */
