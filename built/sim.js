@@ -55,7 +55,13 @@ var pxsim;
         var connections = {};
         var script = document.createElement('script');
         script.onload = function () {
-            peer = new Peer({ host: 'localhost', port: 9000, path: '/' });
+            peer = new Peer({ host: 'localhost',
+                port: 9000,
+                path: '/',
+                config: { 'iceServers': [
+                        { 'url': 'stun:stun.l.google.com:19302' }
+                    ] }
+            });
             peer.on('open', function (id) {
                 document.getElementById('userid').innerHTML = 'Your user id is: ' + id.toString();
             });
@@ -86,8 +92,9 @@ var pxsim;
         //% weight=100
         function send(key, value, id) {
             if (peer) {
-                if (connections[id]) {
-                    connections[id].send("hey hey heyyyy");
+                var dataConnection = connections[id];
+                if (dataConnection && dataConnection.open) {
+                    dataConnection.send("hey hey heyyyy");
                 }
                 else {
                     var dataConnection_1 = peer.connect(id);
@@ -168,19 +175,24 @@ var pxsim;
     var video;
     (function (video) {
         var player = null;
-        window.onYouTubeIframeAPIReady = function () {
-            player = new YT.Player('video-placeholder', {
-                width: 350,
-                height: 250,
-                videoId: '6v2L2UGZJAM',
-                playerVars: {
-                    color: 'white',
-                },
-                events: {
-                    onReady: initializePlayer
-                }
-            });
+        var script = document.createElement('script');
+        script.onload = function () {
+            window.onYouTubeIframeAPIReady = function () {
+                player = new YT.Player('video-placeholder', {
+                    width: 350,
+                    height: 250,
+                    videoId: '6v2L2UGZJAM',
+                    playerVars: {
+                        color: 'white',
+                    },
+                    events: {
+                        onReady: initializePlayer
+                    }
+                });
+            };
         };
+        script.src = "https://www.youtube.com/iframe_api";
+        document.head.appendChild(script);
         function initializePlayer() {
         }
         function resetVideo() {

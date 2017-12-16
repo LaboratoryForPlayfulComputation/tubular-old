@@ -3,19 +3,25 @@
 namespace pxsim.video {
 
     let player = null as any;
-    (window as any).onYouTubeIframeAPIReady = function() {
-        player = new YT.Player('video-placeholder', {
-            width: 350,
-            height: 250,
-            videoId: '6v2L2UGZJAM',
-            playerVars: {
-                color: 'white',
-            },
-            events: {
-                onReady: initializePlayer
-            }
-        });    
-    }      
+
+    var script = document.createElement('script');
+    script.onload = function () {
+        (window as any).onYouTubeIframeAPIReady = function() {
+            player = new YT.Player('video-placeholder', {
+                width: 350,
+                height: 250,
+                videoId: '6v2L2UGZJAM',
+                playerVars: {
+                    color: 'white',
+                },
+                events: {
+                    onReady: initializePlayer
+                }
+            });    
+        }
+    };
+    script.src = "https://www.youtube.com/iframe_api";
+    document.head.appendChild(script);
         
     function initializePlayer(){
     }
