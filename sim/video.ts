@@ -23,6 +23,18 @@ namespace pxsim.video {
     script.src = "https://www.youtube.com/iframe_api";
     document.head.appendChild(script);
         
+    window.addEventListener("resize", resizeVideo);
+
+    function resizeVideo(){
+        if (player){
+            let iframe = player.getIframe();
+            let w = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+            let h = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+            iframe.setAttribute("width", w);
+            iframe.setAttribute("height", h);
+        }
+    }
+
     function initializePlayer(){
     }
 
