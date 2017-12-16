@@ -57,7 +57,7 @@ var pxsim;
         script.onload = function () {
             initializePeer();
         };
-        script.src = "/sim/peer.min.js";
+        script.src = "http://cdn.peerjs.com/0.3/peer.js";
         document.head.appendChild(script);
         function updateUserId(id) {
             document.getElementById('userid').innerHTML = 'Your user id is: ' + id.toString();
