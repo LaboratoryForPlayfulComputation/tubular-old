@@ -51,17 +51,56 @@ var pxsim;
 (function (pxsim) {
     var messaging;
     (function (messaging) {
-        var connections = new Array();
-        // this.peer = new Peer({key: '648xw9rwll92j4i'}); // need key for deployment if using the cloud
-        var peer = new Peer({ host: 'localhost', port: 9000, path: '/' }); // for running locally and with custom server
-        peer.on('open', function (id) { });
-        peer.on('connection', function (dataConnection) {
-            connections.push(dataConnection);
-            dataConnection.on('data', function (data) { });
-        });
-        peer.on('close', function () { });
-        peer.on('disconnected', function () { });
-        peer.on('error', function (err) { });
+        var peer = null;
+        var connections = {};
+        var script = document.createElement('script');
+        script.onload = function () {
+            initializePeer();
+        };
+        script.src = "/sim/peer.min.js";
+        document.head.appendChild(script);
+        function updateUserId(id) {
+            document.getElementById('userid').innerHTML = 'Your user id is: ' + id.toString();
+        }
+        function initDataConnectionCallbacks(conn) {
+            connections[conn.peer] = conn;
+            conn.on('data', function (data) {
+                pxsim.board().bus.queue(data["key"], 0x1);
+            });
+            conn.on('close', function () { connections[conn.peer] = undefined; });
+            conn.on('error', function () { connections[conn.peer] = undefined; });
+        }
+        function initializePeer() {
+            /* Create instance of PeerJS */
+            peer = new Peer({
+                host: 'liminal-jam.herokuapp.com',
+                secure: true,
+                port: 443,
+                key: 'peerjs',
+                debug: 3 });
+            /* Received user ID from server */
+            if (peer)
+                peer.on('open', function (id) { updateUserId(id); });
+            else
+                initializePeer();
+            if (peer)
+                peer.on('close', function () { peer = null; });
+            else
+                initializePeer();
+            if (peer)
+                peer.on('disconnected', function () { peer = null; });
+            else
+                initializePeer();
+            if (peer)
+                peer.on('error', function (err) { peer = null; });
+            else
+                initializePeer();
+            /* Successfully created data connection */
+            if (peer)
+                peer.on('connection', function (conn) { initDataConnectionCallbacks(conn); });
+            else
+                initializePeer();
+        }
         /**
          * Peer
          * @param id The value of the marker
@@ -70,24 +109,22 @@ var pxsim;
         //% blockNamespace=messaging inBasicCategory=true
         //% weight=100
         function send(key, value, id) {
-            var conn = peer.connect(id);
-            var sendString = { key: value };
-            conn.on('open', function () {
-                conn.send(sendString);
-            });
+            if (peer) {
+                var conn_1 = connections[id];
+                if (!conn_1 || !conn_1.open) {
+                    conn_1 = peer.connect(id);
+                    conn_1.on('open', function () {
+                        initDataConnectionCallbacks(conn_1);
+                    });
+                }
+                conn_1.send({ "key": key, "value": value });
+            }
+            else {
+                initializePeer();
+                send(key, value, id);
+            }
         }
         messaging.send = send;
-        /**
-         * Peer
-         * @param id The value of the marker
-         */
-        //% blockId=peer_conn_block block="connect to %id"
-        //% blockNamespace=messaging inBasicCategory=true
-        //% weight=100
-        function connect(id) {
-            var conn = peer.connect(id);
-        }
-        messaging.connect = connect;
         /**
          * Allows user to define callbacks for receive event
          * @param key
@@ -96,8 +133,7 @@ var pxsim;
         //% blockNamespace=messaging inBasicCategory=true
         //% weight=99    
         function receive(key, handler) {
-            var event = 0x1;
-            pxsim.board().bus.listen(key, event, handler);
+            pxsim.board().bus.listen(key, 0x1, handler);
         }
         messaging.receive = receive;
     })(messaging = pxsim.messaging || (pxsim.messaging = {}));
@@ -145,19 +181,34 @@ var pxsim;
     var video;
     (function (video) {
         var player = null;
-        window.onYouTubeIframeAPIReady = function () {
-            player = new YT.Player('video-placeholder', {
-                width: 350,
-                height: 250,
-                videoId: '6v2L2UGZJAM',
-                playerVars: {
-                    color: 'white',
-                },
-                events: {
-                    onReady: initializePlayer
-                }
-            });
+        var script = document.createElement('script');
+        script.onload = function () {
+            window.onYouTubeIframeAPIReady = function () {
+                player = new YT.Player('video-placeholder', {
+                    width: 350,
+                    height: 250,
+                    videoId: '6v2L2UGZJAM',
+                    playerVars: {
+                        color: 'white',
+                    },
+                    events: {
+                        onReady: initializePlayer
+                    }
+                });
+            };
         };
+        script.src = "https://www.youtube.com/iframe_api";
+        document.head.appendChild(script);
+        window.addEventListener("resize", resizeVideo);
+        function resizeVideo() {
+            if (player) {
+                var iframe = player.getIframe();
+                var w = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+                var h = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+                iframe.setAttribute("width", w);
+                iframe.setAttribute("height", h);
+            }
+        }
         function initializePlayer() {
         }
         function resetVideo() {
