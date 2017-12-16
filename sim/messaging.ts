@@ -7,7 +7,7 @@ namespace pxsim.messaging {
         script.onload = function () {
             initializePeer();
         };
-        script.src = "http://cdn.peerjs.com/0.3/peer.js";
+        script.src = "https://cdnjs.cloudflare.com/ajax/libs/peerjs/0.3.14/peer.js";
         document.head.appendChild(script);
 
         function updateUserId(id : string){
