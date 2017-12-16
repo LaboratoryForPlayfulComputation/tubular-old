@@ -62,6 +62,14 @@ var pxsim;
         function updateUserId(id) {
             document.getElementById('userid').innerHTML = 'Your user id is: ' + id.toString();
         }
+        function initDataConnectionCallbacks(dataConnection) {
+            connections[dataConnection.peer] = dataConnection;
+            dataConnection.on('data', function (data) {
+                pxsim.board().bus.queue(data["key"], 0x1);
+            });
+            dataConnection.on('close', function () { connections[dataConnection.peer] = undefined; });
+            dataConnection.on('error', function () { connections[dataConnection.peer] = undefined; });
+        }
         function initializePeer() {
             /* Create instance of PeerJS */
             peer = new Peer({
@@ -79,13 +87,7 @@ var pxsim;
             peer.on('error', function (err) { });
             /* Successfully created data connection */
             peer.on('connection', function (dataConnection) {
-                connections[dataConnection.peer] = dataConnection;
-                dataConnection.on('data', function (data) {
-                    pxsim.console.log(data["key"]);
-                    pxsim.board().bus.queue(data['key'], 0x1);
-                });
-                dataConnection.on('close', function () { });
-                dataConnection.on('error', function () { });
+                initDataConnectionCallbacks(dataConnection);
             });
         }
         /**
@@ -97,21 +99,14 @@ var pxsim;
         //% weight=100
         function send(key, value, id) {
             if (peer) {
-                var dataConnection = connections[id];
-                if (dataConnection && dataConnection.open) {
-                    dataConnection.send({ "key": key, "value": value });
-                }
-                else {
-                    var dataConnection_1 = peer.connect(id);
-                    connections[dataConnection_1.peer] = dataConnection_1;
+                var dataConnection_1 = connections[id];
+                if (!dataConnection_1 || !dataConnection_1.open) {
+                    dataConnection_1 = peer.connect(id);
                     dataConnection_1.on('open', function () {
-                        dataConnection_1.send({ "key": key, "value": value });
-                        dataConnection_1.on('data', function (data) {
-                            pxsim.console.log(data["key"]);
-                            pxsim.board().bus.queue(data["key"], 0x1);
-                        });
+                        initDataConnectionCallbacks(dataConnection_1);
                     });
                 }
+                dataConnection_1.send({ "key": key, "value": value });
             }
         }
         messaging.send = send;
@@ -124,7 +119,10 @@ var pxsim;
         //% weight=100
         function connect(id) {
             if (peer) {
-                var conn = peer.connect(id);
+                var dataConnection_2 = peer.connect(id);
+                dataConnection_2.on('open', function () {
+                    initDataConnectionCallbacks(dataConnection_2);
+                });
             }
         }
         messaging.connect = connect;
