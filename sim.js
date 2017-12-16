@@ -47,8 +47,100 @@ var pxsim;
         console.log = log;
     })(console = pxsim.console || (pxsim.console = {}));
 })(pxsim || (pxsim = {}));
+var pxsim;
+(function (pxsim) {
+    var messaging;
+    (function (messaging) {
+        var peer = null;
+        var connections = {};
+        var script = document.createElement('script');
+        script.onload = function () {
+            initializePeer();
+        };
+        script.src = "/sim/peer.min.js";
+        document.head.appendChild(script);
+        function updateUserId(id) {
+            document.getElementById('userid').innerHTML = 'Your user id is: ' + id.toString();
+        }
+        function initDataConnectionCallbacks(conn) {
+            connections[conn.peer] = conn;
+            conn.on('data', function (data) {
+                pxsim.board().bus.queue(data["key"], 0x1);
+            });
+            conn.on('close', function () { connections[conn.peer] = undefined; });
+            conn.on('error', function () { connections[conn.peer] = undefined; });
+        }
+        function initializePeer() {
+            /* Create instance of PeerJS */
+            peer = new Peer({
+                host: 'liminal-jam.herokuapp.com',
+                secure: true,
+                port: 443,
+                key: 'peerjs',
+                debug: 3 });
+            /* Received user ID from server */
+            if (peer)
+                peer.on('open', function (id) { updateUserId(id); });
+            else
+                initializePeer();
+            if (peer)
+                peer.on('close', function () { peer = null; });
+            else
+                initializePeer();
+            if (peer)
+                peer.on('disconnected', function () { peer = null; });
+            else
+                initializePeer();
+            if (peer)
+                peer.on('error', function (err) { peer = null; });
+            else
+                initializePeer();
+            /* Successfully created data connection */
+            if (peer)
+                peer.on('connection', function (conn) { initDataConnectionCallbacks(conn); });
+            else
+                initializePeer();
+        }
+        /**
+         * Peer
+         * @param id The value of the marker
+         */
+        //% blockId=peer_block block="send key %key| value %value| to %id"
+        //% blockNamespace=messaging inBasicCategory=true
+        //% weight=100
+        function send(key, value, id) {
+            if (peer) {
+                var conn_1 = connections[id];
+                if (!conn_1 || !conn_1.open) {
+                    conn_1 = peer.connect(id);
+                    conn_1.on('open', function () {
+                        initDataConnectionCallbacks(conn_1);
+                    });
+                }
+                conn_1.send({ "key": key, "value": value });
+            }
+            else {
+                initializePeer();
+                send(key, value, id);
+            }
+        }
+        messaging.send = send;
+        /**
+         * Allows user to define callbacks for receive event
+         * @param key
+         */
+        //% blockId=peer_receive block="when I receive key %key|do" blockGap=8
+        //% blockNamespace=messaging inBasicCategory=true
+        //% weight=99    
+        function receive(key, handler) {
+            pxsim.board().bus.listen(key, 0x1, handler);
+        }
+        messaging.receive = receive;
+    })(messaging = pxsim.messaging || (pxsim.messaging = {}));
+})(pxsim || (pxsim = {}));
 /// <reference path="../node_modules/pxt-core/typings/globals/bluebird/index.d.ts"/>
 /// <reference path="../node_modules/pxt-core/built/pxtsim.d.ts"/>
+/// <reference path="../typings/globals/peerjs/index.d.ts" />
 /// <reference path="video.d.ts" />
 var pxsim;
 (function (pxsim) {
@@ -83,24 +175,40 @@ var pxsim;
     }(pxsim.BaseBoard));
     pxsim.Board = Board;
 })(pxsim || (pxsim = {}));
+/// <reference path="video.d.ts" />
 var pxsim;
 (function (pxsim) {
     var video;
     (function (video) {
         var player = null;
-        window.onYouTubeIframeAPIReady = function () {
-            player = new YT.Player('video-placeholder', {
-                width: 415,
-                height: 325,
-                videoId: '6v2L2UGZJAM',
-                playerVars: {
-                    color: 'white',
-                },
-                events: {
-                    onReady: initializePlayer
-                }
-            });
+        var script = document.createElement('script');
+        script.onload = function () {
+            window.onYouTubeIframeAPIReady = function () {
+                player = new YT.Player('video-placeholder', {
+                    width: 350,
+                    height: 250,
+                    videoId: '6v2L2UGZJAM',
+                    playerVars: {
+                        color: 'white',
+                    },
+                    events: {
+                        onReady: initializePlayer
+                    }
+                });
+            };
         };
+        script.src = "https://www.youtube.com/iframe_api";
+        document.head.appendChild(script);
+        window.addEventListener("resize", resizeVideo);
+        function resizeVideo() {
+            if (player) {
+                var iframe = player.getIframe();
+                var w = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+                var h = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+                iframe.setAttribute("width", w);
+                iframe.setAttribute("height", h);
+            }
+        }
         function initializePlayer() {
         }
         function resetVideo() {
@@ -119,8 +227,7 @@ var pxsim;
         //% weight=98
         //% blockNamespace=video inBasicCategory=true
         function setVideo(id) {
-            if (player)
-                player.cueVideoById(id);
+            player.cueVideoById(id);
         }
         video.setVideo = setVideo;
         /**
@@ -131,8 +238,7 @@ var pxsim;
         //% weight=98
         //% blockNamespace=video inBasicCategory=true
         function setSpeed(rate) {
-            if (player)
-                player.setPlaybackRate(rate);
+            player.setPlaybackRate(rate);
         }
         video.setSpeed = setSpeed;
         /**
@@ -142,9 +248,7 @@ var pxsim;
         //% weight=98
         //% blockNamespace=video inBasicCategory=true
         function getSpeed() {
-            if (player)
-                return player.getPlaybackRate();
-            return 0;
+            return player.getPlaybackRate();
         }
         video.getSpeed = getSpeed;
         /**
@@ -154,9 +258,10 @@ var pxsim;
         //% weight=98
         //% blockNamespace=video inBasicCategory=true
         function isPlaying() {
-            if (player && (player.getPlayerState() == 1))
+            if (player.getPlayerState() == 1)
                 return true;
-            return false;
+            else
+                return false;
         }
         video.isPlaying = isPlaying;
         /**
@@ -166,9 +271,7 @@ var pxsim;
         //% weight=98
         //% blockNamespace=video inBasicCategory=true
         function getCurrentTime() {
-            if (player)
-                return player.getCurrentTime();
-            return 0;
+            return player.getCurrentTime();
         }
         video.getCurrentTime = getCurrentTime;
         /**
@@ -178,9 +281,7 @@ var pxsim;
         //% weight=98
         //% blockNamespace=video inBasicCategory=true
         function getDuration() {
-            if (player)
-                return player.getDuration();
-            return 0;
+            return player.getDuration();
         }
         video.getDuration = getDuration;
         /**
@@ -190,9 +291,7 @@ var pxsim;
         //% weight=98
         //% blockNamespace=video inBasicCategory=true
         function getVolume() {
-            if (player)
-                return player.getVolume();
-            return 0;
+            return player.getVolume();
         }
         video.getVolume = getVolume;
         /**
@@ -202,9 +301,7 @@ var pxsim;
         //% weight=98
         //% blockNamespace=video inBasicCategory=true
         function isMuted() {
-            if (player)
-                return player.isMuted();
-            return false;
+            return player.isMuted();
         }
         video.isMuted = isMuted;
         /**
@@ -215,8 +312,7 @@ var pxsim;
         //% weight=98
         //% blockNamespace=video inBasicCategory=true
         function seek(time) {
-            if (player)
-                player.seekTo(time);
+            player.seekTo(time);
         }
         video.seek = seek;
         /**
@@ -227,10 +323,8 @@ var pxsim;
         //% weight=98
         //% blockNamespace=video inBasicCategory=true
         function rewind(value) {
-            if (player) {
-                var time = player.getCurrentTime();
-                player.seekTo(time - value);
-            }
+            var time = player.getCurrentTime();
+            player.seekTo(time - value);
         }
         video.rewind = rewind;
         /**
@@ -241,10 +335,8 @@ var pxsim;
         //% weight=98
         //% blockNamespace=video inBasicCategory=true
         function fastforward(value) {
-            if (player) {
-                var time = player.getCurrentTime();
-                player.seekTo(time + value);
-            }
+            var time = player.getCurrentTime();
+            player.seekTo(time + value);
         }
         video.fastforward = fastforward;
         /**
@@ -255,8 +347,7 @@ var pxsim;
         //% weight=98
         //% blockNamespace=video inBasicCategory=true
         function setVolume(value) {
-            if (player)
-                player.setVolume(value);
+            player.setVolume(value);
         }
         video.setVolume = setVolume;
         /**
@@ -266,8 +357,7 @@ var pxsim;
         //% weight=98
         //% blockNamespace=video inBasicCategory=true
         function play() {
-            if (player)
-                player.playVideo();
+            player.playVideo();
         }
         video.play = play;
         /**
@@ -277,8 +367,7 @@ var pxsim;
         //% weight=98
         //% blockNamespace=video inBasicCategory=true
         function pause() {
-            if (player)
-                player.pauseVideo();
+            player.pauseVideo();
         }
         video.pause = pause;
         /**
@@ -288,8 +377,7 @@ var pxsim;
         //% weight=98
         //% blockNamespace=video inBasicCategory=true
         function stop() {
-            if (player)
-                player.stopVideo();
+            player.stopVideo();
         }
         video.stop = stop;
         /**
@@ -299,8 +387,7 @@ var pxsim;
         //% weight=98
         //% blockNamespace=video inBasicCategory=true
         function mute() {
-            if (player)
-                player.mute();
+            player.mute();
         }
         video.mute = mute;
         /**
@@ -310,8 +397,7 @@ var pxsim;
         //% weight=98
         //% blockNamespace=video inBasicCategory=true
         function unmute() {
-            if (player)
-                player.unMute();
+            player.unMute();
         }
         video.unmute = unmute;
     })(video = pxsim.video || (pxsim.video = {}));
