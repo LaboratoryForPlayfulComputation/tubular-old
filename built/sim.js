@@ -81,7 +81,8 @@ var pxsim;
             peer.on('connection', function (dataConnection) {
                 connections[dataConnection.peer] = dataConnection;
                 dataConnection.on('data', function (data) {
-                    pxsim.console.log(data);
+                    pxsim.console.log(data["key"]);
+                    pxsim.board().bus.queue(data['key'], 0x1);
                 });
                 dataConnection.on('close', function () { });
                 dataConnection.on('error', function () { });
@@ -98,15 +99,16 @@ var pxsim;
             if (peer) {
                 var dataConnection = connections[id];
                 if (dataConnection && dataConnection.open) {
-                    dataConnection.send("hey hey heyyyy");
+                    dataConnection.send({ "key": key, "value": value });
                 }
                 else {
                     var dataConnection_1 = peer.connect(id);
                     connections[dataConnection_1.peer] = dataConnection_1;
                     dataConnection_1.on('open', function () {
-                        dataConnection_1.send("hey hey heyyyy");
+                        dataConnection_1.send({ "key": key, "value": value });
                         dataConnection_1.on('data', function (data) {
-                            pxsim.console.log(data);
+                            pxsim.console.log(data["key"]);
+                            pxsim.board().bus.queue(data["key"], 0x1);
                         });
                     });
                 }
@@ -134,8 +136,7 @@ var pxsim;
         //% blockNamespace=messaging inBasicCategory=true
         //% weight=99    
         function receive(key, handler) {
-            var event = 0x1;
-            pxsim.board().bus.listen(key, event, handler);
+            pxsim.board().bus.listen(key, 0x1, handler);
         }
         messaging.receive = receive;
     })(messaging = pxsim.messaging || (pxsim.messaging = {}));
