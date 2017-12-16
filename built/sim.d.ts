@@ -29,11 +29,6 @@ declare namespace pxsim.messaging {
      */
     function send(key: string, value: number, id: string): void;
     /**
-     * Peer
-     * @param id The value of the marker
-     */
-    function connect(id: string): void;
-    /**
      * Allows user to define callbacks for receive event
      * @param key
      */

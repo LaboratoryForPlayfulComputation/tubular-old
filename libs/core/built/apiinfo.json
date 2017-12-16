@@ -2437,40 +2437,6 @@
    "snippet": "send(\"\", 0, \"\")",
    "qName": "messaging.send"
   },
-  "messaging.connect": {
-   "kind": 3,
-   "namespace": "messaging",
-   "name": "connect",
-   "attributes": {
-    "paramDefl": {},
-    "callingConvention": 0,
-    "_source": null,
-    "blockId": "peer_conn_block",
-    "block": "connect to %id",
-    "blockNamespace": "messaging",
-    "inBasicCategory": "true",
-    "weight": 100,
-    "shim": "messaging::connect",
-    "paramHelp": {
-     "id": "The value of the marker"
-    },
-    "jsDoc": "Peer",
-    "_name": "connect"
-   },
-   "pkg": null,
-   "retType": "void",
-   "parameters": [
-    {
-     "name": "id",
-     "description": "The value of the marker",
-     "type": "string",
-     "options": {},
-     "isEnum": false
-    }
-   ],
-   "snippet": "connect(\"\")",
-   "qName": "messaging.connect"
-  },
   "messaging.receive": {
    "kind": 3,
    "namespace": "messaging",

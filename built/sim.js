@@ -126,26 +126,6 @@ var pxsim;
         }
         messaging.send = send;
         /**
-         * Peer
-         * @param id The value of the marker
-         */
-        //% blockId=peer_conn_block block="connect to %id"
-        //% blockNamespace=messaging inBasicCategory=true
-        //% weight=100
-        function connect(id) {
-            if (peer) {
-                var conn_2 = peer.connect(id);
-                conn_2.on('open', function () {
-                    initDataConnectionCallbacks(conn_2);
-                });
-            }
-            else {
-                initializePeer();
-                connect(id);
-            }
-        }
-        messaging.connect = connect;
-        /**
          * Allows user to define callbacks for receive event
          * @param key
          */

@@ -23,7 +23,6 @@
   "loops.forever|block": "forever",
   "loops.pause|block": "pause (ms) %pause",
   "loops|block": "loops",
-  "messaging.connect|block": "connect to %id",
   "messaging.receive|block": "when I receive key %key|do",
   "messaging.send|block": "send key %key| value %value| to %id",
   "messaging|block": "messaging",
