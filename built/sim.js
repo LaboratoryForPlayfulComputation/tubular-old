@@ -62,13 +62,13 @@ var pxsim;
         function updateUserId(id) {
             document.getElementById('userid').innerHTML = 'Your user id is: ' + id.toString();
         }
-        function initDataConnectionCallbacks(dataConnection) {
-            connections[dataConnection.peer] = dataConnection;
-            dataConnection.on('data', function (data) {
+        function initDataConnectionCallbacks(conn) {
+            connections[conn.peer] = conn;
+            conn.on('data', function (data) {
                 pxsim.board().bus.queue(data["key"], 0x1);
             });
-            dataConnection.on('close', function () { connections[dataConnection.peer] = undefined; });
-            dataConnection.on('error', function () { connections[dataConnection.peer] = undefined; });
+            conn.on('close', function () { connections[conn.peer] = undefined; });
+            conn.on('error', function () { connections[conn.peer] = undefined; });
         }
         function initializePeer() {
             /* Create instance of PeerJS */
@@ -79,16 +79,27 @@ var pxsim;
                 key: 'peerjs',
                 debug: 3 });
             /* Received user ID from server */
-            peer.on('open', function (id) {
-                updateUserId(id);
-            });
-            peer.on('close', function () { });
-            peer.on('disconnected', function () { });
-            peer.on('error', function (err) { });
+            if (peer)
+                peer.on('open', function (id) { updateUserId(id); });
+            else
+                initializePeer();
+            if (peer)
+                peer.on('close', function () { peer = null; });
+            else
+                initializePeer();
+            if (peer)
+                peer.on('disconnected', function () { peer = null; });
+            else
+                initializePeer();
+            if (peer)
+                peer.on('error', function (err) { peer = null; });
+            else
+                initializePeer();
             /* Successfully created data connection */
-            peer.on('connection', function (dataConnection) {
-                initDataConnectionCallbacks(dataConnection);
-            });
+            if (peer)
+                peer.on('connection', function (conn) { initDataConnectionCallbacks(conn); });
+            else
+                initializePeer();
         }
         /**
          * Peer
@@ -99,14 +110,18 @@ var pxsim;
         //% weight=100
         function send(key, value, id) {
             if (peer) {
-                var dataConnection_1 = connections[id];
-                if (!dataConnection_1 || !dataConnection_1.open) {
-                    dataConnection_1 = peer.connect(id);
-                    dataConnection_1.on('open', function () {
-                        initDataConnectionCallbacks(dataConnection_1);
+                var conn_1 = connections[id];
+                if (!conn_1 || !conn_1.open) {
+                    conn_1 = peer.connect(id);
+                    conn_1.on('open', function () {
+                        initDataConnectionCallbacks(conn_1);
                     });
                 }
-                dataConnection_1.send({ "key": key, "value": value });
+                conn_1.send({ "key": key, "value": value });
+            }
+            else {
+                initializePeer();
+                send(key, value, id);
             }
         }
         messaging.send = send;
@@ -119,10 +134,14 @@ var pxsim;
         //% weight=100
         function connect(id) {
             if (peer) {
-                var dataConnection_2 = peer.connect(id);
-                dataConnection_2.on('open', function () {
-                    initDataConnectionCallbacks(dataConnection_2);
+                var conn_2 = peer.connect(id);
+                conn_2.on('open', function () {
+                    initDataConnectionCallbacks(conn_2);
                 });
+            }
+            else {
+                initializePeer();
+                connect(id);
             }
         }
         messaging.connect = connect;
