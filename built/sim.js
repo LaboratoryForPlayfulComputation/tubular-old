@@ -60,7 +60,8 @@ var pxsim;
         script.src = "https://cdnjs.cloudflare.com/ajax/libs/peerjs/0.3.14/peer.js";
         document.head.appendChild(script);
         function updateUserId(id) {
-            document.getElementById('userid').innerHTML = 'User ID: ' + id.toString();
+            var userId = parent.document.getElementById("userid");
+            userId.value = id.toString();
         }
         function initDataConnectionCallbacks(conn) {
             connections[conn.peer] = conn;
@@ -84,15 +85,15 @@ var pxsim;
             else
                 initializePeer();
             if (peer)
-                peer.on('close', function () { peer = null; initializePeer(); });
+                peer.on('close', function () { });
             else
                 initializePeer();
             if (peer)
-                peer.on('disconnected', function () { peer = null; initializePeer(); });
+                peer.on('disconnected', function () { });
             else
                 initializePeer();
             if (peer)
-                peer.on('error', function (err) { peer = null; initializePeer(); });
+                peer.on('error', function (err) { });
             else
                 initializePeer();
             /* Successfully created data connection */
