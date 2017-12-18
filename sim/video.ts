@@ -7,9 +7,13 @@ namespace pxsim.video {
     var script = document.createElement('script');
     script.onload = function () {
         (window as any).onYouTubeIframeAPIReady = function() {
+            let w = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+            let h = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;  
+            let heightOffset = 40;          
+            let widthOffset = 15;          
             player = new YT.Player('video-placeholder', {
-                width: 350,
-                height: 250,
+                width: w - widthOffset,
+                height: h - heightOffset,
                 videoId: '6v2L2UGZJAM',
                 playerVars: {
                     color: 'white',
@@ -30,8 +34,10 @@ namespace pxsim.video {
             let iframe = player.getIframe();
             let w = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
             let h = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
-            iframe.setAttribute("width", w);
-            iframe.setAttribute("height", h);
+            let heightOffset = 40;          
+            let widthOffset = 15;              
+            iframe.setAttribute("width", w - widthOffset);
+            iframe.setAttribute("height", h - heightOffset);
         }
     }
 

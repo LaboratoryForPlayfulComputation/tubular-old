@@ -60,7 +60,7 @@ var pxsim;
         script.src = "https://cdnjs.cloudflare.com/ajax/libs/peerjs/0.3.14/peer.js";
         document.head.appendChild(script);
         function updateUserId(id) {
-            document.getElementById('userid').innerHTML = 'Your user id is: ' + id.toString();
+            document.getElementById('userid').innerHTML = 'User ID: ' + id.toString();
         }
         function initDataConnectionCallbacks(conn) {
             connections[conn.peer] = conn;
@@ -84,15 +84,15 @@ var pxsim;
             else
                 initializePeer();
             if (peer)
-                peer.on('close', function () { peer = null; });
+                peer.on('close', function () { peer = null; initializePeer(); });
             else
                 initializePeer();
             if (peer)
-                peer.on('disconnected', function () { peer = null; });
+                peer.on('disconnected', function () { peer = null; initializePeer(); });
             else
                 initializePeer();
             if (peer)
-                peer.on('error', function (err) { peer = null; });
+                peer.on('error', function (err) { peer = null; initializePeer(); });
             else
                 initializePeer();
             /* Successfully created data connection */
@@ -184,9 +184,13 @@ var pxsim;
         var script = document.createElement('script');
         script.onload = function () {
             window.onYouTubeIframeAPIReady = function () {
+                var w = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+                var h = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+                var heightOffset = 40;
+                var widthOffset = 15;
                 player = new YT.Player('video-placeholder', {
-                    width: 350,
-                    height: 250,
+                    width: w - widthOffset,
+                    height: h - heightOffset,
                     videoId: '6v2L2UGZJAM',
                     playerVars: {
                         color: 'white',
@@ -205,8 +209,10 @@ var pxsim;
                 var iframe = player.getIframe();
                 var w = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
                 var h = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
-                iframe.setAttribute("width", w);
-                iframe.setAttribute("height", h);
+                var heightOffset = 40;
+                var widthOffset = 15;
+                iframe.setAttribute("width", w - widthOffset);
+                iframe.setAttribute("height", h - heightOffset);
             }
         }
         function initializePlayer() {

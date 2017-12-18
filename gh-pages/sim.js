@@ -84,15 +84,15 @@ var pxsim;
             else
                 initializePeer();
             if (peer)
-                peer.on('close', function () { peer = null; });
+                peer.on('close', function () { peer = null; initializePeer(); });
             else
                 initializePeer();
             if (peer)
-                peer.on('disconnected', function () { peer = null; });
+                peer.on('disconnected', function () { peer = null; initializePeer(); });
             else
                 initializePeer();
             if (peer)
-                peer.on('error', function (err) { peer = null; });
+                peer.on('error', function (err) { peer = null; initializePeer(); });
             else
                 initializePeer();
             /* Successfully created data connection */

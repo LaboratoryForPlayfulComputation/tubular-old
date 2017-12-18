@@ -11,7 +11,7 @@ namespace pxsim.messaging {
         document.head.appendChild(script);
 
         function updateUserId(id : string){
-            document.getElementById('userid').innerHTML = 'Your user id is: ' + id.toString();
+            document.getElementById('userid').innerHTML = 'User ID: ' + id.toString();
         }
 
         function initDataConnectionCallbacks(conn: PeerJs.DataConnection){
