@@ -116,6 +116,7 @@ var pxsim;
                     conn_1 = peer.connect(id);
                     conn_1.on('open', function () {
                         initDataConnectionCallbacks(conn_1);
+                        conn_1.send({ "key": key, "value": value });
                     });
                 }
                 conn_1.send({ "key": key, "value": value });
