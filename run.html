@@ -85,7 +85,7 @@
     "workerjs": "/tubular/worker.js",
     "tdworkerjs": "/tubular/tdworker.js",
     "monacoworkerjs": "/tubular/monacoworker.js",
-    "pxtVersion": "2.0.10",
+    "pxtVersion": "2.4.3",
     "pxtRelId": "",
     "pxtCdnUrl": "/tubular/",
     "commitCdnUrl": "/tubular/",
@@ -94,6 +94,7 @@
     "targetVersion": "0.0.0",
     "targetRelId": "",
     "targetUrl": "",
+    "targetId": "Tubular",
     "simUrl": "/tubular/simulator.html",
     "partsUrl": "/tubular/siminstructions.html",
     "runUrl": "/tubular/run.html",
@@ -116,9 +117,16 @@
 
         if (!id && !code && !debugSim) {
             console.error("missing id or code");
-            loading.innerText = 'Oops, wrong arguments...';
+            loading.textContent = 'Oops, wrong arguments...';
             return;
         }
+
+        function initAppCache() {
+            window.applicationCache.addEventListener('updateready', () => {
+                window.location.reload();
+            });
+        }
+        initAppCache();
 
         ksRunnerReady(function() {
             var theme = pxt.appTarget.appTheme;

@@ -256,6 +256,9 @@
      Fonts
 --------------------*/
 /*-------------------
+   Links
+--------------------*/
+/*-------------------
    Breakpoints
 --------------------*/
 /*
@@ -265,6 +268,18 @@
 @largeMonitorBreakpoint      : unit( (99 * @emSize), px);
 @widescreenMonitorBreakpoint : unit( (119 * @emSize), px);
 */
+/*--------------
+   Form Input
+---------------*/
+/*-------------------
+     Neutral Text
+--------------------*/
+/*******************************
+             States
+*******************************/
+/*-------------------
+      Disabled
+--------------------*/
 /*******************************
      PXT Variables
 *******************************/
@@ -1207,6 +1222,9 @@ template {
      Fonts
 --------------------*/
 /*-------------------
+   Links
+--------------------*/
+/*-------------------
    Breakpoints
 --------------------*/
 /*
@@ -1216,6 +1234,18 @@ template {
 @largeMonitorBreakpoint      : unit( (99 * @emSize), px);
 @widescreenMonitorBreakpoint : unit( (119 * @emSize), px);
 */
+/*--------------
+   Form Input
+---------------*/
+/*-------------------
+     Neutral Text
+--------------------*/
+/*******************************
+             States
+*******************************/
+/*-------------------
+      Disabled
+--------------------*/
 /*******************************
      PXT Variables
 *******************************/
@@ -1251,6 +1281,9 @@ template {
      Fonts
 --------------------*/
 /*-------------------
+   Links
+--------------------*/
+/*-------------------
    Breakpoints
 --------------------*/
 /*
@@ -1260,6 +1293,18 @@ template {
 @largeMonitorBreakpoint      : unit( (99 * @emSize), px);
 @widescreenMonitorBreakpoint : unit( (119 * @emSize), px);
 */
+/*--------------
+   Form Input
+---------------*/
+/*-------------------
+     Neutral Text
+--------------------*/
+/*******************************
+             States
+*******************************/
+/*-------------------
+      Disabled
+--------------------*/
 /*******************************
      PXT Variables
 *******************************/
@@ -1526,6 +1571,9 @@ template {
      Fonts
 --------------------*/
 /*-------------------
+   Links
+--------------------*/
+/*-------------------
    Breakpoints
 --------------------*/
 /*
@@ -1535,6 +1583,18 @@ template {
 @largeMonitorBreakpoint      : unit( (99 * @emSize), px);
 @widescreenMonitorBreakpoint : unit( (119 * @emSize), px);
 */
+/*--------------
+   Form Input
+---------------*/
+/*-------------------
+     Neutral Text
+--------------------*/
+/*******************************
+             States
+*******************************/
+/*-------------------
+      Disabled
+--------------------*/
 /*******************************
      PXT Variables
 *******************************/
@@ -1630,7 +1690,7 @@ body {
   min-width: 320px;
   background: #F9F9F9;
   font-family: "Roboto Mono", serif;
-  font-size: 14px;
+  font-size: 12pt;
   line-height: 1.4285em;
   color: rgba(0, 0, 0, 0.87);
   font-smoothing: antialiased;
@@ -1696,11 +1756,11 @@ p:last-child {
         Links
 --------------------*/
 a {
-  color: #4183C4;
+  color: #004d99;
   text-decoration: none;
 }
 a:hover {
-  color: #1e70bf;
+  color: #004182;
   text-decoration: none;
 }
 /*******************************
@@ -2024,6 +2084,9 @@ body .ui.inverted::-webkit-scrollbar-thumb:hover {
      Fonts
 --------------------*/
 /*-------------------
+   Links
+--------------------*/
+/*-------------------
    Breakpoints
 --------------------*/
 /*
@@ -2033,6 +2096,18 @@ body .ui.inverted::-webkit-scrollbar-thumb:hover {
 @largeMonitorBreakpoint      : unit( (99 * @emSize), px);
 @widescreenMonitorBreakpoint : unit( (119 * @emSize), px);
 */
+/*--------------
+   Form Input
+---------------*/
+/*-------------------
+     Neutral Text
+--------------------*/
+/*******************************
+             States
+*******************************/
+/*-------------------
+      Disabled
+--------------------*/
 /*******************************
      PXT Variables
 *******************************/
@@ -2390,7 +2465,7 @@ body .ui.inverted::-webkit-scrollbar-thumb:hover {
 .ui.disabled.button:hover,
 .ui.disabled.active.button {
   cursor: default;
-  opacity: 0.45 !important;
+  opacity: 0.8 !important;
   background-image: none !important;
   box-shadow: none !important;
   pointer-events: none !important;
@@ -3077,7 +3152,7 @@ body .ui.inverted::-webkit-scrollbar-thumb:hover {
   width: 1.8em;
   height: 1.8em;
   line-height: 1.8em;
-  color: rgba(0, 0, 0, 0.4);
+  color: rgba(0, 0, 0, 0.68);
   font-style: normal;
   font-weight: bold;
   box-shadow: 0px 0px 0px 1px #DDDDDD inset;
@@ -5687,6 +5762,9 @@ body .ui.inverted::-webkit-scrollbar-thumb:hover {
      Fonts
 --------------------*/
 /*-------------------
+   Links
+--------------------*/
+/*-------------------
    Breakpoints
 --------------------*/
 /*
@@ -5696,6 +5774,18 @@ body .ui.inverted::-webkit-scrollbar-thumb:hover {
 @largeMonitorBreakpoint      : unit( (99 * @emSize), px);
 @widescreenMonitorBreakpoint : unit( (119 * @emSize), px);
 */
+/*--------------
+   Form Input
+---------------*/
+/*-------------------
+     Neutral Text
+--------------------*/
+/*******************************
+             States
+*******************************/
+/*-------------------
+      Disabled
+--------------------*/
 /*******************************
      PXT Variables
 *******************************/
@@ -5731,6 +5821,9 @@ body .ui.inverted::-webkit-scrollbar-thumb:hover {
      Fonts
 --------------------*/
 /*-------------------
+   Links
+--------------------*/
+/*-------------------
    Breakpoints
 --------------------*/
 /*
@@ -5740,6 +5833,18 @@ body .ui.inverted::-webkit-scrollbar-thumb:hover {
 @largeMonitorBreakpoint      : unit( (99 * @emSize), px);
 @widescreenMonitorBreakpoint : unit( (119 * @emSize), px);
 */
+/*--------------
+   Form Input
+---------------*/
+/*-------------------
+     Neutral Text
+--------------------*/
+/*******************************
+             States
+*******************************/
+/*-------------------
+      Disabled
+--------------------*/
 /*******************************
      PXT Variables
 *******************************/
@@ -6202,6 +6307,9 @@ body .ui.inverted::-webkit-scrollbar-thumb:hover {
      Fonts
 --------------------*/
 /*-------------------
+   Links
+--------------------*/
+/*-------------------
    Breakpoints
 --------------------*/
 /*
@@ -6211,6 +6319,18 @@ body .ui.inverted::-webkit-scrollbar-thumb:hover {
 @largeMonitorBreakpoint      : unit( (99 * @emSize), px);
 @widescreenMonitorBreakpoint : unit( (119 * @emSize), px);
 */
+/*--------------
+   Form Input
+---------------*/
+/*-------------------
+     Neutral Text
+--------------------*/
+/*******************************
+             States
+*******************************/
+/*-------------------
+      Disabled
+--------------------*/
 /*******************************
      PXT Variables
 *******************************/
@@ -6246,6 +6366,9 @@ body .ui.inverted::-webkit-scrollbar-thumb:hover {
      Fonts
 --------------------*/
 /*-------------------
+   Links
+--------------------*/
+/*-------------------
    Breakpoints
 --------------------*/
 /*
@@ -6255,6 +6378,18 @@ body .ui.inverted::-webkit-scrollbar-thumb:hover {
 @largeMonitorBreakpoint      : unit( (99 * @emSize), px);
 @widescreenMonitorBreakpoint : unit( (119 * @emSize), px);
 */
+/*--------------
+   Form Input
+---------------*/
+/*-------------------
+     Neutral Text
+--------------------*/
+/*******************************
+             States
+*******************************/
+/*-------------------
+      Disabled
+--------------------*/
 /*******************************
      PXT Variables
 *******************************/
@@ -6806,6 +6941,9 @@ body .ui.inverted::-webkit-scrollbar-thumb:hover {
      Fonts
 --------------------*/
 /*-------------------
+   Links
+--------------------*/
+/*-------------------
    Breakpoints
 --------------------*/
 /*
@@ -6815,6 +6953,18 @@ body .ui.inverted::-webkit-scrollbar-thumb:hover {
 @largeMonitorBreakpoint      : unit( (99 * @emSize), px);
 @widescreenMonitorBreakpoint : unit( (119 * @emSize), px);
 */
+/*--------------
+   Form Input
+---------------*/
+/*-------------------
+     Neutral Text
+--------------------*/
+/*******************************
+             States
+*******************************/
+/*-------------------
+      Disabled
+--------------------*/
 /*******************************
      PXT Variables
 *******************************/
@@ -6850,6 +7000,9 @@ body .ui.inverted::-webkit-scrollbar-thumb:hover {
      Fonts
 --------------------*/
 /*-------------------
+   Links
+--------------------*/
+/*-------------------
    Breakpoints
 --------------------*/
 /*
@@ -6859,6 +7012,18 @@ body .ui.inverted::-webkit-scrollbar-thumb:hover {
 @largeMonitorBreakpoint      : unit( (99 * @emSize), px);
 @widescreenMonitorBreakpoint : unit( (119 * @emSize), px);
 */
+/*--------------
+   Form Input
+---------------*/
+/*-------------------
+     Neutral Text
+--------------------*/
+/*******************************
+             States
+*******************************/
+/*-------------------
+      Disabled
+--------------------*/
 /*******************************
      PXT Variables
 *******************************/
@@ -7229,6 +7394,9 @@ i.flag:not(.icon):before {
      Fonts
 --------------------*/
 /*-------------------
+   Links
+--------------------*/
+/*-------------------
    Breakpoints
 --------------------*/
 /*
@@ -7238,6 +7406,18 @@ i.flag:not(.icon):before {
 @largeMonitorBreakpoint      : unit( (99 * @emSize), px);
 @widescreenMonitorBreakpoint : unit( (119 * @emSize), px);
 */
+/*--------------
+   Form Input
+---------------*/
+/*-------------------
+     Neutral Text
+--------------------*/
+/*******************************
+             States
+*******************************/
+/*-------------------
+      Disabled
+--------------------*/
 /*******************************
      PXT Variables
 *******************************/
@@ -7273,6 +7453,9 @@ i.flag:not(.icon):before {
      Fonts
 --------------------*/
 /*-------------------
+   Links
+--------------------*/
+/*-------------------
    Breakpoints
 --------------------*/
 /*
@@ -7282,6 +7465,18 @@ i.flag:not(.icon):before {
 @largeMonitorBreakpoint      : unit( (99 * @emSize), px);
 @widescreenMonitorBreakpoint : unit( (119 * @emSize), px);
 */
+/*--------------
+   Form Input
+---------------*/
+/*-------------------
+     Neutral Text
+--------------------*/
+/*******************************
+             States
+*******************************/
+/*-------------------
+      Disabled
+--------------------*/
 /*******************************
      PXT Variables
 *******************************/
@@ -7637,7 +7832,7 @@ h5.ui.header .sub.header {
             States
 *******************************/
 .ui.disabled.header {
-  opacity: 0.45;
+  opacity: 0.8;
 }
 /*******************************
            Variations
@@ -8259,6 +8454,9 @@ a.ui.inverted.grey.header:hover {
      Fonts
 --------------------*/
 /*-------------------
+   Links
+--------------------*/
+/*-------------------
    Breakpoints
 --------------------*/
 /*
@@ -8268,6 +8466,18 @@ a.ui.inverted.grey.header:hover {
 @largeMonitorBreakpoint      : unit( (99 * @emSize), px);
 @widescreenMonitorBreakpoint : unit( (119 * @emSize), px);
 */
+/*--------------
+   Form Input
+---------------*/
+/*-------------------
+     Neutral Text
+--------------------*/
+/*******************************
+             States
+*******************************/
+/*-------------------
+      Disabled
+--------------------*/
 /*******************************
      PXT Variables
 *******************************/
@@ -12001,6 +12211,9 @@ i.icon.times.rectangle.outline:before {
      Fonts
 --------------------*/
 /*-------------------
+   Links
+--------------------*/
+/*-------------------
    Breakpoints
 --------------------*/
 /*
@@ -12010,6 +12223,18 @@ i.icon.times.rectangle.outline:before {
 @largeMonitorBreakpoint      : unit( (99 * @emSize), px);
 @widescreenMonitorBreakpoint : unit( (119 * @emSize), px);
 */
+/*--------------
+   Form Input
+---------------*/
+/*-------------------
+     Neutral Text
+--------------------*/
+/*******************************
+             States
+*******************************/
+/*-------------------
+      Disabled
+--------------------*/
 /*******************************
      PXT Variables
 *******************************/
@@ -12045,6 +12270,9 @@ i.icon.times.rectangle.outline:before {
      Fonts
 --------------------*/
 /*-------------------
+   Links
+--------------------*/
+/*-------------------
    Breakpoints
 --------------------*/
 /*
@@ -12054,6 +12282,18 @@ i.icon.times.rectangle.outline:before {
 @largeMonitorBreakpoint      : unit( (99 * @emSize), px);
 @widescreenMonitorBreakpoint : unit( (119 * @emSize), px);
 */
+/*--------------
+   Form Input
+---------------*/
+/*-------------------
+     Neutral Text
+--------------------*/
+/*******************************
+             States
+*******************************/
+/*-------------------
+      Disabled
+--------------------*/
 /*******************************
      PXT Variables
 *******************************/
@@ -12194,7 +12434,7 @@ img.ui.image {
 .ui.disabled.images,
 .ui.disabled.image {
   cursor: default;
-  opacity: 0.45;
+  opacity: 0.8;
 }
 /*******************************
           Variations
@@ -12668,6 +12908,9 @@ img.ui.bordered.image {
      Fonts
 --------------------*/
 /*-------------------
+   Links
+--------------------*/
+/*-------------------
    Breakpoints
 --------------------*/
 /*
@@ -12677,6 +12920,18 @@ img.ui.bordered.image {
 @largeMonitorBreakpoint      : unit( (99 * @emSize), px);
 @widescreenMonitorBreakpoint : unit( (119 * @emSize), px);
 */
+/*--------------
+   Form Input
+---------------*/
+/*-------------------
+     Neutral Text
+--------------------*/
+/*******************************
+             States
+*******************************/
+/*-------------------
+      Disabled
+--------------------*/
 /*******************************
      PXT Variables
 *******************************/
@@ -12712,6 +12967,9 @@ img.ui.bordered.image {
      Fonts
 --------------------*/
 /*-------------------
+   Links
+--------------------*/
+/*-------------------
    Breakpoints
 --------------------*/
 /*
@@ -12721,6 +12979,18 @@ img.ui.bordered.image {
 @largeMonitorBreakpoint      : unit( (99 * @emSize), px);
 @widescreenMonitorBreakpoint : unit( (119 * @emSize), px);
 */
+/*--------------
+   Form Input
+---------------*/
+/*-------------------
+     Neutral Text
+--------------------*/
+/*******************************
+             States
+*******************************/
+/*-------------------
+      Disabled
+--------------------*/
 /*******************************
      PXT Variables
 *******************************/
@@ -12870,13 +13140,13 @@ img.ui.bordered.image {
 ---------------------*/
 /* browsers require these rules separate */
 .ui.input input::-webkit-input-placeholder {
-  color: rgba(191, 191, 191, 0.87);
+  color: rgba(64, 64, 64, 0.87);
 }
 .ui.input input::-moz-placeholder {
-  color: rgba(191, 191, 191, 0.87);
+  color: rgba(64, 64, 64, 0.87);
 }
 .ui.input input:-ms-input-placeholder {
-  color: rgba(191, 191, 191, 0.87);
+  color: rgba(64, 64, 64, 0.87);
 }
 /*******************************
             States
@@ -12886,7 +13156,7 @@ img.ui.bordered.image {
 ---------------------*/
 .ui.disabled.input,
 .ui.input:not(.disabled) input[disabled] {
-  opacity: 0.45;
+  opacity: 0.8;
 }
 .ui.disabled.input input,
 .ui.input:not(.disabled) input[disabled] {
@@ -12944,15 +13214,15 @@ img.ui.bordered.image {
 }
 .ui.input.focus input::-webkit-input-placeholder,
 .ui.input input:focus::-webkit-input-placeholder {
-  color: rgba(115, 115, 115, 0.87);
+  color: rgba(26, 26, 26, 0.87);
 }
 .ui.input.focus input::-moz-placeholder,
 .ui.input input:focus::-moz-placeholder {
-  color: rgba(115, 115, 115, 0.87);
+  color: rgba(26, 26, 26, 0.87);
 }
 .ui.input.focus input:-ms-input-placeholder,
 .ui.input input:focus:-ms-input-placeholder {
-  color: rgba(115, 115, 115, 0.87);
+  color: rgba(26, 26, 26, 0.87);
 }
 /*--------------------
         Error
@@ -13016,13 +13286,13 @@ img.ui.bordered.image {
   color: inherit;
 }
 .ui.transparent.inverted.input input::-webkit-input-placeholder {
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.8);
 }
 .ui.transparent.inverted.input input::-moz-placeholder {
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.8);
 }
 .ui.transparent.inverted.input input:-ms-input-placeholder {
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.8);
 }
 /*--------------------
          Icon
@@ -13507,6 +13777,9 @@ img.ui.bordered.image {
      Fonts
 --------------------*/
 /*-------------------
+   Links
+--------------------*/
+/*-------------------
    Breakpoints
 --------------------*/
 /*
@@ -13516,6 +13789,18 @@ img.ui.bordered.image {
 @largeMonitorBreakpoint      : unit( (99 * @emSize), px);
 @widescreenMonitorBreakpoint : unit( (119 * @emSize), px);
 */
+/*--------------
+   Form Input
+---------------*/
+/*-------------------
+     Neutral Text
+--------------------*/
+/*******************************
+             States
+*******************************/
+/*-------------------
+      Disabled
+--------------------*/
 /*******************************
      PXT Variables
 *******************************/
@@ -13551,6 +13836,9 @@ img.ui.bordered.image {
      Fonts
 --------------------*/
 /*-------------------
+   Links
+--------------------*/
+/*-------------------
    Breakpoints
 --------------------*/
 /*
@@ -13560,6 +13848,18 @@ img.ui.bordered.image {
 @largeMonitorBreakpoint      : unit( (99 * @emSize), px);
 @widescreenMonitorBreakpoint : unit( (119 * @emSize), px);
 */
+/*--------------
+   Form Input
+---------------*/
+/*-------------------
+     Neutral Text
+--------------------*/
+/*******************************
+             States
+*******************************/
+/*-------------------
+      Disabled
+--------------------*/
 /*******************************
      PXT Variables
 *******************************/
@@ -14598,7 +14898,7 @@ a.ui.basic.black.label:hover {
 a.ui.basic.label:hover {
   text-decoration: none;
   background: none #FFFFFF;
-  color: #1e70bf;
+  color: #004182;
   box-shadow: 1px solid rgba(34, 36, 38, 0.15);
   box-shadow: none;
 }
@@ -15051,6 +15351,9 @@ a.ui.basic.label:hover {
      Fonts
 --------------------*/
 /*-------------------
+   Links
+--------------------*/
+/*-------------------
    Breakpoints
 --------------------*/
 /*
@@ -15060,6 +15363,18 @@ a.ui.basic.label:hover {
 @largeMonitorBreakpoint      : unit( (99 * @emSize), px);
 @widescreenMonitorBreakpoint : unit( (119 * @emSize), px);
 */
+/*--------------
+   Form Input
+---------------*/
+/*-------------------
+     Neutral Text
+--------------------*/
+/*******************************
+             States
+*******************************/
+/*-------------------
+      Disabled
+--------------------*/
 /*******************************
      PXT Variables
 *******************************/
@@ -15095,6 +15410,9 @@ a.ui.basic.label:hover {
      Fonts
 --------------------*/
 /*-------------------
+   Links
+--------------------*/
+/*-------------------
    Breakpoints
 --------------------*/
 /*
@@ -15104,6 +15422,18 @@ a.ui.basic.label:hover {
 @largeMonitorBreakpoint      : unit( (99 * @emSize), px);
 @widescreenMonitorBreakpoint : unit( (119 * @emSize), px);
 */
+/*--------------
+   Form Input
+---------------*/
+/*-------------------
+     Neutral Text
+--------------------*/
+/*******************************
+             States
+*******************************/
+/*-------------------
+      Disabled
+--------------------*/
 /*******************************
      PXT Variables
 *******************************/
@@ -15397,26 +15727,26 @@ ol.ui.list ol li,
 .ui.list .list > a.item,
 .ui.list > a.item {
   cursor: pointer;
-  color: #4183C4;
+  color: #004d99;
 }
 .ui.list .list > a.item:hover,
 .ui.list > a.item:hover {
-  color: #1e70bf;
+  color: #004182;
 }
 /* Linked Item Icons */
 .ui.list .list > a.item i.icon,
 .ui.list > a.item i.icon {
-  color: rgba(0, 0, 0, 0.4);
+  color: rgba(0, 0, 0, 0.68);
 }
 /* Header Link */
 .ui.list .list > .item a.header,
 .ui.list > .item a.header {
   cursor: pointer;
-  color: #4183C4 !important;
+  color: #004d99 !important;
 }
 .ui.list .list > .item a.header:hover,
 .ui.list > .item a.header:hover {
-  color: #1e70bf !important;
+  color: #004182 !important;
 }
 /* Floated Content */
 .ui[class*="left floated"].list {
@@ -15538,7 +15868,7 @@ ol.ui.list ol li,
 --------------------*/
 .ui.inverted.list .list > a.item > .icon,
 .ui.inverted.list > a.item > .icon {
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.9);
 }
 .ui.inverted.list .list > .item .header,
 .ui.inverted.list > .item .header {
@@ -15546,7 +15876,7 @@ ol.ui.list ol li,
 }
 .ui.inverted.list .list > .item .description,
 .ui.inverted.list > .item .description {
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.9);
 }
 /* Item Link */
 .ui.inverted.list .list > a.item,
@@ -15556,14 +15886,14 @@ ol.ui.list ol li,
 }
 .ui.inverted.list .list > a.item:hover,
 .ui.inverted.list > a.item:hover {
-  color: #1e70bf;
+  color: #004182;
 }
 /* Linking Content */
 .ui.inverted.list .item a:not(.ui) {
   color: rgba(255, 255, 255, 0.9) !important;
 }
 .ui.inverted.list .item a:not(.ui):hover {
-  color: #1e70bf !important;
+  color: #004182 !important;
 }
 /*-------------------
        Aligned
@@ -15608,7 +15938,7 @@ ol.ui.list ol li,
 .ui.inverted.link.list .item,
 .ui.inverted.link.list a.item,
 .ui.inverted.link.list .item a:not(.ui) {
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.8);
 }
 .ui.inverted.link.list a.item:hover,
 .ui.inverted.link.list .item a:not(.ui):hover {
@@ -15658,7 +15988,7 @@ ol.ui.list ol li,
 .ui.inverted.selection.list > .item,
 .ui.inverted.selection.list > .item {
   background: transparent;
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.8);
 }
 .ui.inverted.selection.list > .item:hover,
 .ui.inverted.selection.list > .item:hover {
@@ -15797,7 +16127,7 @@ ol.ui.list li:before,
 ol.ui.inverted.list li:before,
 .ui.ordered.inverted.list .list > .item:before,
 .ui.ordered.inverted.list > .item:before {
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.9);
 }
 /* Value */
 .ui.ordered.list > .list > .item[data-value],
@@ -16326,6 +16656,9 @@ ol.ui.horizontal.list li:before,
      Fonts
 --------------------*/
 /*-------------------
+   Links
+--------------------*/
+/*-------------------
    Breakpoints
 --------------------*/
 /*
@@ -16335,6 +16668,18 @@ ol.ui.horizontal.list li:before,
 @largeMonitorBreakpoint      : unit( (99 * @emSize), px);
 @widescreenMonitorBreakpoint : unit( (119 * @emSize), px);
 */
+/*--------------
+   Form Input
+---------------*/
+/*-------------------
+     Neutral Text
+--------------------*/
+/*******************************
+             States
+*******************************/
+/*-------------------
+      Disabled
+--------------------*/
 /*******************************
      PXT Variables
 *******************************/
@@ -16370,6 +16715,9 @@ ol.ui.horizontal.list li:before,
      Fonts
 --------------------*/
 /*-------------------
+   Links
+--------------------*/
+/*-------------------
    Breakpoints
 --------------------*/
 /*
@@ -16379,6 +16727,18 @@ ol.ui.horizontal.list li:before,
 @largeMonitorBreakpoint      : unit( (99 * @emSize), px);
 @widescreenMonitorBreakpoint : unit( (119 * @emSize), px);
 */
+/*--------------
+   Form Input
+---------------*/
+/*-------------------
+     Neutral Text
+--------------------*/
+/*******************************
+             States
+*******************************/
+/*-------------------
+      Disabled
+--------------------*/
 /*******************************
      PXT Variables
 *******************************/
@@ -17074,6 +17434,9 @@ ol.ui.horizontal.list li:before,
      Fonts
 --------------------*/
 /*-------------------
+   Links
+--------------------*/
+/*-------------------
    Breakpoints
 --------------------*/
 /*
@@ -17083,6 +17446,18 @@ ol.ui.horizontal.list li:before,
 @largeMonitorBreakpoint      : unit( (99 * @emSize), px);
 @widescreenMonitorBreakpoint : unit( (119 * @emSize), px);
 */
+/*--------------
+   Form Input
+---------------*/
+/*-------------------
+     Neutral Text
+--------------------*/
+/*******************************
+             States
+*******************************/
+/*-------------------
+      Disabled
+--------------------*/
 /*******************************
      PXT Variables
 *******************************/
@@ -17118,6 +17493,9 @@ ol.ui.horizontal.list li:before,
      Fonts
 --------------------*/
 /*-------------------
+   Links
+--------------------*/
+/*-------------------
    Breakpoints
 --------------------*/
 /*
@@ -17127,6 +17505,18 @@ ol.ui.horizontal.list li:before,
 @largeMonitorBreakpoint      : unit( (99 * @emSize), px);
 @widescreenMonitorBreakpoint : unit( (119 * @emSize), px);
 */
+/*--------------
+   Form Input
+---------------*/
+/*-------------------
+     Neutral Text
+--------------------*/
+/*******************************
+             States
+*******************************/
+/*-------------------
+      Disabled
+--------------------*/
 /*******************************
      PXT Variables
 *******************************/
@@ -17594,6 +17984,9 @@ ol.ui.horizontal.list li:before,
      Fonts
 --------------------*/
 /*-------------------
+   Links
+--------------------*/
+/*-------------------
    Breakpoints
 --------------------*/
 /*
@@ -17603,6 +17996,18 @@ ol.ui.horizontal.list li:before,
 @largeMonitorBreakpoint      : unit( (99 * @emSize), px);
 @widescreenMonitorBreakpoint : unit( (119 * @emSize), px);
 */
+/*--------------
+   Form Input
+---------------*/
+/*-------------------
+     Neutral Text
+--------------------*/
+/*******************************
+             States
+*******************************/
+/*-------------------
+      Disabled
+--------------------*/
 /*******************************
      PXT Variables
 *******************************/
@@ -17638,6 +18043,9 @@ ol.ui.horizontal.list li:before,
      Fonts
 --------------------*/
 /*-------------------
+   Links
+--------------------*/
+/*-------------------
    Breakpoints
 --------------------*/
 /*
@@ -17647,6 +18055,18 @@ ol.ui.horizontal.list li:before,
 @largeMonitorBreakpoint      : unit( (99 * @emSize), px);
 @widescreenMonitorBreakpoint : unit( (119 * @emSize), px);
 */
+/*--------------
+   Form Input
+---------------*/
+/*-------------------
+     Neutral Text
+--------------------*/
+/*******************************
+             States
+*******************************/
+/*-------------------
+      Disabled
+--------------------*/
 /*******************************
      PXT Variables
 *******************************/
@@ -18196,6 +18616,9 @@ ol.ui.horizontal.list li:before,
      Fonts
 --------------------*/
 /*-------------------
+   Links
+--------------------*/
+/*-------------------
    Breakpoints
 --------------------*/
 /*
@@ -18205,6 +18628,18 @@ ol.ui.horizontal.list li:before,
 @largeMonitorBreakpoint      : unit( (99 * @emSize), px);
 @widescreenMonitorBreakpoint : unit( (119 * @emSize), px);
 */
+/*--------------
+   Form Input
+---------------*/
+/*-------------------
+     Neutral Text
+--------------------*/
+/*******************************
+             States
+*******************************/
+/*-------------------
+      Disabled
+--------------------*/
 /*******************************
      PXT Variables
 *******************************/
@@ -18240,6 +18675,9 @@ ol.ui.horizontal.list li:before,
      Fonts
 --------------------*/
 /*-------------------
+   Links
+--------------------*/
+/*-------------------
    Breakpoints
 --------------------*/
 /*
@@ -18249,6 +18687,18 @@ ol.ui.horizontal.list li:before,
 @largeMonitorBreakpoint      : unit( (99 * @emSize), px);
 @widescreenMonitorBreakpoint : unit( (119 * @emSize), px);
 */
+/*--------------
+   Form Input
+---------------*/
+/*-------------------
+     Neutral Text
+--------------------*/
+/*******************************
+             States
+*******************************/
+/*-------------------
+      Disabled
+--------------------*/
 /*******************************
      PXT Variables
 *******************************/
@@ -18702,7 +19152,7 @@ ol.ui.horizontal.list li:before,
     Disabled
 ---------------*/
 .ui.disabled.segment {
-  opacity: 0.45;
+  opacity: 0.8;
   color: rgba(40, 40, 40, 0.3);
 }
 /*--------------
@@ -19279,6 +19729,9 @@ ol.ui.horizontal.list li:before,
      Fonts
 --------------------*/
 /*-------------------
+   Links
+--------------------*/
+/*-------------------
    Breakpoints
 --------------------*/
 /*
@@ -19288,6 +19741,18 @@ ol.ui.horizontal.list li:before,
 @largeMonitorBreakpoint      : unit( (99 * @emSize), px);
 @widescreenMonitorBreakpoint : unit( (119 * @emSize), px);
 */
+/*--------------
+   Form Input
+---------------*/
+/*-------------------
+     Neutral Text
+--------------------*/
+/*******************************
+             States
+*******************************/
+/*-------------------
+      Disabled
+--------------------*/
 /*******************************
      PXT Variables
 *******************************/
@@ -19323,6 +19788,9 @@ ol.ui.horizontal.list li:before,
      Fonts
 --------------------*/
 /*-------------------
+   Links
+--------------------*/
+/*-------------------
    Breakpoints
 --------------------*/
 /*
@@ -19332,6 +19800,18 @@ ol.ui.horizontal.list li:before,
 @largeMonitorBreakpoint      : unit( (99 * @emSize), px);
 @widescreenMonitorBreakpoint : unit( (119 * @emSize), px);
 */
+/*--------------
+   Form Input
+---------------*/
+/*-------------------
+     Neutral Text
+--------------------*/
+/*******************************
+             States
+*******************************/
+/*-------------------
+      Disabled
+--------------------*/
 /*******************************
      PXT Variables
 *******************************/
@@ -19716,7 +20196,7 @@ ol.ui.horizontal.list li:before,
   background: #F3F4F5;
 }
 .ui.steps .step.active .title {
-  color: #4183C4;
+  color: #004d99;
 }
 .ui.ordered.steps .step.active:before,
 .ui.steps .active.step .icon {
@@ -20172,6 +20652,9 @@ ol.ui.horizontal.list li:before,
      Fonts
 --------------------*/
 /*-------------------
+   Links
+--------------------*/
+/*-------------------
    Breakpoints
 --------------------*/
 /*
@@ -20181,6 +20664,18 @@ ol.ui.horizontal.list li:before,
 @largeMonitorBreakpoint      : unit( (99 * @emSize), px);
 @widescreenMonitorBreakpoint : unit( (119 * @emSize), px);
 */
+/*--------------
+   Form Input
+---------------*/
+/*-------------------
+     Neutral Text
+--------------------*/
+/*******************************
+             States
+*******************************/
+/*-------------------
+      Disabled
+--------------------*/
 /*******************************
      PXT Variables
 *******************************/
@@ -20812,6 +21307,9 @@ ol.ui.horizontal.list li:before,
      Fonts
 --------------------*/
 /*-------------------
+   Links
+--------------------*/
+/*-------------------
    Breakpoints
 --------------------*/
 /*
@@ -20821,6 +21319,18 @@ ol.ui.horizontal.list li:before,
 @largeMonitorBreakpoint      : unit( (99 * @emSize), px);
 @widescreenMonitorBreakpoint : unit( (119 * @emSize), px);
 */
+/*--------------
+   Form Input
+---------------*/
+/*-------------------
+     Neutral Text
+--------------------*/
+/*******************************
+             States
+*******************************/
+/*-------------------
+      Disabled
+--------------------*/
 /*******************************
      PXT Variables
 *******************************/
@@ -22338,6 +22848,9 @@ ol.ui.horizontal.list li:before,
      Fonts
 --------------------*/
 /*-------------------
+   Links
+--------------------*/
+/*-------------------
    Breakpoints
 --------------------*/
 /*
@@ -22347,6 +22860,18 @@ ol.ui.horizontal.list li:before,
 @largeMonitorBreakpoint      : unit( (99 * @emSize), px);
 @widescreenMonitorBreakpoint : unit( (119 * @emSize), px);
 */
+/*--------------
+   Form Input
+---------------*/
+/*-------------------
+     Neutral Text
+--------------------*/
+/*******************************
+             States
+*******************************/
+/*-------------------
+      Disabled
+--------------------*/
 /*******************************
      PXT Variables
 *******************************/
@@ -22382,6 +22907,9 @@ ol.ui.horizontal.list li:before,
      Fonts
 --------------------*/
 /*-------------------
+   Links
+--------------------*/
+/*-------------------
    Breakpoints
 --------------------*/
 /*
@@ -22391,6 +22919,18 @@ ol.ui.horizontal.list li:before,
 @largeMonitorBreakpoint      : unit( (99 * @emSize), px);
 @widescreenMonitorBreakpoint : unit( (119 * @emSize), px);
 */
+/*--------------
+   Form Input
+---------------*/
+/*-------------------
+     Neutral Text
+--------------------*/
+/*******************************
+             States
+*******************************/
+/*-------------------
+      Disabled
+--------------------*/
 /*******************************
      PXT Variables
 *******************************/
@@ -24579,6 +25119,9 @@ ol.ui.horizontal.list li:before,
      Fonts
 --------------------*/
 /*-------------------
+   Links
+--------------------*/
+/*-------------------
    Breakpoints
 --------------------*/
 /*
@@ -24588,6 +25131,18 @@ ol.ui.horizontal.list li:before,
 @largeMonitorBreakpoint      : unit( (99 * @emSize), px);
 @widescreenMonitorBreakpoint : unit( (119 * @emSize), px);
 */
+/*--------------
+   Form Input
+---------------*/
+/*-------------------
+     Neutral Text
+--------------------*/
+/*******************************
+             States
+*******************************/
+/*-------------------
+      Disabled
+--------------------*/
 /*******************************
      PXT Variables
 *******************************/
@@ -24623,6 +25178,9 @@ ol.ui.horizontal.list li:before,
      Fonts
 --------------------*/
 /*-------------------
+   Links
+--------------------*/
+/*-------------------
    Breakpoints
 --------------------*/
 /*
@@ -24632,6 +25190,18 @@ ol.ui.horizontal.list li:before,
 @largeMonitorBreakpoint      : unit( (99 * @emSize), px);
 @widescreenMonitorBreakpoint : unit( (119 * @emSize), px);
 */
+/*--------------
+   Form Input
+---------------*/
+/*-------------------
+     Neutral Text
+--------------------*/
+/*******************************
+             States
+*******************************/
+/*-------------------
+      Disabled
+--------------------*/
 /*******************************
      PXT Variables
 *******************************/
@@ -25490,7 +26060,7 @@ Floated Menu / Item
 /* Inverted */
 .ui.secondary.inverted.menu .link.item,
 .ui.secondary.inverted.menu a.item {
-  color: rgba(255, 255, 255, 0.7) !important;
+  color: rgba(255, 255, 255, 0.9) !important;
 }
 .ui.secondary.inverted.menu .dropdown.item:hover,
 .ui.secondary.inverted.menu .link.item:hover,
@@ -25939,7 +26509,7 @@ Floated Menu / Item
 /* Sub Menu */
 .ui.vertical.inverted.menu .menu .item,
 .ui.vertical.inverted.menu .menu .item a:not(.ui) {
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.8);
 }
 /* Header */
 .ui.inverted.menu .header.item {
@@ -26511,6 +27081,13 @@ Floated Menu / Item
   margin-right: 0.25rem;
   padding: 0.6rem;
 }
+#menubar #accessibleMenu .ui.item.link {
+  height: 4rem;
+  min-height: 4rem !important;
+}
+#menubar #accessibleMenu .ui.item.link.inverted:hover {
+  background: #e74c3c;
+}
 @media only screen and (max-width: 991px) {
   #menubar .ui.menu {
     height: 3.5rem !important;
@@ -26527,9 +27104,17 @@ Floated Menu / Item
   .ui.menu .item > i.icon {
     margin: 0;
   }
+  #menubar #accessibleMenu .ui.item.link {
+    height: 3.5rem !important;
+    min-height: 3.5rem !important;
+  }
 }
 .ui.inverted.menu .active.item {
   background: rgba(255, 255, 255, 0.3);
+}
+.ui.vertical.menu .item > .label:hover,
+.ui.vertical.menu .item > .label:focus {
+  background: #6C6C6C;
 }
 /* Tutorial mode */
 .tutorial .ui.inverted.menu {
@@ -26787,6 +27372,9 @@ Floated Menu / Item
      Fonts
 --------------------*/
 /*-------------------
+   Links
+--------------------*/
+/*-------------------
    Breakpoints
 --------------------*/
 /*
@@ -26796,6 +27384,18 @@ Floated Menu / Item
 @largeMonitorBreakpoint      : unit( (99 * @emSize), px);
 @widescreenMonitorBreakpoint : unit( (119 * @emSize), px);
 */
+/*--------------
+   Form Input
+---------------*/
+/*-------------------
+     Neutral Text
+--------------------*/
+/*******************************
+             States
+*******************************/
+/*-------------------
+      Disabled
+--------------------*/
 /*******************************
      PXT Variables
 *******************************/
@@ -27760,6 +28360,9 @@ Floated Menu / Item
      Fonts
 --------------------*/
 /*-------------------
+   Links
+--------------------*/
+/*-------------------
    Breakpoints
 --------------------*/
 /*
@@ -27769,6 +28372,18 @@ Floated Menu / Item
 @largeMonitorBreakpoint      : unit( (99 * @emSize), px);
 @widescreenMonitorBreakpoint : unit( (119 * @emSize), px);
 */
+/*--------------
+   Form Input
+---------------*/
+/*-------------------
+     Neutral Text
+--------------------*/
+/*******************************
+             States
+*******************************/
+/*-------------------
+      Disabled
+--------------------*/
 /*******************************
      PXT Variables
 *******************************/
@@ -29342,6 +29957,9 @@ Floated Menu / Item
      Fonts
 --------------------*/
 /*-------------------
+   Links
+--------------------*/
+/*-------------------
    Breakpoints
 --------------------*/
 /*
@@ -29351,6 +29969,18 @@ Floated Menu / Item
 @largeMonitorBreakpoint      : unit( (99 * @emSize), px);
 @widescreenMonitorBreakpoint : unit( (119 * @emSize), px);
 */
+/*--------------
+   Form Input
+---------------*/
+/*-------------------
+     Neutral Text
+--------------------*/
+/*******************************
+             States
+*******************************/
+/*-------------------
+      Disabled
+--------------------*/
 /*******************************
      PXT Variables
 *******************************/
@@ -30084,6 +30714,9 @@ Floated Menu / Item
      Fonts
 --------------------*/
 /*-------------------
+   Links
+--------------------*/
+/*-------------------
    Breakpoints
 --------------------*/
 /*
@@ -30093,6 +30726,18 @@ Floated Menu / Item
 @largeMonitorBreakpoint      : unit( (99 * @emSize), px);
 @widescreenMonitorBreakpoint : unit( (119 * @emSize), px);
 */
+/*--------------
+   Form Input
+---------------*/
+/*-------------------
+     Neutral Text
+--------------------*/
+/*******************************
+             States
+*******************************/
+/*-------------------
+      Disabled
+--------------------*/
 /*******************************
      PXT Variables
 *******************************/
@@ -30128,6 +30773,9 @@ Floated Menu / Item
      Fonts
 --------------------*/
 /*-------------------
+   Links
+--------------------*/
+/*-------------------
    Breakpoints
 --------------------*/
 /*
@@ -30137,6 +30785,18 @@ Floated Menu / Item
 @largeMonitorBreakpoint      : unit( (99 * @emSize), px);
 @widescreenMonitorBreakpoint : unit( (119 * @emSize), px);
 */
+/*--------------
+   Form Input
+---------------*/
+/*-------------------
+     Neutral Text
+--------------------*/
+/*******************************
+             States
+*******************************/
+/*-------------------
+      Disabled
+--------------------*/
 /*******************************
      PXT Variables
 *******************************/
@@ -30476,7 +31136,7 @@ Floated Menu / Item
 .ui.cards > .card .meta,
 .ui.card .meta {
   font-size: 1em;
-  color: rgba(0, 0, 0, 0.4);
+  color: rgba(0, 0, 0, 0.68);
 }
 .ui.cards > .card .meta *,
 .ui.card .meta * {
@@ -30511,12 +31171,12 @@ Floated Menu / Item
 }
 .ui.cards > .card > .content > a.header:hover,
 .ui.card > .content > a.header:hover {
-  color: #1e70bf;
+  color: #004182;
 }
 /* Meta */
 .ui.cards > .card .meta > a:not(.ui),
 .ui.card .meta > a:not(.ui) {
-  color: rgba(0, 0, 0, 0.4);
+  color: rgba(0, 0, 0, 0.68);
 }
 .ui.cards > .card .meta > a:not(.ui):hover,
 .ui.card .meta > a:not(.ui):hover {
@@ -30593,7 +31253,7 @@ Floated Menu / Item
   padding: 0.75em 1em;
   top: 0em;
   left: 0em;
-  color: rgba(0, 0, 0, 0.4);
+  color: rgba(0, 0, 0, 0.68);
   box-shadow: none;
   transition: color 0.1s ease;
 }
@@ -30603,7 +31263,7 @@ Floated Menu / Item
 }
 .ui.cards > .card > .extra a:not(.ui):hover,
 .ui.card > .extra a:not(.ui):hover {
-  color: #1e70bf;
+  color: #004182;
 }
 /*******************************
            Variations
@@ -31351,6 +32011,9 @@ a.ui.card:hover,
      Fonts
 --------------------*/
 /*-------------------
+   Links
+--------------------*/
+/*-------------------
    Breakpoints
 --------------------*/
 /*
@@ -31360,6 +32023,18 @@ a.ui.card:hover,
 @largeMonitorBreakpoint      : unit( (99 * @emSize), px);
 @widescreenMonitorBreakpoint : unit( (119 * @emSize), px);
 */
+/*--------------
+   Form Input
+---------------*/
+/*-------------------
+     Neutral Text
+--------------------*/
+/*******************************
+             States
+*******************************/
+/*-------------------
+      Disabled
+--------------------*/
 /*******************************
      PXT Variables
 *******************************/
@@ -32142,6 +32817,9 @@ a.ui.card:hover,
      Fonts
 --------------------*/
 /*-------------------
+   Links
+--------------------*/
+/*-------------------
    Breakpoints
 --------------------*/
 /*
@@ -32151,6 +32829,18 @@ a.ui.card:hover,
 @largeMonitorBreakpoint      : unit( (99 * @emSize), px);
 @widescreenMonitorBreakpoint : unit( (119 * @emSize), px);
 */
+/*--------------
+   Form Input
+---------------*/
+/*-------------------
+     Neutral Text
+--------------------*/
+/*******************************
+             States
+*******************************/
+/*-------------------
+      Disabled
+--------------------*/
 /*******************************
      PXT Variables
 *******************************/
@@ -32961,6 +33651,9 @@ a.ui.card:hover,
      Fonts
 --------------------*/
 /*-------------------
+   Links
+--------------------*/
+/*-------------------
    Breakpoints
 --------------------*/
 /*
@@ -32970,6 +33663,18 @@ a.ui.card:hover,
 @largeMonitorBreakpoint      : unit( (99 * @emSize), px);
 @widescreenMonitorBreakpoint : unit( (119 * @emSize), px);
 */
+/*--------------
+   Form Input
+---------------*/
+/*-------------------
+     Neutral Text
+--------------------*/
+/*******************************
+             States
+*******************************/
+/*-------------------
+      Disabled
+--------------------*/
 /*******************************
      PXT Variables
 *******************************/
@@ -33935,6 +34640,9 @@ a.ui.card:hover,
      Fonts
 --------------------*/
 /*-------------------
+   Links
+--------------------*/
+/*-------------------
    Breakpoints
 --------------------*/
 /*
@@ -33944,6 +34652,18 @@ a.ui.card:hover,
 @largeMonitorBreakpoint      : unit( (99 * @emSize), px);
 @widescreenMonitorBreakpoint : unit( (119 * @emSize), px);
 */
+/*--------------
+   Form Input
+---------------*/
+/*-------------------
+     Neutral Text
+--------------------*/
+/*******************************
+             States
+*******************************/
+/*-------------------
+      Disabled
+--------------------*/
 /*******************************
      PXT Variables
 *******************************/
@@ -34988,6 +35708,9 @@ a.ui.card:hover,
      Fonts
 --------------------*/
 /*-------------------
+   Links
+--------------------*/
+/*-------------------
    Breakpoints
 --------------------*/
 /*
@@ -34997,6 +35720,18 @@ a.ui.card:hover,
 @largeMonitorBreakpoint      : unit( (99 * @emSize), px);
 @widescreenMonitorBreakpoint : unit( (119 * @emSize), px);
 */
+/*--------------
+   Form Input
+---------------*/
+/*-------------------
+     Neutral Text
+--------------------*/
+/*******************************
+             States
+*******************************/
+/*-------------------
+      Disabled
+--------------------*/
 /*******************************
      PXT Variables
 *******************************/
@@ -35754,6 +36489,9 @@ a.ui.card:hover,
      Fonts
 --------------------*/
 /*-------------------
+   Links
+--------------------*/
+/*-------------------
    Breakpoints
 --------------------*/
 /*
@@ -35763,6 +36501,18 @@ a.ui.card:hover,
 @largeMonitorBreakpoint      : unit( (99 * @emSize), px);
 @widescreenMonitorBreakpoint : unit( (119 * @emSize), px);
 */
+/*--------------
+   Form Input
+---------------*/
+/*-------------------
+     Neutral Text
+--------------------*/
+/*******************************
+             States
+*******************************/
+/*-------------------
+      Disabled
+--------------------*/
 /*******************************
      PXT Variables
 *******************************/
@@ -36856,6 +37606,9 @@ a.ui.card:hover,
      Fonts
 --------------------*/
 /*-------------------
+   Links
+--------------------*/
+/*-------------------
    Breakpoints
 --------------------*/
 /*
@@ -36865,6 +37618,18 @@ a.ui.card:hover,
 @largeMonitorBreakpoint      : unit( (99 * @emSize), px);
 @widescreenMonitorBreakpoint : unit( (119 * @emSize), px);
 */
+/*--------------
+   Form Input
+---------------*/
+/*-------------------
+     Neutral Text
+--------------------*/
+/*******************************
+             States
+*******************************/
+/*-------------------
+      Disabled
+--------------------*/
 /*******************************
      PXT Variables
 *******************************/
@@ -36900,6 +37665,9 @@ a.ui.card:hover,
      Fonts
 --------------------*/
 /*-------------------
+   Links
+--------------------*/
+/*-------------------
    Breakpoints
 --------------------*/
 /*
@@ -36909,6 +37677,18 @@ a.ui.card:hover,
 @largeMonitorBreakpoint      : unit( (99 * @emSize), px);
 @widescreenMonitorBreakpoint : unit( (119 * @emSize), px);
 */
+/*--------------
+   Form Input
+---------------*/
+/*-------------------
+     Neutral Text
+--------------------*/
+/*******************************
+             States
+*******************************/
+/*-------------------
+      Disabled
+--------------------*/
 /*******************************
      PXT Variables
 *******************************/
@@ -37417,6 +38197,9 @@ body.dimmable > .dimmer {
      Fonts
 --------------------*/
 /*-------------------
+   Links
+--------------------*/
+/*-------------------
    Breakpoints
 --------------------*/
 /*
@@ -37426,6 +38209,18 @@ body.dimmable > .dimmer {
 @largeMonitorBreakpoint      : unit( (99 * @emSize), px);
 @widescreenMonitorBreakpoint : unit( (119 * @emSize), px);
 */
+/*--------------
+   Form Input
+---------------*/
+/*-------------------
+     Neutral Text
+--------------------*/
+/*******************************
+             States
+*******************************/
+/*-------------------
+      Disabled
+--------------------*/
 /*******************************
      PXT Variables
 *******************************/
@@ -39341,6 +40136,9 @@ select.ui.dropdown {
      Fonts
 --------------------*/
 /*-------------------
+   Links
+--------------------*/
+/*-------------------
    Breakpoints
 --------------------*/
 /*
@@ -39350,6 +40148,18 @@ select.ui.dropdown {
 @largeMonitorBreakpoint      : unit( (99 * @emSize), px);
 @widescreenMonitorBreakpoint : unit( (119 * @emSize), px);
 */
+/*--------------
+   Form Input
+---------------*/
+/*-------------------
+     Neutral Text
+--------------------*/
+/*******************************
+             States
+*******************************/
+/*-------------------
+      Disabled
+--------------------*/
 /*******************************
      PXT Variables
 *******************************/
@@ -40027,6 +40837,9 @@ select.ui.dropdown {
      Fonts
 --------------------*/
 /*-------------------
+   Links
+--------------------*/
+/*-------------------
    Breakpoints
 --------------------*/
 /*
@@ -40036,6 +40849,18 @@ select.ui.dropdown {
 @largeMonitorBreakpoint      : unit( (99 * @emSize), px);
 @widescreenMonitorBreakpoint : unit( (119 * @emSize), px);
 */
+/*--------------
+   Form Input
+---------------*/
+/*-------------------
+     Neutral Text
+--------------------*/
+/*******************************
+             States
+*******************************/
+/*-------------------
+      Disabled
+--------------------*/
 /*******************************
      PXT Variables
 *******************************/
@@ -40071,6 +40896,9 @@ select.ui.dropdown {
      Fonts
 --------------------*/
 /*-------------------
+   Links
+--------------------*/
+/*-------------------
    Breakpoints
 --------------------*/
 /*
@@ -40080,6 +40908,18 @@ select.ui.dropdown {
 @largeMonitorBreakpoint      : unit( (99 * @emSize), px);
 @widescreenMonitorBreakpoint : unit( (119 * @emSize), px);
 */
+/*--------------
+   Form Input
+---------------*/
+/*-------------------
+     Neutral Text
+--------------------*/
+/*******************************
+             States
+*******************************/
+/*-------------------
+      Disabled
+--------------------*/
 /*******************************
      PXT Variables
 *******************************/
@@ -40934,6 +41774,9 @@ select.ui.dropdown {
      Fonts
 --------------------*/
 /*-------------------
+   Links
+--------------------*/
+/*-------------------
    Breakpoints
 --------------------*/
 /*
@@ -40943,6 +41786,18 @@ select.ui.dropdown {
 @largeMonitorBreakpoint      : unit( (99 * @emSize), px);
 @widescreenMonitorBreakpoint : unit( (119 * @emSize), px);
 */
+/*--------------
+   Form Input
+---------------*/
+/*-------------------
+     Neutral Text
+--------------------*/
+/*******************************
+             States
+*******************************/
+/*-------------------
+      Disabled
+--------------------*/
 /*******************************
      PXT Variables
 *******************************/
@@ -41615,6 +42470,9 @@ a.ui.nag {
      Fonts
 --------------------*/
 /*-------------------
+   Links
+--------------------*/
+/*-------------------
    Breakpoints
 --------------------*/
 /*
@@ -41624,6 +42482,18 @@ a.ui.nag {
 @largeMonitorBreakpoint      : unit( (99 * @emSize), px);
 @widescreenMonitorBreakpoint : unit( (119 * @emSize), px);
 */
+/*--------------
+   Form Input
+---------------*/
+/*-------------------
+     Neutral Text
+--------------------*/
+/*******************************
+             States
+*******************************/
+/*-------------------
+      Disabled
+--------------------*/
 /*******************************
      PXT Variables
 *******************************/
@@ -42820,6 +43690,9 @@ a.ui.nag {
      Fonts
 --------------------*/
 /*-------------------
+   Links
+--------------------*/
+/*-------------------
    Breakpoints
 --------------------*/
 /*
@@ -42829,6 +43702,18 @@ a.ui.nag {
 @largeMonitorBreakpoint      : unit( (99 * @emSize), px);
 @widescreenMonitorBreakpoint : unit( (119 * @emSize), px);
 */
+/*--------------
+   Form Input
+---------------*/
+/*-------------------
+     Neutral Text
+--------------------*/
+/*******************************
+             States
+*******************************/
+/*-------------------
+      Disabled
+--------------------*/
 /*******************************
      PXT Variables
 *******************************/
@@ -43820,6 +44705,9 @@ a.ui.nag {
      Fonts
 --------------------*/
 /*-------------------
+   Links
+--------------------*/
+/*-------------------
    Breakpoints
 --------------------*/
 /*
@@ -43829,6 +44717,18 @@ a.ui.nag {
 @largeMonitorBreakpoint      : unit( (99 * @emSize), px);
 @widescreenMonitorBreakpoint : unit( (119 * @emSize), px);
 */
+/*--------------
+   Form Input
+---------------*/
+/*-------------------
+     Neutral Text
+--------------------*/
+/*******************************
+             States
+*******************************/
+/*-------------------
+      Disabled
+--------------------*/
 /*******************************
      PXT Variables
 *******************************/
@@ -44577,6 +45477,9 @@ a.ui.nag {
      Fonts
 --------------------*/
 /*-------------------
+   Links
+--------------------*/
+/*-------------------
    Breakpoints
 --------------------*/
 /*
@@ -44586,6 +45489,18 @@ a.ui.nag {
 @largeMonitorBreakpoint      : unit( (99 * @emSize), px);
 @widescreenMonitorBreakpoint : unit( (119 * @emSize), px);
 */
+/*--------------
+   Form Input
+---------------*/
+/*-------------------
+     Neutral Text
+--------------------*/
+/*******************************
+             States
+*******************************/
+/*-------------------
+      Disabled
+--------------------*/
 /*******************************
      PXT Variables
 *******************************/
@@ -45493,6 +46408,9 @@ a.ui.nag {
      Fonts
 --------------------*/
 /*-------------------
+   Links
+--------------------*/
+/*-------------------
    Breakpoints
 --------------------*/
 /*
@@ -45502,6 +46420,18 @@ a.ui.nag {
 @largeMonitorBreakpoint      : unit( (99 * @emSize), px);
 @widescreenMonitorBreakpoint : unit( (119 * @emSize), px);
 */
+/*--------------
+   Form Input
+---------------*/
+/*-------------------
+     Neutral Text
+--------------------*/
+/*******************************
+             States
+*******************************/
+/*-------------------
+      Disabled
+--------------------*/
 /*******************************
      PXT Variables
 *******************************/
@@ -46147,6 +47077,9 @@ a.ui.nag {
      Fonts
 --------------------*/
 /*-------------------
+   Links
+--------------------*/
+/*-------------------
    Breakpoints
 --------------------*/
 /*
@@ -46156,6 +47089,18 @@ a.ui.nag {
 @largeMonitorBreakpoint      : unit( (99 * @emSize), px);
 @widescreenMonitorBreakpoint : unit( (119 * @emSize), px);
 */
+/*--------------
+   Form Input
+---------------*/
+/*-------------------
+     Neutral Text
+--------------------*/
+/*******************************
+             States
+*******************************/
+/*-------------------
+      Disabled
+--------------------*/
 /*******************************
      PXT Variables
 *******************************/
@@ -47149,6 +48094,9 @@ body.pushable > .pusher {
      Fonts
 --------------------*/
 /*-------------------
+   Links
+--------------------*/
+/*-------------------
    Breakpoints
 --------------------*/
 /*
@@ -47158,6 +48106,18 @@ body.pushable > .pusher {
 @largeMonitorBreakpoint      : unit( (99 * @emSize), px);
 @widescreenMonitorBreakpoint : unit( (119 * @emSize), px);
 */
+/*--------------
+   Form Input
+---------------*/
+/*-------------------
+     Neutral Text
+--------------------*/
+/*******************************
+             States
+*******************************/
+/*-------------------
+      Disabled
+--------------------*/
 /*******************************
      PXT Variables
 *******************************/
@@ -47733,6 +48693,9 @@ body.pushable > .pusher {
      Fonts
 --------------------*/
 /*-------------------
+   Links
+--------------------*/
+/*-------------------
    Breakpoints
 --------------------*/
 /*
@@ -47742,6 +48705,18 @@ body.pushable > .pusher {
 @largeMonitorBreakpoint      : unit( (99 * @emSize), px);
 @widescreenMonitorBreakpoint : unit( (119 * @emSize), px);
 */
+/*--------------
+   Form Input
+---------------*/
+/*-------------------
+     Neutral Text
+--------------------*/
+/*******************************
+             States
+*******************************/
+/*-------------------
+      Disabled
+--------------------*/
 /*******************************
      PXT Variables
 *******************************/
@@ -48333,6 +49308,9 @@ body.pushable > .pusher {
      Fonts
 --------------------*/
 /*-------------------
+   Links
+--------------------*/
+/*-------------------
    Breakpoints
 --------------------*/
 /*
@@ -48342,6 +49320,18 @@ body.pushable > .pusher {
 @largeMonitorBreakpoint      : unit( (99 * @emSize), px);
 @widescreenMonitorBreakpoint : unit( (119 * @emSize), px);
 */
+/*--------------
+   Form Input
+---------------*/
+/*-------------------
+     Neutral Text
+--------------------*/
+/*******************************
+             States
+*******************************/
+/*-------------------
+      Disabled
+--------------------*/
 /*******************************
      PXT Variables
 *******************************/
@@ -49779,10 +50769,6 @@ div.simframe > iframe {
   transition: margin-left 0.3s;
   transition-timing-function: ease-in;
 }
-.ui.inverted.menu.fixed .item.editor-menuitem :first-child[style*="display:none"] + .ui.inverted.menu.fixed .item.editor-menuitem :not([style*="display:none"]) {
-  border-top-left-radius: 0.2rem !important;
-  border-bottom-left-radius: 0.2rem !important;
-}
 .active.item.blocks-menuitem ~ .toggle {
   margin-left: 0 !important;
   box-shadow: 2px 0px 0px rgba(0, 0, 0, 0.1) !important;
@@ -49900,6 +50886,10 @@ div.simframe > iframe {
 .ui.label.betalabel {
   padding: 0.3em;
 }
+/* Experimental banner */
+#experimentalBanner {
+  z-index: 1000;
+}
 /*******************************
              Docs
 *******************************/
@@ -49953,210 +50943,32 @@ h6 {
 }
 .ui.modal.projectsdialog > .content {
   padding: 0 !important;
+  position: relative;
 }
 .ui.modal.projectsdialog .tabsegment {
   min-height: 450px;
   background: white !important;
 }
 /*******************************
-             Blockly
+        Modal Close Icon
 *******************************/
-/* Lower Z index for BlocklyWidgetDiv and grid picker tooltips */
-.blocklyWidgetDiv {
-  z-index: 105;
-}
-/* Set Z index of the Blockly scrollbars to be beneath the BlocklyWidgetDiv */
-.blocklyScrollbarHorizontal,
-.blocklyScrollbarVertical {
-  z-index: 8 !important;
-}
-.blocklyTooltipDiv {
-  border: none !important;
-  box-shadow: none !important;
-  background-color: transparent !important;
-  opacity: 1 !important;
-  /* wrap the JS text inside a blockly Tooltip */
-  overflow-wrap: break-word;
-}
-.blocklyToolboxDiv,
-.monacoToolboxDiv {
-  background: white !important;
-  z-index: 1;
-  -webkit-transition: width 1s, background 0.3s;
-  /* Safari */
-  -moz-transition: width 1s, background 0.3s;
-  /* Mozilla */
-  -webkit-transition-timing-function: ease-in;
-  /* Mozilla */
-  -o-transition: width 1s, background 0.3s;
-  /* Opera */
-  transition: width 1s, background 0.3s;
-  transition-timing-function: ease-in;
-}
-.blocklyToolboxDiv.blocklyToolboxDeleting {
-  background: #ed7669 !important;
-}
-svg.blocklySvg {
-  background-color: #ecf0f1 !important;
-}
-#blocksEditor .injectionDiv svg {
-  overflow: visible;
-}
-span.blocklyTreeLabel,
-text.blocklyText,
-input.blocklyHtmlInput {
-  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace !important;
-}
-/* Using 1rem creates font size issues in Edge
-text.blocklyText {
-    font-size:1rem !important;
-} */
-span.blocklyTreeLabel {
-  font-size: 1.25rem;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-.blocklyFlyoutButtonShadow {
-  fill: none !important;
-}
-.blocklyFlyoutLabelText {
-  fill: white !important;
-  font-size: 1rem;
-}
-.blocklyFlyoutHeading .blocklyFlyoutLabelText {
-  fill: white !important;
-  font-size: 1.5rem;
-}
-.blocklyFlyoutLabelText:hover {
-  fill: white !important;
-}
-.blocklyFlyoutLabelIcon {
-  font-family: 'Icons';
-  font-size: 1.5rem;
-}
-line.blocklyFlyoutLine {
-  stroke: white;
-}
-/* Opacity of blockly flyout background */
-.blocklyFlyoutBackground {
-  fill: #7f8c8d;
-  fill-opacity: 0.9 !important;
-}
-div.blocklyTreeRow,
-span.blocklyTreeLabel {
-  cursor: pointer;
-}
-/* This horrendous selector and the next are for subcategories in the Blockly toolbox */
-div.blocklyTreeRoot div div div div div.blocklyTreeRow {
-  border-left-width: 12px !important;
-  padding-left: 0px !important;
-}
-div.blocklyTreeRoot div div div div div.blocklyTreeRow span.blocklyTreeLabel {
-  font-size: 1rem;
-}
-/* The trash icon inside the toolbox */
-#blocklyTrashIcon {
+.ui.modal .closeIcon {
   position: absolute;
-  top: 30%;
-  left: 0;
-  text-align: center;
-  width: 100px;
-  height: 80px;
-  z-index: 8;
-  font-size: 5rem;
-  color: #3498db;
+  top: 0;
+  right: 0;
 }
-/* Blockly / Monaco Toolbox Buttons */
-#blocklyToolboxButtons,
-#monacoToolboxButtons {
-  margin-top: 0.1rem;
-  font-size: 3rem;
+.ui.modal.projectsdialog .closeIcon {
+  top: 0.4rem;
+  right: 0.2rem;
 }
-/* Blockly Search bar */
-.blocklySearchInputField {
+.ui.button.icon.clear {
+  background: transparent;
   border: 0 !important;
-  border-radius: 0 !important;
+  box-shadow: none !important;
 }
-/* Blockly toolbox icons */
-span.blocklyTreeIcon {
-  opacity: 1;
-  margin: -0.2em 0.25em 0em 0.25em;
-  width: 30px;
-  font-family: 'Icons';
-  font-style: normal;
-  font-weight: normal;
-  text-decoration: inherit;
-  text-align: center;
-  speak: none;
-  font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  backface-visibility: hidden;
-  font-size: 1.2rem;
-  height: 100%;
-  display: none;
-}
-.blocklyTreeSelected .blocklyTreeIcon {
-  color: white;
-}
-.blocklyTreeIcon.blocklyTreeIconsearch::before {
-  content: "\f002";
-}
-.blocklyTreeIcon.blocklyTreeIconDefault::before {
-  content: "\f12e";
-}
-.blocklyTreeIcon.blocklyTreeIconadvancedcollapsed::before {
-  content: "\f078";
-}
-.blocklyTreeIcon.blocklyTreeIconadvancedexpanded::before {
-  content: "\f077";
-}
-.blocklyTreeIcon.blocklyTreeIconmore::before {
-  content: "\f141";
-}
-.blocklyTreeIcon.blocklyTreeIconaddpackage::before {
-  content: "\f055";
-}
-.blocklyTreeIcon.blocklyTreeIconloops::before {
-  content: "\f01e";
-}
-.blocklyTreeIcon.blocklyTreeIconmath::before {
-  content: "\f1ec";
-}
-.blocklyTreeIcon.blocklyTreeIconlogic::before {
-  content: "\f074";
-}
-.blocklyTreeIcon.blocklyTreeIconvariables::before {
-  content: "\f039";
-}
-.blocklyTreeIcon.blocklyTreeIcontext::before {
-  content: "\f035";
-}
-.blocklyTreeIcon.blocklyTreeIconarrays::before {
-  content: "\f0cb";
-}
-.blocklyTreeIcon.blocklyTreeIconfunctions {
-  font-family: xicon !important;
-}
-.blocklyTreeIcon.blocklyTreeIconfunctions::before {
-  content: "\f107";
-}
-.blocklyFlyoutLabelIcon.blocklyFlyoutIconfunctions {
-  font-family: xicon !important;
-}
-/* Blockly Slider field */
-.blocklyWidgetDiv .goog-slider-horizontal {
-  background: white;
-  border: 2px solid black;
-  border-radius: 5px;
-}
-/* Fade out disabled blocks, but don't completely lose the colour */
-.blocklyDisabled > .blocklyPathDark {
-  display: block !important;
-  fill-opacity: 0.5;
+.ui.button.icon.inverted.clear:hover,
+.ui.button.icon.inverted.clear:focus {
+  color: #7f8c8d !important;
 }
 /*******************************
         Monaco Editor
@@ -50401,70 +51213,11 @@ Field editors
         Media Adjustments
 *******************************/
 /* Large Monitor */
-@media only screen and (min-width: 1200px) {
-  /* Blockly */
-  div.blocklyTreeRow {
-    min-width: 200px;
-    min-height: 40px;
-    line-height: 40px;
-  }
-  #blocklyTrashIcon {
-    width: 200px;
-  }
-}
 /* Small Monitor */
-@media only screen and (min-width: 992px) and (max-width: 1199px) {
-  /* Blockly row */
-  div.blocklyTreeRow {
-    min-width: 180px;
-    min-height: 40px;
-    line-height: 40px;
-  }
-  #blocklyTrashIcon {
-    width: 180px;
-  }
-}
 /* Tablet */
-@media only screen and (min-width: 768px) and (max-width: 991px) {
-  /* Blockly */
-  div.blocklyTreeRow {
-    min-width: 150px;
-    min-height: 45px;
-    line-height: 45px;
-    border-left-width: 12px !important;
-  }
-  #blocklyTrashIcon {
-    width: 150px;
-  }
-  div.blocklyTreeRoot div div div div div.blocklyTreeRow {
-    border-left-width: 18px !important;
-  }
-}
 /* Mobile */
-@media only screen and (max-width: 767px) {
-  div.blocklyTreeRow {
-    min-width: 50px;
-    min-height: 50px;
-    line-height: 50px;
-    border-left-width: 6px !important;
-  }
-  span.blocklyTreeIcon {
-    font-size: 1.5rem;
-    margin: 0.0em 0.25em 0.0em 0.25em;
-  }
-  #blocklyTrashIcon {
-    width: 50px;
-  }
-}
 /* >= Small Monitor (Small Monitor + Large Monitor + Wide Monitor) */
 @media only screen and (min-width: 992px) {
-  /* Blockly */
-  div.blocklyTreeRow {
-    border-left-width: 12px !important;
-  }
-  div.blocklyTreeRoot div div div div div.blocklyTreeRow {
-    border-left-width: 18px !important;
-  }
   .collapsedEditorTools #filelist {
     display: none;
   }
@@ -50569,10 +51322,6 @@ Field editors
   #logo .name {
     display: none !important;
   }
-  /* Blockly */
-  span.blocklyTreeLabel {
-    font-size: 1rem;
-  }
   /* Help card */
   #helpcard {
     top: auto;
@@ -50587,10 +51336,6 @@ Field editors
   #organization {
     font-size: 0rem;
     padding-right: 0;
-  }
-  /* Blockly */
-  span.blocklyTreeLabel {
-    font-size: 1rem;
   }
   /* Help card */
   #helpcard {
@@ -50704,31 +51449,6 @@ Field editors
 }
 /* Mobile */
 @media only screen and (max-width: 767px) {
-  /* Blockly */
-  text.blocklyCheckbox {
-    font-size: 17pt !important;
-  }
-  /* Hide blockly tree labels on mobile */
-  span.blocklyTreeLabel,
-  div.blocklyTreeRow:hover span.blocklyTreeLabel,
-  div.blocklyTreeRow.blocklyTreeSelected:hover span.blocklyTreeLabel {
-    display: none !important;
-  }
-  div.blocklyTreeRow {
-    padding-right: 0;
-    text-align: center;
-  }
-  div.blocklyTreeRoot div div div div div.blocklyTreeRow {
-    border-left-width: 8px !important;
-  }
-  /* Blockly trash icon */
-  #blocklyTrashIcon {
-    font-size: 3rem;
-  }
-  /* Hide the blockly toolbox search */
-  #blocklySearchArea {
-    display: none !important;
-  }
   .hideEditorFloats #editortools {
     height: 4.7rem;
   }
@@ -50872,10 +51592,13 @@ Field editors
 /* Import all components */
 /* Reference import */
 /*******************************
-             Layout
+      Tutorial mode
 *******************************/
 .tutorial #maineditor .full-abs {
   top: 5.5rem;
+}
+.tutorial #maineditor #monacoEditor {
+  top: 0rem;
 }
 /* Tutorial Mode */
 #menubar .ui.menu .item.tutorial-menuitem {
@@ -50900,7 +51623,7 @@ Field editors
 }
 #tutorialcard {
   position: relative;
-  z-index: 0;
+  z-index: 1;
   height: 6rem;
   width: 100%;
   padding-left: 1rem;
@@ -50926,7 +51649,7 @@ body#docs.tutorial {
   box-shadow: none;
   border: none;
 }
-#docs.tutorial #content {
+#docs.tutorial #root {
   margin-bottom: 0.5rem !important;
 }
 /******************************
@@ -50962,14 +51685,14 @@ body#docs.tutorial {
 }
 #tutorialcard .tutorialmessage .content {
   width: 100%;
-  font-size: 16px;
+  font-size: 12pt;
   height: 3.5rem;
   margin-bottom: 1rem;
   overflow: auto;
   cursor: pointer;
 }
 #tutorialcard .tutorialmessage .content p {
-  line-height: 25px !important;
+  line-height: 27px !important;
 }
 #tutorialcard .tutorialmessage {
   width: 100%;
@@ -50978,11 +51701,8 @@ body#docs.tutorial {
   height: 4.5rem;
   margin-bottom: 1rem;
 }
-#root.dimmable.dimmed #tutorialcard .ui.message {
-  border-radius: 3px;
-}
-#root.dimmable.dimmed #tutorialcard .tutorialmessage {
-  border: solid white 2px;
+#root.dimmable.dimmed .ui.segment.message {
+  border-radius: 5px;
 }
 /* Show / Hide in dimmer */
 .ui.showlightbox {
@@ -50997,6 +51717,7 @@ body#docs.tutorial {
 #root.dimmable.dimmed #tutorialcard.tutorialReady .ui.prevbutton,
 #root.dimmable.dimmed #tutorialcard.tutorialReady .ui.nextbutton {
   opacity: 0 !important;
+  z-index: -1;
 }
 #tutorialcard .ui.button.okbutton {
   border-radius: 0.28571429rem;
@@ -51035,19 +51756,19 @@ i.icon.avatar-image {
     Inline Blocks and Buttons
 ******************************/
 span.docs.inlinebutton {
-  padding: 0.15rem 0.3rem;
-  border-radius: 0.3rem;
+  padding: 0.4rem;
+  border-radius: 0.2rem;
   white-space: nowrap;
   background-color: #3498db;
   border: 1px solid #8bc4ea;
   color: #FFFFFF;
 }
 span.docs.inlineblock {
-  padding: 0.15rem 0.3rem;
-  border-radius: 0.4rem 0 0 0.4rem;
+  padding: 0.10rem 0.3rem;
+  border-radius: 0.3rem;
   white-space: nowrap;
-  background-color: #eb9950;
-  border: 1px solid #e67e22;
+  background-color: #D83B01;
+  border: 1px solid #d73b01;
   color: #FFFFFF;
 }
 .tutorialmessage code,
@@ -51091,6 +51812,9 @@ code.lang-filterblocks {
 /* Mobile */
 /* Import all components */
 /* Reference import */
+/*******************************
+         Side docs
+*******************************/
 /* Side Docs layout */
 #sidedocs {
   height: 100%;
@@ -51109,7 +51833,6 @@ code.lang-filterblocks {
   width: 0;
   height: 0;
   border: none;
-  overflow-y: hidden;
   background: white;
 }
 /* Side docs toggle button */
@@ -51128,13 +51851,36 @@ code.lang-filterblocks {
   box-shadow: none !important;
   transition: none;
 }
-.sideDocs #sidedocsframe {
+#sidedocstoggle:hover,
+#sidedocstoggle:focus {
+  background: #5A5A5A;
+}
+.sideDocs #sidedocs {
+  position: fixed;
+  visibility: visible;
+  opacity: 1;
+  width: 22rem;
+  top: calc(5rem);
+  padding-bottom: calc(10.7rem);
+}
+.sideDocs #sidedocsframe-wrapper {
+  position: relative;
+  -webkit-overflow-scrolling: touch;
+  overflow: auto;
   width: 22rem;
   height: 100%;
-  overflow-y: auto;
   -webkit-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.41);
   -moz-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.41);
   box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.41);
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  z-index: 10;
+}
+.sideDocs #sidedocsframe {
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  height: 100%;
 }
 .sideDocs #sidedocstoggle {
   right: 22rem;
@@ -51151,17 +51897,12 @@ code.lang-filterblocks {
   display: inherit !important;
 }
 .sideDocs #sidedocsbar {
-  top: calc(5.5rem);
-}
-.sideDocs #sidedocs {
-  visibility: visible;
-  opacity: 1;
-  width: 22rem;
-  padding-top: calc(5rem);
-  padding-bottom: calc(5.7rem);
+  top: 1rem;
+  z-index: 11;
 }
 #sidedocsbar .ui.link .icon {
   cursor: pointer;
+  font-size: 1.28571429rem;
 }
 /* Large Monitor */
 /* Small Monitor */
@@ -51172,11 +51913,12 @@ code.lang-filterblocks {
 /* <= Tablet (Mobile + Tablet) */
 @media only screen and (max-width: 991px) {
   .sideDocs #sidedocs {
-    padding-top: calc(4.5rem);
-    padding-bottom: calc(11rem);
+    top: calc(4.5rem);
+    padding-bottom: calc(15.5rem);
   }
-  .collapsedEditorTools #sidedocs {
-    padding-bottom: calc(5.7rem);
+  .sideDocs.collapsedEditorTools #sidedocs,
+  .sideDocs.hideEditorFloats #sidedocs {
+    padding-bottom: calc(10.2rem);
   }
   .sideDocs #sidedocsbar {
     top: calc(5rem);
@@ -51194,87 +51936,391 @@ code.lang-filterblocks {
 }
 /* Import all components */
 /* Reference import */
-.blocklyDropDownContent .blocklyPianoDiv {
-  position: relative;
+/*******************************
+          Accessibility
+*******************************/
+*[tabindex='0']:focus,
+*[tabindex*='d1']:focus,
+*[tabindex*='d2']:focus,
+*[role='menuitem']:focus,
+a:not([tabindex='-1']):focus,
+input:not([tabindex='-1']):focus,
+button:not([tabindex='-1']):focus,
+textarea:not([tabindex='-1']):focus,
+.ui.form input:not([tabindex='-1']):focus {
+  outline: 2px solid #4D90FE;
 }
-.blocklyDropDownContent .blocklyNote {
-  border: solid 0.5px;
-  cursor: pointer;
-  display: inline-block;
+@media all and (pointer: coarse) {
+  /* If touch screen */
+  *[tabindex='0']:focus,
+  *[tabindex*='d1']:focus,
+  *[tabindex*='d2']:focus,
+  *[role='menuitem']:focus,
+  a:not([tabindex='-1']):focus,
+  input:not([tabindex='-1']):focus,
+  button:not([tabindex='-1']):focus,
+  textarea:not([tabindex='-1']):focus,
+  .ui.form input:not([tabindex='-1']):focus {
+    outline: 1px solid transparent !important;
+  }
+}
+.blocklyTreeRoot:focus,
+.blocklyWidgetDiv *:focus,
+.blocklySVG *:focus,
+.monaco-editor *:focus,
+#monacoEditor *:focus {
+  outline: 1px solid transparent !important;
+}
+.ui.item:focus,
+.ui.button:focus {
+  z-index: 1000;
+}
+.accessible-hidden {
+  position: absolute !important;
+  display: block;
+  visibility: visible;
+  overflow: hidden;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+}
+#accessibleMenu {
   position: absolute;
-  top: 0px;
-  border-bottom-left-radius: 3px;
-  border-bottom-right-radius: 3px;
+  z-index: 1001;
+  top: -20em;
+  padding: 0;
+  margin: 0;
+  width: 100%;
 }
-.blocklyDropDownContent .blocklyNote:hover {
-  background-color: yellow !important;
+#accessibleMenu .ui.item.link {
+  position: absolute;
+  width: 100%;
+  color: rgba(255, 255, 255, 0.9);
 }
-.blocklyDropDownContent .blocklyNoteLabel {
-  border: solid 0.5px;
+#accessibleMenu .ui.item.link:focus {
+  top: 20em;
+}
+/* <= Tablet (Mobile + Tablet) */
+@media only screen and (max-width: 991px) {
+  #menubar #accessibleMenu {
+    height: 3.5rem !important;
+    min-height: 3.5rem !important;
+  }
+}
+/* Import all components */
+/* Reference import */
+/*******************************
+        High Contrast
+*******************************/
+/* Messages */
+#msg .hc {
+  background-color: black !important;
+  border: 1px solid white !important;
+  border-radius: 0em;
+  color: white !important;
+}
+.hc {
+  /* root */
+  /* Simulator */
+  /* Menu bar */
+  /* Editor toolbar */
+  /* Buttons */
+  /* Inputs */
+  /* Hyperlinks */
+  /* Items */
+  /* Dropdown */
+  /* Editor switch toggle */
+  /* Modals */
+  /* Tab list in Modals*/
+  /* Cards */
+  /* Tutorial */
+  /* Blockly / Monaco toolbox */
+  /* Editor toolbox */
+  /* PxtJson */
+}
+.hc *[tabindex='0']:focus,
+.hc *[tabindex*='d1']:focus,
+.hc *[tabindex*='d2']:focus,
+.hc *[role='menuitem']:focus,
+.hc a:not([tabindex='-1']):focus,
+.hc input:not([tabindex='-1']):focus,
+.hc button:not([tabindex='-1']):focus {
+  outline: 2px solid #10C8CD !important;
+}
+@media all and (pointer: coarse) {
+  .hc {
+    /* If touch screen */
+  }
+  .hc *[tabindex='0']:focus,
+  .hc *[tabindex*='d1']:focus,
+  .hc *[tabindex*='d2']:focus,
+  .hc *[role='menuitem']:focus,
+  .hc a:not([tabindex='-1']):focus,
+  .hc input:not([tabindex='-1']):focus,
+  .hc button:not([tabindex='-1']):focus {
+    outline: 1px solid transparent !important;
+  }
+}
+.hc .blocklyWidgetDiv *:focus,
+.hc .blocklySVG *:focus,
+.hc .monaco-editor *:focus,
+.hc #monacoEditor *:focus {
+  outline: none !important;
+}
+.hc .blocklyTreeRoot:focus {
+  outline: none !important;
+}
+.hc #root {
+  background: black !important;
+}
+.hc #filelist {
+  background: black !important;
+}
+.hc #filelist #boardview {
+  background: black !important;
+}
+.hc #menubar .menu > .item:focus > i,
+.hc #menubar .menu > .item:focus > span {
+  color: #10C8CD !important;
+}
+.hc #menubar #accessibleMenu > .item:focus i,
+.hc #menubar .editor-menuitem > .item:focus:not(.active) i,
+.hc #menubar #accessibleMenu > .item:focus span,
+.hc #menubar .editor-menuitem > .item:focus:not(.active) span {
+  color: #10C8CD !important;
+}
+.hc #menubar .ui.inverted.menu,
+.hc #menubar #accessibleMenu .ui.item.link.inverted:hover {
+  background: black !important;
+  border-bottom: 1px solid white;
+}
+.hc #menubar #accessibleMenu .ui.item.link {
+  color: white !important;
+}
+.hc #editortools {
+  background: black !important;
+  border-top: 1px solid white;
+}
+.hc .ui.button {
+  background: black !important;
+  color: white !important;
+  border: 1px solid white !important;
+}
+.hc .ui.button:focus {
+  color: #10C8CD !important;
+  border-color: #10C8CD !important;
+}
+.hc .ui.button:focus i,
+.hc .ui.button:focus span {
+  color: #10C8CD !important;
+}
+.hc .ui.button.disabled {
+  opacity: 1 !important;
+  border: 1px solid #3ff23f !important;
+}
+.hc .ui.button.disabled i,
+.hc .ui.button.disabled span {
+  color: #3ff23f !important;
+}
+.hc .ui.button.download-button:hover > span,
+.hc .ui.button.download-button:hover > i {
+  color: white !important;
+}
+.hc .ui.input input {
+  background: black !important;
+  color: white !important;
+  border: 1px solid white !important;
+}
+.hc input::placeholder {
+  color: yellow !important;
+}
+.hc a {
+  color: yellow !important;
+}
+.hc #sidedocsbar {
+  background-color: black !important;
+}
+.hc #sidedocsbar a {
+  color: white !important;
+  outline: 1px solid white !important;
+}
+.hc #sidedocsbar a:focus {
+  color: #10C8CD !important;
+}
+.hc #sidedocsbar a:focus i,
+.hc #sidedocsbar a:focus span {
+  color: #10C8CD !important;
+}
+.hc .ui.item {
+  background: black !important;
+  color: white !important;
+}
+.hc .ui.menu .ui.dropdown .menu {
+  border: 1px solid white !important;
+}
+.hc .ui.menu .ui.dropdown .menu,
+.hc .ui.menu .ui.dropdown .menu > .item {
+  background: black !important;
+  color: white !important;
+}
+.hc .ui.menu .ui.dropdown .menu:focus,
+.hc .ui.menu .ui.dropdown .menu > .item:focus {
+  color: #10C8CD !important;
+  font-weight: normal !important;
+}
+.hc .ui.menu .ui.dropdown .menu:focus i,
+.hc .ui.menu .ui.dropdown .menu > .item:focus i,
+.hc .ui.menu .ui.dropdown .menu:focus span,
+.hc .ui.menu .ui.dropdown .menu > .item:focus span {
+  color: #10C8CD !important;
+  font-weight: normal !important;
+}
+.hc .ui.menu .ui.dropdown .menu > .divider {
+  background: black !important;
+  border-top: 1px solid white !important;
+}
+.hc #menubar .ui.menu .item.editor-menuitem {
+  border: 1px solid white !important;
+}
+.hc #menubar .ui.menu .item.editor-menuitem .active {
+  background: #10C8CD !important;
+  color: black !important;
+}
+.hc .ui.modal {
+  border: 2px solid white !important;
+  border-radius: initial !important;
+  box-shadow: initial !important;
+}
+.hc .ui.modal,
+.hc .ui.modal > .header,
+.hc .ui.modal > .content,
+.hc .ui.modal > .actions,
+.hc .ui.modal > .segment {
+  background: black !important;
+  color: white !important;
+}
+.hc .ui.secondary.menu > .item:not(.active),
+.hc .ui.secondary.pointing.menu > .item:not(.active),
+.hc .ui.secondary.inverted.menu .link.item:not(.active) {
+  color: white !important;
+  border: 1px solid white !important;
+}
+.hc .ui.secondary.menu > .item.active,
+.hc .ui.secondary.menu > .item.active:hover,
+.hc .ui.secondary.pointing.menu > .item.active,
+.hc .ui.secondary.pointing.menu > .item.active:hover {
+  color: #10C8CD !important;
+  border: 2px solid #10C8CD !important;
+  border-radius: initial !important;
+  box-shadow: initial !important;
+}
+.hc .ui.modal.projectsdialog .tabsegment,
+.hc .ui.modal .ui.inverted.segment,
+.hc .ui.modal .ui.primary.inverted.segment {
+  background: black !important;
+  color: white !important;
+  border-color: white !important;
+}
+.hc .ui.modal.projectsdialog .tabsegment .header,
+.hc .ui.modal .ui.inverted.segment .header,
+.hc .ui.modal .ui.primary.inverted.segment .header {
+  opacity: 1 !important;
   color: white;
-  display: inline-block;
-  line-height: normal;
-  position: absolute;
-  text-align: center;
 }
-.blocklyDropDownContent .blocklyNotePrevNext {
-  border: solid 0.5px;
-  border-top: 0;
-  cursor: pointer;
-  color: white;
-  display: inline-block;
-  font-weight: bold;
-  line-height: normal;
-  position: absolute;
-  text-align: center;
+.hc .card {
+  background: black !important;
+  border: 2px solid white !important;
+  border-radius: initial !important;
+  box-shadow: initial !important;
 }
-.blocklyGridPickerTooltip {
-  z-index: 106;
+.hc .card .header,
+.hc .card .description,
+.hc .card .meta {
+  color: white !important;
 }
-.blocklyGridPickerPadder {
-  box-shadow: 0px 0px 8px 1px rgba(0, 0, 0, 0.3);
+.hc .card:focus .header,
+.hc .card:focus .description,
+.hc .card:focus .meta {
+  color: #10C8CD !important;
 }
-.blocklyWidgetDiv .blocklyGridPickerMenu {
-  display: table;
-  outline: none;
+.hc .card .ui.orange.labels .label,
+.hc .card .ui.orange.label {
+  background: #3ff23f !important;
+  border-color: #3ff23f !important;
+  color: black !important;
 }
-.blocklyGridPickerScroller {
-  outline: none;
-  padding: 4px;
-  border-radius: 10px;
+.hc #cookiemsg {
+  background: black !important;
+  border-radius: 0em;
+  border: 1px solid white !important;
 }
-.blocklyGridPickerPadder {
-  border-radius: 10px;
-  outline: none;
+.hc .ui.message {
+  background-color: black !important;
+  color: white !important;
 }
-.blocklyWidgetDiv .blocklyGridPickerRow {
-  display: table-row;
+.hc .ui.message .tutorialmessage {
+  outline: 1px solid white !important;
+  border: none !important;
 }
-.blocklyWidgetDiv .blocklyGridPickerMenu .goog-menuitem {
-  background: white;
-  cursor: pointer;
+.hc .ui.message .tutorialmessage:focus {
+  color: #10C8CD !important;
 }
-.blocklyWidgetDiv .blocklyGridPickerMenu .goog-menuitem-highlight,
-.blocklyWidgetDiv .blocklyGridPickerMenu .goog-menuitem-hover {
-  background: #d6e9f8;
+.hc .ui.label {
+  background-color: black !important;
+  border: 2px solid white !important;
 }
-.blocklyWidgetDiv .blocklyGridPickerMenu .goog-option {
-  border: solid 4px black;
-  border-radius: 10px;
-  display: table-cell;
-  padding: 4px;
-  text-align: center;
-  vertical-align: top;
+.hc .ui.blue.labels .label,
+.hc .ui.blue.label {
+  background-color: #10C8CD !important;
+  border-color: #10C8CD !important;
 }
-.blocklyWidgetDiv .blocklyGridPickerMenu .goog-option.goog-option-selected {
-  outline: solid 3px #fc3;
+.hc .blocklyTreeSelected {
+  background: #10C8CD !important;
 }
-.blocklyWidgetDiv .blocklyGridPickerMenu .goog-menuitem .goog-menuitem-checkbox {
-  display: none;
+.hc .blocklyToolboxDiv,
+.hc .monacoToolboxDiv {
+  background: black !important;
+  border-left: 1px solid white !important;
+  border-right: 1px solid white !important;
 }
-.blocklyGridPickerTooltip {
-  z-index: 100000;
-  /* big value for bootstrap3 compatibility */
+.hc .blocklyTreeLabel,
+.hc .blocklyTreeIcon {
+  color: white !important;
+}
+.hc .blocklyFlyoutBackground {
+  fill: black !important;
+  border-right: 1px solid white !important;
+}
+.hc .monacoFlyout {
+  background: black !important;
+  border-right: 1px solid white !important;
+}
+.hc .filemenu .item {
+  background: black !important;
+  color: white !important;
+  border: 1px solid white !important;
+}
+.hc .filemenu .item:focus,
+.hc .filemenu .item.active {
+  background: #10C8CD !important;
+}
+.hc .filemenu .item:focus span,
+.hc .filemenu .item.active span {
+  color: black !important;
+}
+.hc #maineditor {
+  border-left: 1px solid white !important;
+}
+.hc #maineditor,
+.hc .ui.segment.form {
+  background: black !important;
+}
+.hc #maineditor label,
+.hc .ui.segment.form label {
+  color: white !important;
 }
 /* Reference import */
 /*******************************
@@ -51470,6 +52516,9 @@ code.lang-filterblocks {
      Fonts
 --------------------*/
 /*-------------------
+   Links
+--------------------*/
+/*-------------------
    Breakpoints
 --------------------*/
 /*
@@ -51479,6 +52528,18 @@ code.lang-filterblocks {
 @largeMonitorBreakpoint      : unit( (99 * @emSize), px);
 @widescreenMonitorBreakpoint : unit( (119 * @emSize), px);
 */
+/*--------------
+   Form Input
+---------------*/
+/*-------------------
+     Neutral Text
+--------------------*/
+/*******************************
+             States
+*******************************/
+/*-------------------
+      Disabled
+--------------------*/
 /*******************************
      PXT Variables
 *******************************/

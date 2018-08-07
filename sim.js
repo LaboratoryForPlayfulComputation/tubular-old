@@ -81,7 +81,12 @@ var pxsim;
                 debug: 3 });
             /* Received user ID from server */
             if (peer)
-                peer.on('open', function (id) { updateUserId(id); });
+                peer.on('open', function (id) {
+                    if (id)
+                        updateUserId(id);
+                    else if (peer.id)
+                        updateUserId(peer.id);
+                });
             else
                 initializePeer();
             if (peer)
@@ -89,7 +94,10 @@ var pxsim;
             else
                 initializePeer();
             if (peer)
-                peer.on('disconnected', function () { });
+                peer.on('disconnected', function () {
+                    pxsim.console.log("peer disconnecteeeeeed from server");
+                    peer.reconnect();
+                });
             else
                 initializePeer();
             if (peer)
