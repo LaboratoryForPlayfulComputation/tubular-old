@@ -1,0 +1,69 @@
+CACHE MANIFEST
+
+CACHE:
+/tubular/semantic.js
+/tubular/main.js
+/tubular/pxtapp.js
+/tubular/typescript.js
+/tubular/marked/marked.min.js
+/tubular/highlight.js/highlight.pack.js
+/tubular/jquery.js
+/tubular/pxtlib.js
+/tubular/pxtcompiler.js
+/tubular/pxtpy.js
+/tubular/pxtblockly.js
+/tubular/pxtwinrt.js
+/tubular/pxteditor.js
+/tubular/pxtsim.js
+/tubular/pxtembed.js
+/tubular/pxtworker.js
+/tubular/pxtweb.js
+/tubular/blockly.css
+/tubular/semantic.css
+/tubular/rtlsemantic.css
+
+
+
+
+
+# blockly
+/tubular/blockly/media/sprites.png
+/tubular/blockly/media/click.mp3
+/tubular/blockly/media/disconnect.wav
+/tubular/blockly/media/delete.mp3
+
+# monaco; keep in sync with webapp/public/index.html
+/tubular/vs/loader.js
+/tubular/vs/base/worker/workerMain.js
+/tubular/vs/basic-languages/bat/bat.js
+/tubular/vs/basic-languages/cpp/cpp.js
+/tubular/vs/basic-languages/python/python.js
+/tubular/vs/basic-languages/markdown/markdown.js
+/tubular/vs/editor/editor.main.css
+/tubular/vs/editor/editor.main.js
+/tubular/vs/editor/editor.main.nls.js
+/tubular/vs/language/json/jsonMode.js
+/tubular/vs/language/json/jsonWorker.js
+
+# charts
+/tubular/smoothie/smoothie_compressed.js
+/tubular/images/Bars_black.gif
+
+# gifjs
+/tubular/gifjs/gif.js
+
+# ai
+/tubular/ai.0.js
+
+/tubular/worker.js
+/tubular/monacoworker.js
+
+# ver Sat Nov 21 2020 17:23:01 GMT-0700 (Mountain Standard Time)
+
+# target
+/tubular/docs/static/hero.png
+
+/tubular/target.js
+
+NETWORK:
+*

@@ -1,0 +1,12 @@
+{
+    "lang": "en",
+    "dir": "ltr",
+    "name": "sample",
+    "short_name": "sample",
+    "background_color": "#FAFAFA",
+    "icons": [],
+    "scope": "/",
+    "start_url": "/",
+    "display": "standalone",
+    "orientation": "landscape"
+}
